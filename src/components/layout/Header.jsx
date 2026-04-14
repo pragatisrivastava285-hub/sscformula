@@ -57,7 +57,7 @@ const Header = () => {
   return (
     <header style={headerStyles}>
       <Link to="/" style={logoStyles}>
-        <span style={{ color: theme.colors.primary }}>Bubu</span>
+        <span style={{ color: theme.colors.primary }}>Prag</span>
         <span>SSC</span>
       </Link>
       

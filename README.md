@@ -1,4 +1,4 @@
-# BubuSSC - SSC Formula Hub
+# PragSSC - SSC Formula Hub
 
 A comprehensive formula hub for SSC exam preparation, featuring all essential mathematical formulas with step-by-step solved examples.
 
@@ -154,11 +154,11 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Contact
 
-- **Email**: contact@bubussc.com
-- **Website**: https://bubussc.com
-- **YouTube**: BubuSSC
-- **Telegram**: BubuSSC_Community
+- **Email**: contact@pragssc.com
+- **Website**: https://pragssc.com
+- **YouTube**: PragSSC
+- **Telegram**: PragSSC_Community
 
 ---
 
-Made with ❤️ for SSC aspirants · BubuSSC
+Made with ❤️ for SSC aspirants · PragSSC

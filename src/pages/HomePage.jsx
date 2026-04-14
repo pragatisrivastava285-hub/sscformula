@@ -192,7 +192,7 @@ const HomePage = () => {
           </div>
           
           <h1 style={titleStyles}>
-            <span style={{ color: theme.colors.primary }}>Bubu</span>
+            <span style={{ color: theme.colors.primary }}>Prag</span>
             <span style={{ color: '#fff' }}>SSC</span>
           </h1>
           
@@ -253,7 +253,7 @@ const HomePage = () => {
         Made with ❤️ for SSC aspirants · <span style={{ 
           color: theme.colors.primary, 
           fontWeight: theme.typography.fontWeight.semibold 
-        }}>BubuSSC</span>
+        }}>PragSSC</span>
       </div>
     </Layout>
   );
