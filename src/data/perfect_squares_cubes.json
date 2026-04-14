@@ -1,0 +1,130 @@
+{
+  "title": "Perfect Squares and Cubes Chart",
+  "description": "Comprehensive reference for perfect squares, cubes, and their roots",
+  "data": {
+    "perfect_squares": {
+      "1_to_25": [
+        {"number": 1, "square": 1, "root": 1},
+        {"number": 2, "square": 4, "root": 1.414},
+        {"number": 3, "square": 9, "root": 1.732},
+        {"number": 4, "square": 16, "root": 2},
+        {"number": 5, "square": 25, "root": 2.236},
+        {"number": 6, "square": 36, "root": 2.449},
+        {"number": 7, "square": 49, "root": 2.646},
+        {"number": 8, "square": 64, "root": 2.828},
+        {"number": 9, "square": 81, "root": 3},
+        {"number": 10, "square": 100, "root": 3.162},
+        {"number": 11, "square": 121, "root": 3.317},
+        {"number": 12, "square": 144, "root": 3.464},
+        {"number": 13, "square": 169, "root": 3.606},
+        {"number": 14, "square": 196, "root": 3.742},
+        {"number": 15, "square": 225, "root": 3.873},
+        {"number": 16, "square": 256, "root": 4},
+        {"number": 17, "square": 289, "root": 4.123},
+        {"number": 18, "square": 324, "root": 4.243},
+        {"number": 19, "square": 361, "root": 4.359},
+        {"number": 20, "square": 400, "root": 4.472},
+        {"number": 21, "square": 441, "root": 4.583},
+        {"number": 22, "square": 484, "root": 4.690},
+        {"number": 23, "square": 529, "root": 4.796},
+        {"number": 24, "square": 576, "root": 4.899},
+        {"number": 25, "square": 625, "root": 5}
+      ],
+      "26_to_50": [
+        {"number": 26, "square": 676, "root": 5.099},
+        {"number": 27, "square": 729, "root": 5.196},
+        {"number": 28, "square": 784, "root": 5.292},
+        {"number": 29, "square": 841, "root": 5.385},
+        {"number": 30, "square": 900, "root": 5.477},
+        {"number": 31, "square": 961, "root": 5.568},
+        {"number": 32, "square": 1024, "root": 5.657},
+        {"number": 33, "square": 1089, "root": 5.745},
+        {"number": 34, "square": 1156, "root": 5.831},
+        {"number": 35, "square": 1225, "root": 5.916},
+        {"number": 36, "square": 1296, "root": 6},
+        {"number": 37, "square": 1369, "root": 6.083},
+        {"number": 38, "square": 1444, "root": 6.164},
+        {"number": 39, "square": 1521, "root": 6.245},
+        {"number": 40, "square": 1600, "root": 6.325},
+        {"number": 41, "square": 1681, "root": 6.403},
+        {"number": 42, "square": 1764, "root": 6.481},
+        {"number": 43, "square": 1849, "root": 6.557},
+        {"number": 44, "square": 1936, "root": 6.633},
+        {"number": 45, "square": 2025, "root": 6.708},
+        {"number": 46, "square": 2116, "root": 6.782},
+        {"number": 47, "square": 2209, "root": 6.856},
+        {"number": 48, "square": 2304, "root": 6.928},
+        {"number": 49, "square": 2401, "root": 7},
+        {"number": 50, "square": 2500, "root": 7.071}
+      ]
+    },
+    "perfect_cubes": {
+      "1_to_25": [
+        {"number": 1, "cube": 1, "cube_root": 1},
+        {"number": 2, "cube": 8, "cube_root": 1.26},
+        {"number": 3, "cube": 27, "cube_root": 1.442},
+        {"number": 4, "cube": 64, "cube_root": 1.587},
+        {"number": 5, "cube": 125, "cube_root": 1.71},
+        {"number": 6, "cube": 216, "cube_root": 1.817},
+        {"number": 7, "cube": 343, "cube_root": 1.913},
+        {"number": 8, "cube": 512, "cube_root": 2},
+        {"number": 9, "cube": 729, "cube_root": 2.08},
+        {"number": 10, "cube": 1000, "cube_root": 2.154},
+        {"number": 11, "cube": 1331, "cube_root": 2.224},
+        {"number": 12, "cube": 1728, "cube_root": 2.289},
+        {"number": 13, "cube": 2197, "cube_root": 2.351},
+        {"number": 14, "cube": 2744, "cube_root": 2.410},
+        {"number": 15, "cube": 3375, "cube_root": 2.466},
+        {"number": 16, "cube": 4096, "cube_root": 2.52},
+        {"number": 17, "cube": 4913, "cube_root": 2.571},
+        {"number": 18, "cube": 5832, "cube_root": 2.62},
+        {"number": 19, "cube": 6859, "cube_root": 2.668},
+        {"number": 20, "cube": 8000, "cube_root": 2.714},
+        {"number": 21, "cube": 9261, "cube_root": 2.759},
+        {"number": 22, "cube": 10648, "cube_root": 2.802},
+        {"number": 23, "cube": 12167, "cube_root": 2.844},
+        {"number": 24, "cube": 13824, "cube_root": 2.884},
+        {"number": 25, "cube": 15625, "cube_root": 2.924}
+      ]
+    },
+    "powers_and_indices": {
+      "squares_tricks": [
+        "Numbers ending with 5: (n5)² = n(n+1) | 25",
+        "Example: 35² = 3×4 | 25 = 1225",
+        "Example: 75² = 7×8 | 25 = 5625"
+      ],
+      "cube_tricks": [
+        "Sum of first n natural numbers = n(n+1)/2",
+        "Sum of first n odd numbers = n²",
+        "Sum of first n even numbers = n(n+1)"
+      ]
+    },
+    "practice_questions": [
+      {
+        "question": "Find the square root of 529",
+        "answer": "23",
+        "explanation": "From the chart, 23² = 529"
+      },
+      {
+        "question": "What is the cube of 17?",
+        "answer": "4913",
+        "explanation": "From the chart, 17³ = 4913"
+      },
+      {
+        "question": "Find the value of √1296",
+        "answer": "36",
+        "explanation": "From the chart, 36² = 1296"
+      },
+      {
+        "question": "Calculate 45² using the trick",
+        "answer": "2025",
+        "explanation": "45² = 4×5 | 25 = 2025"
+      },
+      {
+        "question": "Find the cube root of 1728",
+        "answer": "12",
+        "explanation": "From the chart, 12³ = 1728"
+      }
+    ]
+  }
+}

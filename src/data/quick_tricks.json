@@ -1,0 +1,340 @@
+[
+  {
+    "topic": "Percentage",
+    "trickName": "Fraction Method for Complex Percentages",
+    "whenToUse": "When calculating odd percentages like 37.5%, 62.5%, 87.5%",
+    "trick": "Convert % to fraction: 37.5% = 3/8, so 37.5% of 240 = 3/8 × 240 = 90",
+    "example": {
+      "question": "Find 37.5% of 800",
+      "solution": "37.5% = 3/8 × 800 = 300",
+      "timeSaved": "~15 seconds vs traditional method"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "High"
+  },
+  {
+    "topic": "Percentage",
+    "trickName": "Successive Percentage Change",
+    "whenToUse": "When two percentage changes occur one after another",
+    "trick": "Net % = A + B + (A×B)/100. For increase use +, for decrease use -",
+    "example": {
+      "question": "Price increased by 20%, then decreased by 10%. Net change?",
+      "solution": "Net = 20 - 10 + (20×-10)/100 = 10 - 2 = 8% increase",
+      "timeSaved": "~10 seconds vs step-by-step calculation"
+    },
+    "difficulty": "Medium",
+    "examFrequency": "High"
+  },
+  {
+    "topic": "Profit & Loss",
+    "trickName": "Quick Profit Calculation",
+    "whenToUse": "When SP and CP are given in ratio form",
+    "trick": "Profit % = (SP - CP)/CP × 100 = (SP/CP - 1) × 100",
+    "example": {
+      "question": "CP:SP = 4:5. Find profit %",
+      "solution": "Profit % = (5/4 - 1) × 100 = (1.25 - 1) × 100 = 25%",
+      "timeSaved": "~8 seconds vs traditional method"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "High"
+  },
+  {
+    "topic": "Profit & Loss",
+    "trickName": "Dishonest Dealer Quick Method",
+    "whenToUse": "When false weight is used in transactions",
+    "trick": "Profit % = (Error/Actual weight) × 100 where Error = False weight - True weight",
+    "example": {
+      "question": "Uses 900g as 1kg (false profit). CP = Rs.20/kg. SP = Rs.25/kg. Total profit %?",
+      "solution": "Weight profit = 100/900 × 100 = 11.11%, Price profit = 5/20 × 100 = 25%, Total = 36.11%",
+      "timeSaved": "~20 seconds vs complex calculation"
+    },
+    "difficulty": "Hard",
+    "examFrequency": "Medium"
+  },
+  {
+    "topic": "Ratio & Proportion",
+    "trickName": "Ratio Compounding Shortcut",
+    "whenToUse": "When three ratios a:b, b:c, c:d are given",
+    "trick": "Make middle terms equal by multiplying, then combine all ratios",
+    "example": {
+      "question": "A:B = 2:3, B:C = 4:5, C:D = 6:7. Find A:B:C:D",
+      "solution": "A:B:C:D = 8:12:15:17.5 = 16:24:30:35",
+      "timeSaved": "~12 seconds vs step-by-step method"
+    },
+    "difficulty": "Medium",
+    "examFrequency": "High"
+  },
+  {
+    "topic": "Time & Work",
+    "trickName": "Work Fraction Method",
+    "whenToUse": "When work is completed in fractions or parts",
+    "trick": "If work done = a/b, then remaining work = 1 - a/b. Time remaining = (remaining work) ÷ work rate",
+    "example": {
+      "question": "A completes 1/3 work in 5 days. Total time for complete work?",
+      "solution": "Work rate = (1/3)/5 = 1/15 per day. Total time = 1 ÷ (1/15) = 15 days",
+      "timeSaved": "~8 seconds vs complex setup"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "High"
+  },
+  {
+    "topic": "Time & Work",
+    "trickName": "Alternate Day Work Pattern",
+    "whenToUse": "When two persons work on alternate days",
+    "trick": "Work in 2 days = 1/a + 1/b. Total time = 2 × (total work ÷ work in 2 days)",
+    "example": {
+      "question": "A works day 1, B works day 2. A alone in 20 days, B in 30 days. Total time?",
+      "solution": "Work in 2 days = 1/20 + 1/30 = 1/12. Total time = 2 × 1 ÷ (1/12) = 24 days",
+      "timeSaved": "~15 seconds vs day-by-day calculation"
+    },
+    "difficulty": "Medium",
+    "examFrequency": "Medium"
+  },
+  {
+    "topic": "Speed, Distance & Time",
+    "trickName": "Relative Speed Quick Formula",
+    "whenToUse": "When two objects move towards or away from each other",
+    "trick": "Towards each other: Time = Distance ÷ (Speed1 + Speed2). Same direction: Time = Distance ÷ |Speed1 - Speed2|",
+    "example": {
+      "question": "Two cars 100km apart, speeds 40 and 60 km/hr towards each other. Meeting time?",
+      "solution": "Time = 100 ÷ (40 + 60) = 1 hour",
+      "timeSaved": "~5 seconds vs equation setup"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "Very High"
+  },
+  {
+    "topic": "Speed, Distance & Time",
+    "trickName": "Train Crossing Platform Formula",
+    "whenToUse": "When train crosses a platform or another train",
+    "trick": "Crossing time = (Train length + Platform length) ÷ Train speed. Convert speed to m/s if needed",
+    "example": {
+      "question": "Train 300m at 60km/hr crosses 200m platform. Time?",
+      "solution": "Speed = 60×5/18 = 50/3 m/s. Time = (300+200) ÷ (50/3) = 500×3/50 = 30 seconds",
+      "timeSaved": "~10 seconds vs unit conversion errors"
+    },
+    "difficulty": "Medium",
+    "examFrequency": "High"
+  },
+  {
+    "topic": "Simple & Compound Interest",
+    "trickName": "CI-SI Difference for 2 Years",
+    "whenToUse": "When compound interest and simple interest difference is asked for 2 years",
+    "trick": "CI - SI = P × (R/100)² where P = Principal, R = Rate",
+    "example": {
+      "question": "P = Rs.10000, R = 10%, 2 years. Find CI - SI",
+      "solution": "Difference = 10000 × (10/100)² = 10000 × 0.01 = Rs.100",
+      "timeSaved": "~25 seconds vs calculating both separately"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "Very High"
+  },
+  {
+    "topic": "Simple & Compound Interest",
+    "trickName": "Installment Quick Method",
+    "whenToUse": "When equal installments are paid on compound interest",
+    "trick": "For amount A, rate r%, n installments: Each installment = A × r/100 ÷ [(1+r/100)^n - 1]",
+    "example": {
+      "question": "Loan Rs.12100 at 10% CI, 2 equal annual installments?",
+      "solution": "Installment = 12100 × 0.1 ÷ [(1.1)² - 1] = 1210 ÷ 0.21 = Rs.5761.90",
+      "timeSaved": "~30 seconds vs complex equation solving"
+    },
+    "difficulty": "Hard",
+    "examFrequency": "Medium"
+  },
+  {
+    "topic": "Average",
+    "trickName": "Average Speed Equal Distances",
+    "whenToUse": "When same distance covered at different speeds",
+    "trick": "Avg Speed = 2 × S1 × S2 ÷ (S1 + S2). Harmonic mean of speeds",
+    "example": {
+      "question": "Go at 40 km/hr, return at 60 km/hr. Average speed?",
+      "solution": "Avg = 2 × 40 × 60 ÷ (40 + 60) = 4800 ÷ 100 = 48 km/hr",
+      "timeSaved": "~8 seconds vs distance-time calculation"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "High"
+  },
+  {
+    "topic": "Average",
+    "trickName": "Replacement Effect on Average",
+    "whenToUse": "When one value is replaced by another in a set",
+    "trick": "Change in average = (New value - Old value) ÷ Number of items",
+    "example": {
+      "question": "Average of 5 numbers = 20. Replace 15 with 35. New average?",
+      "solution": "Change = (35 - 15) ÷ 5 = 4. New average = 20 + 4 = 24",
+      "timeSaved": "~6 seconds vs recalculation"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "Medium"
+  },
+  {
+    "topic": "Number System",
+    "trickName": "Digital Root for Large Numbers",
+    "whenToUse": "When checking divisibility or solving complex number problems",
+    "trick": "Keep adding digits until single digit. Digital root of product = product of digital roots",
+    "example": {
+      "question": "Find remainder when 789 × 456 is divided by 9",
+      "solution": "Digital root of 789 = 6, of 456 = 6. Product digital root = 6×6 = 36 = 9. So remainder = 0",
+      "timeSaved": "~20 seconds vs actual multiplication"
+    },
+    "difficulty": "Medium",
+    "examFrequency": "Medium"
+  },
+  {
+    "topic": "Number System",
+    "trickName": "Unit Digit Pattern Recognition",
+    "whenToUse": "When finding unit digit of large powers",
+    "trick": "Remember cycles: 2(2,4,8,6), 3(3,9,7,1), 4(4,6), 7(7,9,3,1), 8(8,4,2,6), 9(9,1)",
+    "example": {
+      "question": "Find unit digit of 2^25",
+      "solution": "25 ÷ 4 = 6 remainder 1. First in cycle = 2. So unit digit = 2",
+      "timeSaved": "~10 seconds vs pattern finding"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "High"
+  },
+  {
+    "topic": "Algebra",
+    "trickName": "x + 1/x Pattern Recognition",
+    "whenToUse": "When expressions involve x + 1/x and its powers",
+    "trick": "If x + 1/x = k, then x² + 1/x² = k² - 2, x³ + 1/x³ = k³ - 3k",
+    "example": {
+      "question": "If x + 1/x = 3, find x³ + 1/x³",
+      "solution": "x³ + 1/x³ = 3³ - 3×3 = 27 - 9 = 18",
+      "timeSaved": "~15 seconds vs expansion method"
+    },
+    "difficulty": "Medium",
+    "examFrequency": "Very High"
+  },
+  {
+    "topic": "Algebra",
+    "trickName": "Quadratic Maximum/Minimum Quick",
+    "whenToUse": "When finding max/min of quadratic expressions",
+    "trick": "For ax² + bx + c: If a > 0, minimum at x = -b/2a. If a < 0, maximum at x = -b/2a",
+    "example": {
+      "question": "Find minimum value of x² + 4x + 5",
+      "solution": "a = 1 > 0, so minimum. x = -4/2 = -2. Value = (-2)² + 4(-2) + 5 = 1",
+      "timeSaved": "~12 seconds vs calculus method"
+    },
+    "difficulty": "Medium",
+    "examFrequency": "High"
+  },
+  {
+    "topic": "Geometry",
+    "trickName": "Pythagorean Triplets Recognition",
+    "whenToUse": "When checking if triangle is right-angled",
+    "trick": "Common triplets: (3,4,5), (5,12,13), (8,15,17), (7,24,25), (9,40,41), (11,60,61)",
+    "example": {
+      "question": "Is triangle with sides 15, 36, 39 right-angled?",
+      "solution": "15² + 36² = 225 + 1296 = 1521 = 39². Yes, it's a multiple of (5,12,13) triplet",
+      "timeSaved": "~8 seconds vs calculation"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "High"
+  },
+  {
+    "topic": "Geometry",
+    "trickName": "Area Comparison Shortcut",
+    "whenToUse": "When comparing areas of similar shapes",
+    "trick": "Area ratio = (side ratio)² for similar figures. Volume ratio = (side ratio)³",
+    "example": {
+      "question": "Two squares sides ratio 2:3. Area ratio?",
+      "solution": "Area ratio = (2:3)² = 4:9",
+      "timeSaved": "~5 seconds vs individual area calculation"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "Medium"
+  },
+  {
+    "topic": "Trigonometry",
+    "trickName": "Angle Complementarity",
+    "whenToUse": "When angles add to 90°",
+    "trick": "sin(90-°) = cos°, cos(90-°) = sin°, tan(90-°) = cot°, cosec(90-°) = sec°",
+    "example": {
+      "question": "Find sin 30° if cos 60° = 0.5",
+      "solution": "sin 30° = cos(90°-30°) = cos 60° = 0.5",
+      "timeSaved": "~6 seconds vs table lookup"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "Very High"
+  },
+  {
+    "topic": "Trigonometry",
+    "trickName": "Special Angle Values",
+    "whenToUse": "When trigonometric values of 15°, 75° are needed",
+    "trick": "sin 15° = (?6 - ?2)/4, cos 15° = (?6 + ?2)/4, tan 15° = 2 - ?3",
+    "example": {
+      "question": "Find tan 15°",
+      "solution": "tan 15° = 2 - ?3 ? 2 - 1.732 = 0.268",
+      "timeSaved": "~20 seconds vs half-angle formula"
+    },
+    "difficulty": "Hard",
+    "examFrequency": "Medium"
+  },
+  {
+    "topic": "Data Interpretation",
+    "trickName": "Pie Chart Angle Conversion",
+    "whenToUse": "When converting percentage to degrees in pie chart",
+    "trick": "Degrees = Percentage × 3.6 (since 100% = 360°, so 1% = 3.6°)",
+    "example": {
+      "question": "Convert 25% to degrees in pie chart",
+      "solution": "25 × 3.6 = 90°",
+      "timeSaved": "~3 seconds vs proportion method"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "High"
+  },
+  {
+    "topic": "Data Interpretation",
+    "trickName": "Bar Graph Approximation",
+    "whenToUse": "When exact values not needed, only comparisons",
+    "trick": "Use visual estimation and relative comparison rather than exact reading",
+    "example": {
+      "question": "Which month had highest sales? (Bar graph shows July tallest)",
+      "solution": "July has tallest bar, so highest sales",
+      "timeSaved": "~10 seconds vs exact value reading"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "Medium"
+  },
+  {
+    "topic": "Data Interpretation",
+    "trickName": "Table Data Scanning Strategy",
+    "whenToUse": "When finding specific data in large tables",
+    "trick": "Scan headers first, then look for key values, use finger to track rows/columns",
+    "example": {
+      "question": "Find sales of Product B in Q2 from 5×4 table",
+      "solution": "Locate Product B row, Q2 column, read intersection value",
+      "timeSaved": "~8 seconds vs random searching"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "High"
+  },
+  {
+    "topic": "Data Interpretation",
+    "trickName": "Line Graph Trend Analysis",
+    "whenToUse": "When analyzing trends over time",
+    "trick": "Look for overall pattern (increasing/decreasing), identify peaks and troughs, note rate of change",
+    "example": {
+      "question": "What is the trend from 2018-2022? (Line shows steady upward movement)",
+      "solution": "Consistent increasing trend with no major fluctuations",
+      "timeSaved": "~12 seconds vs point-by-point analysis"
+    },
+    "difficulty": "Medium",
+    "examFrequency": "Medium"
+  },
+  {
+    "topic": "Data Interpretation",
+    "trickName": "Missing Data Calculation",
+    "whenToUse": "When some data is missing but total is given",
+    "trick": "Use total - sum of known values = missing value. Check for patterns if multiple missing",
+    "example": {
+      "question": "Total sales = 500. Jan=100, Feb=120, Mar=80, Apr=?",
+      "solution": "Apr = 500 - (100+120+80) = 500 - 300 = 200",
+      "timeSaved": "~6 seconds vs complex calculation"
+    },
+    "difficulty": "Easy",
+    "examFrequency": "High"
+  }
+]

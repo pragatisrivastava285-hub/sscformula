@@ -1,0 +1,682 @@
+{
+  "id": "geometry",
+  "name": "Geometry & Mensuration",
+  "icon": "📐",
+  "color": "#6366f1",
+  "formulas": [
+    {
+      "name": "Triangle Area - Basic",
+      "tag": "Foundation",
+      "formula": "Area = ½ × Base × Height\nFor right triangle: Area = ½ × base × height",
+      "vars": [
+        {"k": "Base", "d": "Length of base of triangle"},
+        {"k": "Height", "d": "Perpendicular height from base"}
+      ],
+      "examples": [
+        {
+          "q": "Triangle with base 12cm, height 8cm. Find area.",
+          "steps": ["Area = ½ × 12 × 8 = 48"],
+          "ans": "48 cm²"
+        }
+      ]
+    },
+    {
+      "name": "Equilateral Triangle",
+      "tag": "Most Asked",
+      "formula": "Area = (sqrt(3)/4) × a²\nHeight = (sqrt(3)/2) × a\nPerimeter = 3a",
+      "vars": [
+        {"k": "a", "d": "Side length of equilateral triangle"}
+      ],
+      "examples": [
+        {
+          "q": "Equilateral triangle side = 6 cm. Find area.",
+          "steps": ["Area = (sqrt(3)/4) × 6² = (sqrt(3)/4) × 36 = 9sqrt(3)"],
+          "ans": "9sqrt(3) cm²"
+        }
+      ]
+    },
+    {
+      "name": "Heron's Formula",
+      "tag": "Important",
+      "formula": "s = (a+b+c)/2\nArea = sqrt[s(s-a)(s-b)(s-c)]\nWhere s = semi-perimeter",
+      "vars": [
+        {"k": "a,b,c", "d": "Sides of triangle"},
+        {"k": "s", "d": "Semi-perimeter"}
+      ],
+      "examples": [
+        {
+          "q": "Triangle sides: 13, 14, 15. Find area.",
+          "steps": ["s = (13+14+15)/2 = 21", "Area = sqrt[21×8×7×6] = sqrt[7056]"],
+          "ans": "84 cm²"
+        }
+      ]
+    },
+    {
+      "name": "Pythagoras Theorem",
+      "tag": "Foundation",
+      "formula": "c² = a² + b²\nHypotenuse = sqrt(a²+b²)\nCommon triples: (3,4,5), (5,12,13), (8,15,17), (7,24,25)",
+      "vars": [
+        {"k": "c", "d": "Hypotenuse (longest side)"},
+        {"k": "a,b", "d": "The other two sides"}
+      ],
+      "examples": [
+        {
+          "q": "Right triangle with legs 3cm and 4cm. Find hypotenuse.",
+          "steps": ["c = sqrt(3²+4²) = sqrt(9+16) = sqrt(25)"],
+          "ans": "5 cm"
+        }
+      ]
+    },
+    {
+      "name": "Circle Basic Formulas",
+      "tag": "Most Asked",
+      "formula": "Area = pr²\nCircumference = 2pr\nDiameter = 2r",
+      "vars": [
+        {"k": "r", "d": "Radius of circle"},
+        {"k": "p", "d": "Pi = 22/7 or 3.14"}
+      ],
+      "examples": [
+        {
+          "q": "Circle radius = 7cm. Find area. (p=22/7)",
+          "steps": ["Area = (22/7) × 7 × 7 = 22 × 7"],
+          "ans": "154 cm²"
+        }
+      ]
+    },
+    {
+      "name": "Circle Sector and Segment",
+      "tag": "Important",
+      "formula": "Sector Area = (?/360°) × pr²\nArc Length = (?/360°) × 2pr\nSegment Area = Sector Area - Triangle Area",
+      "vars": [
+        {"k": "? (theta)", "d": "Central angle in degrees"},
+        {"k": "r", "d": "Radius of circle"}
+      ],
+      "examples": [
+        {
+          "q": "Sector with r=7cm, ?=60°. Find area.",
+          "steps": ["Area = (60/360) × (22/7) × 7² = (1/6) × 154"],
+          "ans": "25.67 cm²"
+        }
+      ]
+    },
+    {
+      "name": "Rectangle Formulas",
+      "tag": "Foundation",
+      "formula": "Area = length × width\nPerimeter = 2(length + width)\nDiagonal = sqrt(length² + width²)",
+      "vars": [
+        {"k": "length", "d": "Length of rectangle"},
+        {"k": "width", "d": "Width of rectangle"}
+      ],
+      "examples": [
+        {
+          "q": "Rectangle 8cm × 6cm. Find area and perimeter.",
+          "steps": ["Area = 8 × 6 = 48", "Perimeter = 2(8+6) = 28"],
+          "ans": "Area = 48 cm², Perimeter = 28 cm"
+        }
+      ]
+    },
+    {
+      "name": "Square Formulas",
+      "tag": "Foundation",
+      "formula": "Area = side²\nPerimeter = 4 × side\nDiagonal = side × sqrt(2)",
+      "vars": [
+        {"k": "side", "d": "Length of one side of square"}
+      ],
+      "examples": [
+        {
+          "q": "Square side = 5cm. Find area and diagonal.",
+          "steps": ["Area = 5² = 25", "Diagonal = 5 × sqrt(2)"],
+          "ans": "Area = 25 cm², Diagonal = 5sqrt(2) cm"
+        }
+      ]
+    },
+    {
+      "name": "Parallelogram Formulas",
+      "tag": "Important",
+      "formula": "Area = base × height\nPerimeter = 2(length + width)\nDiagonal formulas use law of cosines",
+      "vars": [
+        {"k": "base", "d": "Base length"},
+        {"k": "height", "d": "Perpendicular height"}
+      ],
+      "examples": [
+        {
+          "q": "Parallelogram base=10cm, height=6cm. Find area.",
+          "steps": ["Area = 10 × 6"],
+          "ans": "60 cm²"
+        }
+      ]
+    },
+    {
+      "name": "Rhombus Formulas",
+      "tag": "Important",
+      "formula": "Area = (d1 × d2)/2\nArea = base × height\nPerimeter = 4 × side",
+      "vars": [
+        {"k": "d1,d2", "d": "Lengths of diagonals"},
+        {"k": "base", "d": "Base length"},
+        {"k": "height", "d": "Perpendicular height"}
+      ],
+      "examples": [
+        {
+          "q": "Rhombus diagonals 12cm and 16cm. Find area.",
+          "steps": ["Area = (12 × 16)/2 = 96"],
+          "ans": "96 cm²"
+        }
+      ]
+    },
+    {
+      "name": "Trapezium (Trapezoid)",
+      "tag": "Important",
+      "formula": "Area = (1/2) × (a + b) × h\nPerimeter = a + b + c + d\nWhere a,b are parallel sides",
+      "vars": [
+        {"k": "a,b", "d": "Lengths of parallel sides"},
+        {"k": "h", "d": "Height (distance between parallel sides)"}
+      ],
+      "examples": [
+        {
+          "q": "Trapezium with parallel sides 8cm and 12cm, height 6cm. Find area.",
+          "steps": ["Area = (1/2) × (8+12) × 6 = (1/2) × 20 × 6"],
+          "ans": "60 cm²"
+        }
+      ]
+    },
+    {
+      "name": "Cube Formulas",
+      "tag": "3D Foundation",
+      "formula": "Volume = a³\nSurface Area = 6a²\nDiagonal = a × sqrt(3)\nSpace Diagonal = a × sqrt(3)",
+      "vars": [
+        {"k": "a", "d": "Edge length of cube"}
+      ],
+      "examples": [
+        {
+          "q": "Cube with edge 5cm. Find volume and surface area.",
+          "steps": ["Volume = 5³ = 125", "Surface Area = 6 × 5² = 150"],
+          "ans": "Volume = 125 cm³, Surface Area = 150 cm²"
+        }
+      ]
+    },
+    {
+      "name": "Cuboid Formulas",
+      "tag": "3D Important",
+      "formula": "Volume = length × width × height\nSurface Area = 2(lw + lh + wh)\nDiagonal = sqrt(l² + w² + h²)",
+      "vars": [
+        {"k": "l,w,h", "d": "Length, width, height of cuboid"}
+      ],
+      "examples": [
+        {
+          "q": "Cuboid 6cm × 4cm × 3cm. Find volume.",
+          "steps": ["Volume = 6 × 4 × 3"],
+          "ans": "72 cm³"
+        }
+      ]
+    },
+    {
+      "name": "Cylinder Formulas",
+      "tag": "3D Most Asked",
+      "formula": "Volume = pr²h\nCurved Surface Area = 2prh\nTotal Surface Area = 2pr(r + h)",
+      "vars": [
+        {"k": "r", "d": "Radius of cylinder base"},
+        {"k": "h", "d": "Height of cylinder"}
+      ],
+      "examples": [
+        {
+          "q": "Cylinder r=7cm, h=10cm. Find volume. (p=22/7)",
+          "steps": ["Volume = (22/7) × 7² × 10 = 22 × 7 × 10"],
+          "ans": "1540 cm³"
+        }
+      ]
+    },
+    {
+      "name": "Cone Formulas",
+      "tag": "3D Important",
+      "formula": "Volume = (1/3)pr²h\nSlant Height l = sqrt(r² + h²)\nCurved Surface Area = prl\nTotal Surface Area = pr(r + l)",
+      "vars": [
+        {"k": "r", "d": "Radius of cone base"},
+        {"k": "h", "d": "Height of cone"},
+        {"k": "l", "d": "Slant height of cone"}
+      ],
+      "examples": [
+        {
+          "q": "Cone r=3cm, h=4cm. Find volume.",
+          "steps": ["Volume = (1/3) × (22/7) × 3² × 4 = (1/3) × (22/7) × 36"],
+          "ans": "37.71 cm³"
+        }
+      ]
+    },
+    {
+      "name": "Sphere Formulas",
+      "tag": "3D Important",
+      "formula": "Volume = (4/3)pr³\nSurface Area = 4pr²\nDiameter = 2r",
+      "vars": [
+        {"k": "r", "d": "Radius of sphere"}
+      ],
+      "examples": [
+        {
+          "q": "Sphere radius = 7cm. Find surface area. (p=22/7)",
+          "steps": ["Surface Area = 4 × (22/7) × 7² = 4 × 22 × 7"],
+          "ans": "616 cm²"
+        }
+      ]
+    },
+    {
+      "name": "Hemisphere Formulas",
+      "tag": "3D Advanced",
+      "formula": "Volume = (2/3)pr³\nCurved Surface Area = 2pr²\nTotal Surface Area = 3pr²",
+      "vars": [
+        {"k": "r", "d": "Radius of hemisphere"}
+      ],
+      "examples": [
+        {
+          "q": "Hemisphere radius = 7cm. Find volume. (p=22/7)",
+          "steps": ["Volume = (2/3) × (22/7) × 7³ = (2/3) × 22 × 49"],
+          "ans": "718.67 cm³"
+        }
+      ]
+    },
+    {
+      "name": "Frustum of Cone",
+      "tag": "3D Advanced",
+      "formula": "Volume = (1/3)ph(R² + r² + Rr)\nSlant Height = sqrt((R-r)² + h²)\nCurved Surface Area = p(R + r)l",
+      "vars": [
+        {"k": "R", "d": "Radius of larger base"},
+        {"k": "r", "d": "Radius of smaller base"},
+        {"k": "h", "d": "Height of frustum"},
+        {"k": "l", "d": "Slant height"}
+      ],
+      "examples": [
+        {
+          "q": "Frustum R=8cm, r=4cm, h=6cm. Find volume.",
+          "steps": ["Volume = (1/3) × (22/7) × 6(8² + 4² + 8×4)"],
+          "ans": "880 cm³"
+        }
+      ]
+    },
+    {
+      "name": "Triangle Properties",
+      "tag": "Theory",
+      "formula": "Sum of angles = 180°\nExterior angle = Sum of opposite interior angles\nIn any triangle: a/sin A = b/sin B = c/sin C",
+      "vars": [
+        {"k": "A,B,C", "d": "Angles of triangle"},
+        {"k": "a,b,c", "d": "Sides opposite angles A,B,C"}
+      ],
+      "examples": [
+        {
+          "q": "Triangle angles: 60°, 70°. Find third angle.",
+          "steps": ["Third angle = 180° - (60° + 70°)"],
+          "ans": "50°"
+        }
+      ]
+    },
+    {
+      "name": "Similar Triangles",
+      "tag": "Important",
+      "formula": "If triangles are similar:\nRatio of corresponding sides = k\nRatio of areas = k²\nRatio of volumes = k³",
+      "vars": [
+        {"k": "k", "d": "Scale factor of similar figures"}
+      ],
+      "examples": [
+        {
+          "q": "Similar triangles with side ratio 2:3. Area ratio?",
+          "steps": ["Area ratio = (2/3)² = 4/9"],
+          "ans": "4:9"
+        }
+      ]
+    },
+    {
+      "name": "Circle Properties",
+      "tag": "Theory",
+      "formula": "Tangent is perpendicular to radius\nAngle in semicircle = 90°\nEqual chords subtend equal angles\nCentral angle = 2 × inscribed angle",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Central angle = 80°. Find inscribed angle subtending same arc.",
+          "steps": ["Inscribed angle = 80°/2"],
+          "ans": "40°"
+        }
+      ]
+    },
+    {
+      "name": "Quadrilateral Properties",
+      "tag": "Theory",
+      "formula": "Sum of interior angles = 360°\nParallelogram: Opposite sides equal, opposite angles equal\nRectangle: All angles = 90°, diagonals equal\nRhombus: All sides equal, diagonals perpendicular",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Three angles of quadrilateral: 80°, 110°, 90°. Find fourth.",
+          "steps": ["Fourth = 360° - (80° + 110° + 90°)"],
+          "ans": "80°"
+        }
+      ]
+    },
+    {
+      "name": "Regular Polygon",
+      "tag": "Advanced",
+      "formula": "Interior angle = (n-2) × 180°/n\nExterior angle = 360°/n\nSum of interior angles = (n-2) × 180°",
+      "vars": [
+        {"k": "n", "d": "Number of sides of polygon"}
+      ],
+      "examples": [
+        {
+          "q": "Regular hexagon. Find each interior angle.",
+          "steps": ["Interior angle = (6-2) × 180°/6 = 4 × 180°/6"],
+          "ans": "120°"
+        }
+      ]
+    },
+    {
+      "name": "Area of Regular Polygon",
+      "tag": "Advanced",
+      "formula": "Area = (1/2) × Perimeter × Apothem\nApothem = side/(2 × tan(180°/n))",
+      "vars": [
+        {"k": "n", "d": "Number of sides"},
+        {"k": "side", "d": "Length of one side"}
+      ],
+      "examples": [
+        {
+          "q": "Regular hexagon side = 6cm. Find area.",
+          "steps": ["Apothem = 6/(2 × tan(30°)) = 6/(2 × 0.577) = 5.2", "Area = (1/2) × 36 × 5.2"],
+          "ans": "93.6 cm²"
+        }
+      ]
+    },
+    {
+      "name": "Coordinate Geometry - Distance",
+      "tag": "Important",
+      "formula": "Distance between (x1,y1) and (x2,y2):\nd = sqrt[(x2-x1)² + (y2-y1)²]",
+      "vars": [
+        {"k": "(x1,y1)", "d": "First point coordinates"},
+        {"k": "(x2,y2)", "d": "Second point coordinates"}
+      ],
+      "examples": [
+        {
+          "q": "Distance between (2,3) and (5,7).",
+          "steps": ["d = sqrt[(5-2)² + (7-3)²] = sqrt[9 + 16] = sqrt[25]"],
+          "ans": "5 units"
+        }
+      ]
+    },
+    {
+      "name": "Coordinate Geometry - Section Formula",
+      "tag": "Important",
+      "formula": "Point dividing (x1,y1) and (x2,y2) in ratio m:n:\nx = (mx2 + nx1)/(m+n), y = (my2 + ny1)/(m+n)",
+      "vars": [
+        {"k": "m:n", "d": "Division ratio"}
+      ],
+      "examples": [
+        {
+          "q": "Find point dividing (2,3) and (8,9) in ratio 2:1.",
+          "steps": ["x = (2×8 + 1×2)/(2+1) = (16+2)/3 = 6", "y = (2×9 + 1×3)/(2+1) = (18+3)/3 = 7"],
+          "ans": "(6,7)"
+        }
+      ]
+    },
+    {
+      "name": "Coordinate Geometry - Line Equation",
+      "tag": "Important",
+      "formula": "Slope form: y - y1 = m(x - x1)\nTwo-point form: (y-y1)/(y2-y1) = (x-x1)/(x2-x1)\nIntercept form: x/a + y/b = 1",
+      "vars": [
+        {"k": "m", "d": "Slope of line"},
+        {"k": "a,b", "d": "x and y intercepts"}
+      ],
+      "examples": [
+        {
+          "q": "Line through (1,2) with slope 3. Find equation.",
+          "steps": ["y - 2 = 3(x - 1)", "y - 2 = 3x - 3", "y = 3x - 1"],
+          "ans": "y = 3x - 1"
+        }
+      ]
+    },
+    {
+      "name": "3D Coordinate Geometry",
+      "tag": "Advanced",
+      "formula": "Distance between (x1,y1,z1) and (x2,y2,z2):\nd = sqrt[(x2-x1)² + (y2-y1)² + (z2-z1)²]",
+      "vars": [
+        {"k": "(x1,y1,z1)", "d": "First point in 3D"},
+        {"k": "(x2,y2,z2)", "d": "Second point in 3D"}
+      ],
+      "examples": [
+        {
+          "q": "Distance between (1,2,3) and (4,6,8).",
+          "steps": ["d = sqrt[(4-1)² + (6-2)² + (8-3)²] = sqrt[9 + 16 + 25] = sqrt[50]"],
+          "ans": "5sqrt(2) units"
+        }
+      ]
+    },
+    {
+      "name": "Area of Triangle Using Coordinates",
+      "tag": "Important",
+      "formula": "Area = (1/2) |x1(y2-y3) + x2(y3-y1) + x3(y1-y2)|",
+      "vars": [
+        {"k": "(x1,y1), (x2,y2), (x3,y3)", "d": "Vertices of triangle"}
+      ],
+      "examples": [
+        {
+          "q": "Triangle with vertices (0,0), (4,0), (0,3). Find area.",
+          "steps": ["Area = (1/2) |0(0-3) + 4(3-0) + 0(0-0)| = (1/2) |0 + 12 + 0|"],
+          "ans": "6 square units"
+        }
+      ]
+    },
+    {
+      "name": "Volume of Pyramid",
+      "tag": "3D Important",
+      "formula": "Volume = (1/3) × Base Area × Height\nSquare Pyramid: V = (1/3) × a² × h",
+      "vars": [
+        {"k": "Base Area", "d": "Area of pyramid base"},
+        {"k": "Height", "d": "Perpendicular height from base to apex"}
+      ],
+      "examples": [
+        {
+          "q": "Square pyramid base 6cm, height 9cm. Find volume.",
+          "steps": ["Volume = (1/3) × 6² × 9 = (1/3) × 36 × 9"],
+          "ans": "108 cm³"
+        }
+      ]
+    },
+    {
+      "name": "Surface Area of Pyramid",
+      "tag": "3D Advanced",
+      "formula": "Total Surface Area = Base Area + Lateral Surface Area\nLateral Area = (1/2) × Perimeter × Slant Height",
+      "vars": [
+        {"k": "Slant Height", "d": "Height of triangular face from base to apex"}
+      ],
+      "examples": [
+        {
+          "q": "Square pyramid base 6cm, slant height 5cm. Find lateral area.",
+          "steps": ["Lateral Area = (1/2) × 24 × 5"],
+          "ans": "60 cm²"
+        }
+      ]
+    },
+    {
+      "name": "Prism Volume",
+      "tag": "3D Important",
+      "formula": "Volume = Base Area × Height\nTriangular Prism: V = (1/2) × base × height × length",
+      "vars": [
+        {"k": "Base Area", "d": "Area of prism base"},
+        {"k": "Height", "d": "Length/height of prism"}
+      ],
+      "examples": [
+        {
+          "q": "Triangular prism base 4cm, height 3cm, length 10cm. Find volume.",
+          "steps": ["Volume = (1/2) × 4 × 3 × 10"],
+          "ans": "60 cm³"
+        }
+      ]
+    },
+    {
+      "name": "Torus Volume and Area",
+      "tag": "3D Advanced",
+      "formula": "Volume = 2p²Rr²\nSurface Area = 4p²Rr\nWhere R = major radius, r = minor radius",
+      "vars": [
+        {"k": "R", "d": "Distance from center to tube center"},
+        {"k": "r", "d": "Radius of the tube"}
+      ],
+      "examples": [
+        {
+          "q": "Torus with R=8cm, r=3cm. Find volume.",
+          "steps": ["Volume = 2 × (22/7)² × 8 × 3²"],
+          "ans": "1425.6 cm³"
+        }
+      ]
+    },
+    {
+      "name": "Ellipsoid Volume",
+      "tag": "3D Advanced",
+      "formula": "Volume = (4/3)pabc\nWhere a,b,c are semi-axes lengths",
+      "vars": [
+        {"k": "a,b,c", "d": "Semi-axes lengths along x,y,z axes"}
+      ],
+      "examples": [
+        {
+          "q": "Ellipsoid with a=4cm, b=3cm, c=2cm. Find volume.",
+          "steps": ["Volume = (4/3) × (22/7) × 4 × 3 × 2"],
+          "ans": "100.57 cm³"
+        }
+      ]
+    },
+    {
+      "name": "Area of Ring (Annulus)",
+      "tag": "Important",
+      "formula": "Area = p(R² - r²)\nWhere R = outer radius, r = inner radius",
+      "vars": [
+        {"k": "R", "d": "Outer radius"},
+        {"k": "r", "d": "Inner radius"}
+      ],
+      "examples": [
+        {
+          "q": "Ring with outer radius 8cm, inner radius 5cm. Find area.",
+          "steps": ["Area = (22/7) × (8² - 5²) = (22/7) × (64-25)"],
+          "ans": "123.14 cm²"
+        }
+      ]
+    },
+    {
+      "name": "Area of Path Around Rectangle",
+      "tag": "Application",
+      "formula": "Area of path = Area of outer rectangle - Area of inner rectangle\nIf path width = w: Outer dimensions = (l+2w) × (b+2w)",
+      "vars": [
+        {"k": "w", "d": "Width of path around rectangle"},
+        {"k": "l,b", "d": "Length and breadth of inner rectangle"}
+      ],
+      "examples": [
+        {
+          "q": "Rectangle 20m × 10m with path 2m wide around it. Find path area.",
+          "steps": ["Outer: 24m × 14m = 336", "Inner: 20m × 10m = 200", "Path area = 336 - 200"],
+          "ans": "136 m²"
+        }
+      ]
+    },
+    {
+      "name": "Cost of Painting/Fencing",
+      "tag": "Application",
+      "formula": "Cost = Area × Rate per unit\nFencing Cost = Perimeter × Rate per unit\nPainting Cost = Surface Area × Rate per unit",
+      "vars": [
+        {"k": "Rate", "d": "Cost per unit area or length"}
+      ],
+      "examples": [
+        {
+          "q": "Paint walls of room 5m × 4m × 3m at ?10/m². Find cost (excluding floor and ceiling).",
+          "steps": ["Wall area = 2(5×3 + 4×3) = 2(15+12) = 54", "Cost = 54 × 10"],
+          "ans": "?540"
+        }
+      ]
+    },
+    {
+      "name": "Volume of Water Tank",
+      "tag": "Application",
+      "formula": "Volume in liters = Volume in m³ × 1000\n1 m³ = 1000 liters",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Tank 2m × 1.5m × 1m. Find capacity in liters.",
+          "steps": ["Volume = 2 × 1.5 × 1 = 3 m³", "Capacity = 3 × 1000"],
+          "ans": "3000 liters"
+        }
+      ]
+    },
+    {
+      "name": "Surface Area to Volume Ratio",
+      "tag": "Advanced",
+      "formula": "SA:V = Surface Area / Volume\nImportant for heat transfer and chemical reactions",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Cube 2cm edge. Find SA:V ratio.",
+          "steps": ["SA = 6 × 2² = 24", "V = 2³ = 8", "Ratio = 24/8"],
+          "ans": "3:1"
+        }
+      ]
+    },
+    {
+      "name": "Geometric Probability",
+      "tag": "Advanced",
+      "formula": "Probability = Favorable Area / Total Area",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Dart thrown at square 10cm side. Target circle radius 3cm. Find probability.",
+          "steps": ["Total area = 10² = 100", "Target area = (22/7) × 3² = 28.29", "P = 28.29/100"],
+          "ans": "0.283"
+        }
+      ]
+    },
+    {
+      "name": "Locus Problems",
+      "tag": "Advanced",
+      "formula": "Locus: Set of points satisfying given condition\nExample: Points at distance r from fixed point = circle",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find equation of locus of points 5 units from origin.",
+          "steps": ["Distance formula: sqrt(x² + y²) = 5", "Square both sides: x² + y² = 25"],
+          "ans": "x² + y² = 25"
+        }
+      ]
+    },
+    {
+      "name": "Transformation Geometry",
+      "tag": "Advanced",
+      "formula": "Translation: (x,y) -> (x+a, y+b)\nRotation 90°: (x,y) -> (-y, x)\nReflection in x-axis: (x,y) -> (x, -y)",
+      "vars": [
+        {"k": "a,b", "d": "Translation distances"}
+      ],
+      "examples": [
+        {
+          "q": "Point (3,4) rotated 90° about origin. Find new position.",
+          "steps": ["(3,4) -> (-4, 3)"],
+          "ans": "(-4, 3)"
+        }
+      ]
+    },
+    {
+      "name": "Vector Geometry Basics",
+      "tag": "Advanced",
+      "formula": "Position vector: r = xi + yj + zk\nMagnitude: |r| = sqrt(x² + y² + z²)\nDot product: a·b = |a||b|cos?",
+      "vars": [
+        {"k": "i,j,k", "d": "Unit vectors along x,y,z axes"}
+      ],
+      "examples": [
+        {
+          "q": "Vector v = 3i + 4j. Find magnitude.",
+          "steps": ["|v| = sqrt(3² + 4²) = sqrt(9 + 16) = sqrt(25)"],
+          "ans": "5"
+        }
+      ]
+    },
+    {
+      "name": "3D Geometry - Planes",
+      "tag": "Advanced",
+      "formula": "Plane equation: ax + by + cz + d = 0\nDistance from point to plane: |ax1 + by1 + cz1 + d|/sqrt(a² + b² + c²)",
+      "vars": [
+        {"k": "a,b,c,d", "d": "Coefficients of plane equation"}
+      ],
+      "examples": [
+        {
+          "q": "Distance from point (1,2,3) to plane 2x + y - z + 1 = 0.",
+          "steps": ["Distance = |2×1 + 1×2 - 1×3 + 1|/sqrt(2² + 1² + (-1)²) = |2+2-3+1|/sqrt(6) = 2/sqrt(6)"],
+          "ans": "0.816 units"
+        }
+      ]
+    }
+  ]
+}

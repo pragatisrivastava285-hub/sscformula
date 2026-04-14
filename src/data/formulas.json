@@ -2,8 +2,7 @@
   {
     "id":"percentage",
     "name":"Percentage",
-    "icon":"📊",
-    "color":"#f97316",
+    "icon":"📊","color":"#f97316",
     "formulas":[
       {
         "name":"Basic Percentage",
@@ -18,21 +17,36 @@
             "q":"Out of 500 marks, a student scored 375. What is the percentage?",
             "steps":["= (375 ÷ 500) × 100","= 0.75 × 100"],
             "ans":"75%"
+          },
+          {
+            "q":"A team won 15 matches out of 20 played. Find success percentage.",
+            "steps":["= (15 ÷ 20) × 100","= 0.75 × 100"],
+            "ans":"75%"
+          },
+          {
+            "q":"If 30% of a number is 45, find the number.",
+            "steps":["Let number = x", "30% of x = 45", "0.3x = 45", "x = 45 ÷ 0.3"],
+            "ans":"150"
           }
         ]
       },
       {
         "name":"Percentage Increase",
         "tag":"Important",
-        "formula":"Increase% = [(New − Old) ÷ Old] × 100",
+        "formula":"Increase% = [(New ? Old) ÷ Old] × 100",
         "vars":[
           {"k":"New","d":"Increased/new value"},
           {"k":"Old","d":"Original value"}
         ],
         "examples":[
           {
-            "q":"Price of rice rose from ₹40 to ₹50. Find % increase.",
-            "steps":["Increase = 50 − 40 = 10","= (10 ÷ 40) × 100"],
+            "q":"Price of rice rose from ?40 to ?50. Find % increase.",
+            "steps":["Increase = 50 ? 40 = 10","= (10 ÷ 40) × 100"],
+            "ans":"25%"
+          },
+          {
+            "q":"Population increased from 8000 to 10000. Find % increase.",
+            "steps":["Increase = 10000 ? 8000 = 2000","= (2000 ÷ 8000) × 100"],
             "ans":"25%"
           }
         ]
@@ -40,31 +54,481 @@
       {
         "name":"Percentage Decrease",
         "tag":"Important",
-        "formula":"Decrease% = [(Old − New) ÷ Old] × 100",
+        "formula":"Decrease% = [(Old ? New) ÷ Old] × 100",
         "vars":[
           {"k":"Old","d":"Original (larger) value"},
           {"k":"New","d":"Reduced value"}
         ],
         "examples":[
           {
-            "q":"Salary dropped from ₹8000 to ₹6000. Find % decrease.",
-            "steps":["Decrease = 8000 − 6000 = 2000","= (2000 ÷ 8000) × 100"],
+            "q":"Salary dropped from ?8000 to ?6000. Find % decrease.",
+            "steps":["Decrease = 8000 ? 6000 = 2000","= (2000 ÷ 8000) × 100"],
+            "ans":"25%"
+          },
+          {
+            "q":"Price reduced from ?120 to ?90. Find % decrease.",
+            "steps":["Decrease = 120 ? 90 = 30","= (30 ÷ 120) × 100"],
             "ans":"25%"
           }
         ]
       },
       {
-        "name":"% → Fraction Shortcut",
+        "name":"Successive Percentage Change",
+        "tag":"Most Asked",
+        "formula":"Net% = A + B + (A×B)/100\nWhere A and B are successive changes",
+        "vars":[
+          {"k":"A","d":"First percentage change"},
+          {"k":"B","d":"Second percentage change"}
+        ],
+        "examples":[
+          {
+            "q":"Price increased by 20% then decreased by 10%. Find net change.",
+            "steps":["Net% = 20 + (?10) + (20×?10)/100","= 20 ? 10 ? 2 = 8%"],
+            "ans":"8% increase"
+          },
+          {
+            "q":"Salary increased by 25% then again by 20%. Find total increase.",
+            "steps":["Net% = 25 + 20 + (25×20)/100","= 25 + 20 + 5 = 50%"],
+            "ans":"50% increase"
+          }
+        ]
+      },
+      {
+        "name":"Population Growth Formula",
+        "tag":"Important",
+        "formula":"Final = Initial × (1 + R/100)^n\nWhere R = growth rate, n = time periods",
+        "vars":[
+          {"k":"Initial","d":"Starting population"},
+          {"k":"R","d":"Growth rate per period (%)"},
+          {"k":"n","d":"Number of periods"}
+        ],
+        "examples":[
+          {
+            "q":"Population = 50000, growth = 10% per year. Find after 3 years.",
+            "steps":["Final = 50000 × (1 + 10/100)³","= 50000 × (1.1)³ = 50000 × 1.331"],
+            "ans":"66550"
+          }
+        ]
+      },
+      {
+        "name":"Population Decay Formula",
+        "tag":"Important",
+        "formula":"Final = Initial × (1 ? R/100)^n\nWhere R = decay rate, n = time periods",
+        "vars":[
+          {"k":"Initial","d":"Starting population"},
+          {"k":"R","d":"Decay rate per period (%)"},
+          {"k":"n","d":"Number of periods"}
+        ],
+        "examples":[
+          {
+            "q":"Species count = 10000, decay = 20% per year. Find after 2 years.",
+            "steps":["Final = 10000 × (1 ? 20/100)²","= 10000 × (0.8)² = 10000 × 0.64"],
+            "ans":"6400"
+          }
+        ]
+      },
+      {
+        "name":"Expenditure and Income Problems",
+        "tag":"Most Asked",
+        "formula":"New Expenditure = Old Expenditure × (1 ± %change)\nIncome = Expenditure + Savings",
+        "vars":[
+          {"k":"Old Expenditure","d":"Original spending amount"},
+          {"k":"%change","d":"Percentage increase/decrease"}
+        ],
+        "examples":[
+          {
+            "q":"Income = ?50000, Expenditure = ?35000. If income increases 20% and expenditure decreases 10%, find new savings.",
+            "steps":["New Income = 50000 × 1.2 = 60000","New Expenditure = 35000 × 0.9 = 31500","Savings = 60000 ? 31500"],
+            "ans":"?28500"
+          }
+        ]
+      },
+      {
+        "name":"Election Vote Calculations",
+        "tag":"SSC Special",
+        "formula":"Valid Votes = Total Votes × (100 ? Invalid%)/100\nVotes Won = Valid Votes × Win%/100",
+        "vars":[
+          {"k":"Total Votes","d":"All votes cast"},
+          {"k":"Invalid%","d":"Percentage of invalid votes"},
+          {"k":"Win%","d":"Percentage of valid votes won"}
+        ],
+        "examples":[
+          {
+            "q":"Total votes = 80000, invalid = 10%, winner got 60% of valid votes. Find winner's votes.",
+            "steps":["Valid = 80000 × 0.9 = 72000","Winner = 72000 × 0.6"],
+            "ans":"43200 votes"
+          }
+        ]
+      },
+      {
+        "name":"Discount and Markup Relationships",
+        "tag":"Most Asked",
+        "formula":"MP = CP × (100 + Markup%)/100\nSP = MP × (100 ? Discount%)/100\nSP = CP × (100 + Markup%)/100 × (100 ? Discount%)/100",
+        "vars":[
+          {"k":"CP","d":"Cost Price"},
+          {"k":"MP","d":"Marked Price"},
+          {"k":"SP","d":"Selling Price"},
+          {"k":"Markup%","d":"Markup percentage on CP"},
+          {"k":"Discount%","d":"Discount percentage on MP"}
+        ],
+        "examples":[
+          {
+            "q":"CP = ?200, Markup = 50%, Discount = 20%. Find SP and Profit%.",
+            "steps":["MP = 200 × 1.5 = 300","SP = 300 × 0.8 = 240","Profit = 240 ? 200 = 40","Profit% = 40/200 × 100"],
+            "ans":"SP = ?240, Profit = 20%"
+          }
+        ]
+      },
+      {
+        "name":"Error Percentage Formula",
+        "tag":"Important",
+        "formula":"Error% = (Error ÷ True Value) × 100\nMeasured Value = True Value ± Error",
+        "vars":[
+          {"k":"Error","d":"Difference between measured and true value"},
+          {"k":"True Value","d":"Actual correct value"}
+        ],
+        "examples":[
+          {
+            "q":"True weight = 50kg, measured = 49kg. Find error%.",
+            "steps":["Error = 50 ? 49 = 1kg","Error% = (1 ÷ 50) × 100"],
+            "ans":"2% error"
+          }
+        ]
+      },
+      {
+        "name":"Return to Original Value",
         "tag":"Trick",
-        "formula":"10%=1/10 | 20%=1/5 | 25%=1/4\n33.3%=1/3 | 50%=1/2 | 75%=3/4",
+        "formula":"After X% increase: Need X/(100+X) × 100% decrease\nAfter X% decrease: Need X/(100?X) × 100% increase",
+        "vars":[
+          {"k":"X","d":"Original percentage change"}
+        ],
+        "examples":[
+          {
+            "q":"Price increased by 25%. By what % should it decrease to return to original?",
+            "steps":["Decrease% = 25/(100+25) × 100","= 25/125 × 100"],
+            "ans":"20% decrease"
+          },
+          {
+            "q":"Price decreased by 20%. By what % should it increase to return to original?",
+            "steps":["Increase% = 20/(100?20) × 100","= 20/80 × 100"],
+            "ans":"25% increase"
+          }
+        ]
+      },
+      {
+        "name":"Fraction Table Memorization",
+        "tag":"Memory Trick",
+        "formula":"1/2=50% | 1/3=33.33% | 1/4=25% | 1/5=20%\n1/6=16.67% | 1/7=14.28% | 1/8=12.5% | 1/9=11.11%\n1/10=10% | 1/11=9.09% | 1/12=8.33% | 1/13=7.69%\n1/14=7.14% | 1/15=6.67% | 1/16=6.25% | 1/17=5.88%\n1/18=5.56% | 1/19=5.26% | 1/20=5% | 1/25=4%\n1/30=3.33%",
         "vars":[],
         "examples":[
           {
-            "q":"Find 25% of 240.",
-            "steps":["25% = 1/4","(1/4) × 240 = 60"],
-            "ans":"60"
+            "q":"Find 16.67% of 600.",
+            "steps":["16.67% = 1/6","600 ÷ 6"],
+            "ans":"100"
+          },
+          {
+            "q":"Find 7.14% of 2800.",
+            "steps":["7.14% = 1/14","2800 ÷ 14"],
+            "ans":"200"
           }
         ]
+      },
+      {
+        "name":"Quick Calculation Trick - Split Method",
+        "tag":"Time Saver",
+        "formula":"Break % into easy parts:\n37% = 25% + 12.5% ? 0.5%\n62.5% = 50% + 12.5%\n87.5% = 100% ? 12.5%",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Find 37.5% of 800.",
+            "steps":["37.5% = 25% + 12.5%","25% of 800 = 200","12.5% of 800 = 100","Total = 200 + 100"],
+            "ans":"300"
+          },
+          {
+            "q":"Find 62.5% of 240.",
+            "steps":["62.5% = 50% + 12.5%","50% of 240 = 120","12.5% of 240 = 30","Total = 120 + 30"],
+            "ans":"150"
+          }
+        ]
+      },
+      {
+        "name":"Base Change Formula",
+        "tag":"Advanced",
+        "formula":"If A is X% of B, then B is (100/X)% of A\nIf A is X% more than B, then B is X/(100+X) × 100% less than A",
+        "vars":[
+          {"k":"A","d":"First quantity"},
+          {"k":"B","d":"Second quantity"},
+          {"k":"X","d":"Given percentage"}
+        ],
+        "examples":[
+          {
+            "q":"If 40 is 20% of B, find B.",
+            "steps":["B = 40 × 100/20","B = 40 × 5"],
+            "ans":"200"
+          },
+          {
+            "q":"If A is 25% more than B and A = 125, find B.",
+            "steps":["B = 125 × 100/125","B = 100"],
+            "ans":"100"
+          }
+        ]
+      },
+      {
+        "name":"Percentage of Percentage",
+        "tag":"SSC Favorite",
+        "formula":"X% of Y% = (X × Y)/100 %\nX% of Y% of Z = (X × Y × Z)/10000",
+        "vars":[
+          {"k":"X","d":"First percentage"},
+          {"k":"Y","d":"Second percentage"},
+          {"k":"Z","d":"Base value"}
+        ],
+        "examples":[
+          {
+            "q":"Find 20% of 30% of 500.",
+            "steps":["20% of 30% = (20 × 30)/100 = 6%","6% of 500 = 0.06 × 500"],
+            "ans":"30"
+          },
+          {
+            "q":"Find 25% of 40%.",
+            "steps":["(25 × 40)/100"],
+            "ans":"10%"
+          }
+        ]
+      },
+      {
+        "name":"Venn Diagram Percentage",
+        "tag":"Important",
+        "formula":"Total = A + B ? Both + Neither\n% of at least one = A% + B% ? Both%\n% of exactly one = A% + B% ? 2 × Both%",
+        "vars":[
+          {"k":"A%","d":"Percentage in group A"},
+          {"k":"B%","d":"Percentage in group B"},
+          {"k":"Both%","d":"Percentage in both groups"}
+        ],
+        "examples":[
+          {
+            "q":"70% like tea, 60% like coffee, 40% like both. Find % who like at least one.",
+            "steps":["At least one = 70 + 60 ? 40"],
+            "ans":"90%"
+          },
+          {
+            "q":"70% like tea, 60% like coffee, 40% like both. Find % who like exactly one.",
+            "steps":["Exactly one = 70 + 60 ? 2×40"],
+            "ans":"50%"
+          }
+        ]
+      },
+      {
+        "name":"Percentage Distribution",
+        "tag":"Most Asked",
+        "formula":"Part = Total × Part%/100\nNew Part = Old Part × (New Total/Old Total)",
+        "vars":[
+          {"k":"Part","d":"Individual share"},
+          {"k":"Total","d":"Whole amount"},
+          {"k":"Part%","d":"Percentage share"}
+        ],
+        "examples":[
+          {
+            "q":"A gets 30% of ?8000. If total becomes ?10000, what's A's new share?",
+            "steps":["A's share = 8000 × 0.3 = 2400","New share = 2400 × (10000/8000) = 2400 × 1.25"],
+            "ans":"?3000"
+          }
+        ]
+      },
+      {
+        "name":"Mixed Percentage Problems",
+        "tag":"SSC Special",
+        "formula":"Final Value = Initial × (1 ± R1/100) × (1 ± R2/100) × ...\nWhere R1, R2 are successive changes",
+        "vars":[
+          {"k":"Initial","d":"Starting value"},
+          {"k":"R1, R2...","d":"Successive percentage changes"}
+        ],
+        "examples":[
+          {
+            "q":"Number = 1000. +20%, ?10%, +15%. Find final value.",
+            "steps":["Final = 1000 × 1.2 × 0.9 × 1.15","= 1000 × 1.242"],
+            "ans":"1242"
+          }
+        ]
+      },
+      {
+        "name":"Percentage Ratio Problems",
+        "tag":"Important",
+        "formula":"If A:B = m:n and total = T\nA = T × m/(m+n), B = T × n/(m+n)",
+        "vars":[
+          {"k":"A:B","d":"Ratio of quantities"},
+          {"k":"m:n","d":"Ratio numbers"},
+          {"k":"T","d":"Total quantity"}
+        ],
+        "examples":[
+          {
+            "q":"Ratio A:B = 3:2, total = 500. Find A and B.",
+            "steps":["A = 500 × 3/(3+2) = 500 × 3/5","B = 500 × 2/(3+2) = 500 × 2/5"],
+            "ans":"A = 300, B = 200"
+          }
+        ]
+      },
+      {
+        "name":"Percentage Error in Approximation",
+        "tag":"Advanced",
+        "formula":"Error% = |Approximate ? Exact| ÷ Exact × 100\nRelative Error = Error ÷ Exact Value",
+        "vars":[
+          {"k":"Approximate","d":"Calculated/approximate value"},
+          {"k":"Exact","d":"True/actual value"}
+        ],
+        "examples":[
+          {
+            "q":"Exact value = 3.14, approximate = 3. Find error%.",
+            "steps":["Error = |3 ? 3.14| = 0.14","Error% = 0.14/3.14 × 100"],
+            "ans":"4.46%"
+          }
+        ]
+      },
+      {
+        "name":"Commission Percentage",
+        "tag":"Business Math",
+        "formula":"Commission = Sales × Commission%/100\nNet Amount = Sales ? Commission\nCommissioned Price = Cost/(1 ? Commission%)",
+        "vars":[
+          {"k":"Sales","d":"Total sales value"},
+          {"k":"Commission%","d":"Commission rate"}
+        ],
+        "examples":[
+          {
+            "q":"Sales = ?50000, commission = 5%. Find commission amount.",
+            "steps":["Commission = 50000 × 0.05"],
+            "ans":"?2500"
+          },
+          {
+            "q":"Cost = ?950, commission = 5%. Find selling price.",
+            "steps":["SP = 950/(1 ? 0.05) = 950/0.95"],
+            "ans":"?1000"
+          }
+        ]
+      },
+      {
+        "name":"Tax Percentage Problems",
+        "tag":"Important",
+        "formula":"Tax Amount = Base Value × Tax%/100\nFinal Price = Base Value + Tax\nBase Value = Final Price/(1 + Tax%/100)",
+        "vars":[
+          {"k":"Base Value","d":"Original price before tax"},
+          {"k":"Tax%","d":"Tax rate"}
+        ],
+        "examples":[
+          {
+            "q":"Price = ?2000, GST = 18%. Find final price.",
+            "steps":["Tax = 2000 × 0.18 = 360","Final = 2000 + 360"],
+            "ans":"?2360"
+          },
+          {
+            "q":"Final price = ?1180, tax = 18%. Find original price.",
+            "steps":["Original = 1180/(1 + 0.18) = 1180/1.18"],
+            "ans":"?1000"
+          }
+        ]
+      },
+      {
+        "name":"Depreciation Percentage",
+        "tag":"Business Math",
+        "formula":"Depreciated Value = Original × (1 ? Rate/100)^n\nAnnual Depreciation = Original × Rate/100",
+        "vars":[
+          {"k":"Original","d":"Initial value"},
+          {"k":"Rate","d":"Depreciation rate per period"},
+          {"k":"n","d":"Number of periods"}
+        ],
+        "examples":[
+          {
+            "q":"Machine value = ?100000, depreciation = 10% per year. Find value after 2 years.",
+            "steps":["Value = 100000 × (0.9)²","= 100000 × 0.81"],
+            "ans":"?81000"
+          }
+        ]
+      },
+      {
+        "name":"Percentage in Geometry",
+        "tag":"SSC Special",
+        "formula":"Area change = (Scale factor)² × 100%\nPerimeter change = Scale factor × 100%\nVolume change = (Scale factor)³ × 100%",
+        "vars":[
+          {"k":"Scale factor","d":"Ratio of new to original dimensions"}
+        ],
+        "examples":[
+          {
+            "q":"Side of square increased by 20%. Find % increase in area.",
+            "steps":["Scale factor = 1.2","Area change = (1.2)² ? 1 = 1.44 ? 1 = 0.44"],
+            "ans":"44% increase"
+          },
+          {
+            "q":"Radius of circle increased by 10%. Find % increase in area.",
+            "steps":["Scale factor = 1.1","Area change = (1.1)² ? 1 = 1.21 ? 1 = 0.21"],
+            "ans":"21% increase"
+          }
+        ]
+      },
+      {
+        "name":"Percentage Speed and Time",
+        "tag":"Important",
+        "formula":"If speed increases by X%, time decreases by X/(100+X) × 100%\nIf speed decreases by X%, time increases by X/(100?X) × 100%",
+        "vars":[
+          {"k":"X","d":"Percentage change in speed"}
+        ],
+        "examples":[
+          {
+            "q":"Speed increased by 25%. Find % decrease in time.",
+            "steps":["Time decrease = 25/(100+25) × 100","= 25/125 × 100"],
+            "ans":"20% decrease"
+          }
+        ]
+      },
+      {
+        "name":"Percentage Efficiency",
+        "tag":"Work Problems",
+        "formula":"Efficiency% = (Output/Input) × 100\nNew Output = Input × New Efficiency%/100",
+        "vars":[
+          {"k":"Output","d":"Actual output achieved"},
+          {"k":"Input","d":"Standard/expected input"}
+        ],
+        "examples":[
+          {
+            "q":"Machine input = 100 units, output = 85 units. Find efficiency%.",
+            "steps":["Efficiency = (85/100) × 100"],
+            "ans":"85%"
+          }
+        ]
+      },
+      {
+        "name":"Compound Percentage Change",
+        "tag":"Advanced",
+        "formula":"After n periods at r%: Final = Initial × (1 + r/100)^n\nEffective rate = [(1 + r/100)^n ? 1] × 100%",
+        "vars":[
+          {"k":"r","d":"Rate per period"},
+          {"k":"n","d":"Number of periods"}
+        ],
+        "examples":[
+          {
+            "q":"Amount = ?10000, 10% compound interest for 2 years. Find amount.",
+            "steps":["Amount = 10000 × (1.1)²","= 10000 × 1.21"],
+            "ans":"?12100"
+          }
+        ]
+      },
+      {
+        "name":"Percentage Comparison",
+        "tag":"Data Analysis",
+        "formula":"A is what % of B = (A/B) × 100\nA is how much % more than B = [(A?B)/B] × 100\nA is how much % less than B = [(B?A)/B] × 100",
+        "vars":[
+          {"k":"A","d":"First quantity"},
+          {"k":"B","d":"Second quantity"}
+        ],
+        "examples":[
+          {
+            "q":"A = 75, B = 50. Find A is what % of B.",
+            "steps":["(75/50) × 100"],
+            "ans":"150%"
+          },
+          {
+            "q":"A = 75, B = 50. Find A is how much % more than B.",
+            "steps":["[(75?50)/50] × 100 = (25/50) × 100"],
+            "ans":"50% more"
+          }
+          ]
       }
     ]
   },
@@ -77,67 +541,454 @@
       {
         "name":"Profit & Loss Basics",
         "tag":"Foundation",
-        "formula":"Profit = SP − CP\nLoss = CP − SP\nProfit% = (Profit ÷ CP) × 100\nLoss%   = (Loss ÷ CP) × 100",
+        "formula":"Profit = SP ? CP\nLoss = CP ? SP\nProfit% = (Profit ÷ CP) × 100\nLoss%   = (Loss ÷ CP) × 100",
         "vars":[
-          {"k":"SP","d":"Selling Price — price at which item is sold"},
-          {"k":"CP","d":"Cost Price — price at which item was bought"}
+          {"k":"SP","d":"Selling Price ? price at which item is sold"},
+          {"k":"CP","d":"Cost Price ? price at which item was bought"}
         ],
         "examples":[
           {
-            "q":"CP = ₹20, SP = ₹25. Find Profit%.",
-            "steps":["Profit = 25 − 20 = ₹5","Profit% = (5 ÷ 20) × 100"],
+            "q":"CP = ?20, SP = ?25. Find Profit%.",
+            "steps":["Profit = 25 ? 20 = ?5","Profit% = (5 ÷ 20) × 100"],
             "ans":"25%"
+          },
+          {
+            "q":"CP = ?150, SP = ?120. Find Loss%.",
+            "steps":["Loss = 150 ? 120 = ?30","Loss% = (30 ÷ 150) × 100"],
+            "ans":"20%"
           }
         ]
       },
       {
         "name":"Finding Selling Price",
         "tag":"Most Asked",
-        "formula":"SP = CP × (100 + Profit%) ÷ 100\nSP = CP × (100 − Loss%)   ÷ 100",
+        "formula":"SP = CP × (100 + Profit%) ÷ 100\nSP = CP × (100 ? Loss%)   ÷ 100",
         "vars":[
           {"k":"SP","d":"Selling Price (to find)"},
           {"k":"CP","d":"Cost Price (given)"}
         ],
         "examples":[
           {
-            "q":"CP = ₹500, Profit = 20%. Find SP.",
+            "q":"CP = ?500, Profit = 20%. Find SP.",
             "steps":["SP = 500 × (100+20) ÷ 100","= 500 × 1.2"],
-            "ans":"SP = ₹600"
+            "ans":"SP = ?600"
+          },
+          {
+            "q":"CP = ?800, Loss = 25%. Find SP.",
+            "steps":["SP = 800 × (100?25) ÷ 100","= 800 × 0.75"],
+            "ans":"SP = ?600"
           }
         ]
       },
       {
         "name":"Finding Cost Price",
         "tag":"Important",
-        "formula":"CP = SP × 100 ÷ (100 + Profit%)\nCP = SP × 100 ÷ (100 − Loss%)",
+        "formula":"CP = SP × 100 ÷ (100 + Profit%)\nCP = SP × 100 ÷ (100 ? Loss%)",
         "vars":[
           {"k":"CP","d":"Cost Price (to find)"},
           {"k":"SP","d":"Selling Price (given)"}
         ],
         "examples":[
           {
-            "q":"SP = ₹600, Profit = 20%. Find CP.",
+            "q":"SP = ?600, Profit = 20%. Find CP.",
             "steps":["CP = 600 × 100 ÷ 120","= 60000 ÷ 120"],
-            "ans":"CP = ₹500"
+            "ans":"CP = ?500"
           }
         ]
       },
       {
         "name":"Discount Formula",
         "tag":"Important",
-        "formula":"Discount = MP − SP\nDiscount% = (Discount ÷ MP) × 100\nSP = MP × (100 − Discount%) ÷ 100",
+        "formula":"Discount = MP ? SP\nDiscount% = (Discount ÷ MP) × 100\nSP = MP × (100 ? Discount%) ÷ 100",
         "vars":[
           {"k":"MP","d":"Marked Price (printed on tag)"},
           {"k":"SP","d":"Selling Price (after discount)"}
         ],
         "examples":[
           {
-            "q":"MP = ₹800, Discount = 10%. Find SP.",
-            "steps":["SP = 800 × (100−10) ÷ 100","= 800 × 0.9"],
-            "ans":"SP = ₹720"
+            "q":"MP = ?800, Discount = 10%. Find SP.",
+            "steps":["SP = 800 × (100?10) ÷ 100","= 800 × 0.9"],
+            "ans":"SP = ?720"
           }
         ]
-      }
+      },
+      {
+        "name":"Successive Discounts",
+        "tag":"Most Asked",
+        "formula":"Net Discount% = D1 + D2 ? (D1×D2)/100\nFinal SP = MP × (100?D1)/100 × (100?D2)/100",
+        "vars":[
+          {"k":"D1, D2","d":"First and second discount percentages"},
+          {"k":"MP","d":"Marked Price"}
+        ],
+        "examples":[
+          {
+            "q":"MP = ?1000, discounts = 20% and 10%. Find final SP.",
+            "steps":["Net% = 20 + 10 ? (20×10)/100 = 30 ? 2 = 28%","SP = 1000 × 0.72"],
+            "ans":"?720"
+          },
+          {
+            "q":"MP = ?2000, discounts = 25% and 20%. Find net discount.",
+            "steps":["Net% = 25 + 20 ? (25×20)/100","= 45 ? 5 = 40%"],
+            "ans":"40% discount"
+          }
+        ]
+      },
+      {
+        "name":"Markup Percentage",
+        "tag":"Business Math",
+        "formula":"Markup% = [(MP ? CP) ÷ CP] × 100\nMP = CP × (100 + Markup%) ÷ 100",
+        "vars":[
+          {"k":"MP","d":"Marked Price"},
+          {"k":"CP","d":"Cost Price"},
+          {"k":"Markup%","d":"Markup percentage on cost price"}
+        ],
+        "examples":[
+          {
+            "q":"CP = ?150, Markup = 40%. Find MP.",
+            "steps":["MP = 150 × (100+40) ÷ 100","= 150 × 1.4"],
+            "ans":"?210"
+          }
+        ]
+      },
+      {
+        "name":"Dishonest Dealer Problems",
+        "tag":"SSC Special",
+        "formula":"False Weight Profit% = [(True Weight ? False Weight) ÷ False Weight] × 100\nActual CP = CP × (True Weight ÷ False Weight)",
+        "vars":[
+          {"k":"True Weight","d":"Actual weight that should be given"},
+          {"k":"False Weight","d":"Weight actually given (less than true)"}
+        ],
+        "examples":[
+          {
+            "q":"Dealer claims 1kg but gives 900g. CP = ?18/kg. Find profit%.",
+            "steps":["False weight profit = (1000?900)/900 × 100","= 100/900 × 100"],
+            "ans":"11.11% profit"}
+          ]
+        },
+      {
+        "name":"When CP of Two Items Same",
+        "tag":"Important",
+        "formula":"If CP1 = CP2 = CP:\nOverall Profit% = (Profit1 + Profit2) ÷ 2\nOverall Loss% = (Loss1 + Loss2) ÷ 2",
+        "vars":[
+          {"k":"CP1, CP2","d":"Cost prices of two items"},
+          {"k":"Profit1, Profit2","d":"Individual profits"}
+        ],
+        "examples":[
+          {
+            "q":"Two items with same CP. One sold at 20% profit, other at 10% loss. Find overall.",
+            "steps":["Overall% = (20 + (?10)) ÷ 2"],
+            "ans":"5% profit"}
+          ]
+        },
+      {
+        "name":"When SP of Two Items Same",
+        "tag":"SSC Favorite",
+        "formula":"If SP1 = SP2 = SP:\nOverall Profit% = [(Profit1 × Profit2) ÷ (Profit1 + Profit2)] × 100\nOverall Loss% = [(Loss1 × Loss2) ÷ (Loss1 + Loss2)] × 100",
+        "vars":[
+          {"k":"SP1, SP2","d":"Selling prices of two items"},
+          {"k":"Profit1, Profit2","d":"Individual profit percentages"}
+        ],
+        "examples":[
+          {
+            "q":"Two items sold at same SP. One at 25% profit, other at 25% loss. Find overall.",
+            "steps":["Overall = (25 × 25) ÷ (25 + 25) = 625 ÷ 50"],
+            "ans":"12.5% loss"}
+          ]
+        },
+      {
+        "name":"Loss When SP = CP × (100?L)/100",
+        "tag":"Formula Derivation",
+        "formula":"If SP = CP × (100?L)/100, then Loss% = L\nLoss% = [(CP ? SP) ÷ CP] × 100",
+        "vars":[
+          {"k":"L","d":"Loss percentage"},
+          {"k":"SP","d":"Selling price after loss"}
+        ],
+        "examples":[
+          {
+            "q":"SP = CP × 0.8. Find loss%.",
+            "steps":["Loss% = (1 ? 0.8) × 100"],
+            "ans":"20% loss"}
+          ]
+        },
+      {
+        "name":"Profit When SP = CP × (100+P)/100",
+        "tag":"Formula Derivation",
+        "formula":"If SP = CP × (100+P)/100, then Profit% = P\nProfit% = [(SP ? CP) ÷ CP] × 100",
+        "vars":[
+          {"k":"P","d":"Profit percentage"},
+          {"k":"SP","d":"Selling price after profit"}
+        ],
+        "examples":[
+          {
+            "q":"SP = CP × 1.25. Find profit%.",
+            "steps":["Profit% = (1.25 ? 1) × 100"],
+            "ans":"25% profit"}
+          ]
+        },
+      {
+        "name":"Equal Profit and Loss",
+        "tag":"Trick",
+        "formula":"If same item sold at equal profit% and loss%\nOverall Loss% = (Profit% × Loss%) ÷ 100",
+        "vars":[
+          {"k":"Profit%","d":"Profit percentage on one sale"},
+          {"k":"Loss%","d":"Loss percentage on other sale"}
+        ],
+        "examples":[
+          {
+            "q":"Item sold at 20% profit and 20% loss. Find overall result.",
+            "steps":["Loss% = (20 × 20) ÷ 100"],
+            "ans":"4% loss"}
+          ]
+        },
+      {
+        "name":"Multiple Transactions Profit",
+        "tag":"Advanced",
+        "formula":"Net Profit% = [(SP1 ? CP1) + (SP2 ? CP2) + ...] ÷ (CP1 + CP2 + ...) × 100",
+        "vars":[
+          {"k":"CP1, CP2...","d":"Cost prices of multiple items"},
+          {"k":"SP1, SP2...","d":"Selling prices of multiple items"}
+        ],
+        "examples":[
+          {
+            "q":"CP1 = ?100, SP1 = ?120; CP2 = ?200, SP2 = ?250. Find overall profit%.",
+            "steps":["Total CP = 300, Total SP = 370","Profit% = (70/300) × 100"],
+            "ans":"23.33% profit"}
+          ]
+        },
+      {
+        "name":"Break-Even Point",
+        "tag":"Business Math",
+        "formula":"Break-Even SP = CP\nAt Break-Even: Profit = 0, Loss = 0",
+        "vars":[
+          {"k":"Break-Even SP","d":"Selling price where no profit or loss"}
+        ],
+        "examples":[
+          {
+            "q":"CP = ?500. Find break-even SP.",
+            "steps":["Break-even SP = CP"],
+            "ans":"?500"}
+          ]
+        },
+      {
+        "name":"Cost Price with Commission",
+        "tag":"Real World",
+        "formula":"Effective CP = CP + Commission\nProfit% = [(SP ? Effective CP) ÷ Effective CP] × 100",
+        "vars":[
+          {"k":"Commission","d":"Commission or additional costs"},
+          {"k":"Effective CP","d":"Total cost including commission"}
+        ],
+        "examples":[
+          {
+            "q":"CP = ?1000, commission = ?100, SP = ?1300. Find profit%.",
+            "steps":["Effective CP = 1000 + 100 = 1100","Profit% = (1300 ? 1100)/1100 × 100"],
+            "ans":"18.18% profit"}
+          ]
+        },
+      {
+        "name":"Profit with Transportation Cost",
+        "tag":"Practical",
+        "formula":"Total CP = Purchase CP + Transportation + Other Costs\nProfit% = [(SP ? Total CP) ÷ Total CP] × 100",
+        "vars":[
+          {"k":"Total CP","d":"Complete cost including all expenses"},
+          {"k":"Transportation","d":"Cost of transport"}
+        ],
+        "examples":[
+          {
+            "q":"Purchase = ?500, transport = ?50, SP = ?600. Find profit%.",
+            "steps":["Total CP = 500 + 50 = 550","Profit% = (600 ? 550)/550 × 100"],
+            "ans":"9.09% profit"}
+          ]
+        },
+      {
+        "name":"Weighted Average Profit",
+        "tag":"Advanced",
+        "formula":"Avg Profit% = (P1×Q1 + P2×Q2 + ...) ÷ (Q1 + Q2 + ...)\nWhere P = profit%, Q = quantity",
+        "vars":[
+          {"k":"P1, P2...","d":"Profit percentages"},
+          {"k":"Q1, Q2...","d":"Quantities sold"}
+        ],
+        "examples":[
+          {
+            "q":"10 items at 20% profit, 20 items at 10% profit. Find avg profit%.",
+            "steps":["Avg% = (20×10 + 10×20) ÷ (10 + 20)","= (200 + 200) ÷ 30"],
+            "ans":"13.33% profit"}
+          ]
+        },
+      {
+        "name":"Cash Discount vs Trade Discount",
+        "tag":"Business Terms",
+        "formula":"Trade Discount: Applied on MP before calculation\nCash Discount: Applied on final amount after trade discount",
+        "vars":[
+          {"k":"Trade Discount","d":"Discount on marked price"},
+          {"k":"Cash Discount","d":"Discount on final bill"}
+        ],
+        "examples":[
+          {
+            "q":"MP = ?1000, Trade discount = 20%, Cash discount = 5%. Find final price.",
+            "steps":["After trade: 1000 × 0.8 = 800","After cash: 800 × 0.95"],
+            "ans":"?760"}
+          ]
+        },
+      {
+        "name":"Profit Margin vs Markup",
+        "tag":"Business Math",
+        "formula":"Profit Margin% = (Profit ÷ SP) × 100\nMarkup% = (Profit ÷ CP) × 100\nProfit Margin% = Markup% ÷ (100 + Markup%) × 100",
+        "vars":[
+          {"k":"Profit Margin%","d":"Profit as % of selling price"},
+          {"k":"Markup%","d":"Profit as % of cost price"}
+        ],
+        "examples":[
+          {
+            "q":"Markup = 25%. Find profit margin.",
+            "steps":["Margin% = 25 ÷ (100 + 25) × 100","= 25 ÷ 125 × 100"],
+            "ans":"20% margin"}
+          ]
+        },
+      {
+        "name":"Loss Leader Strategy",
+        "tag":"Business Strategy",
+        "formula":"Loss on one item + Profit on another = Net Result\nNet Profit% = (Total Profit ? Total Loss) ÷ Total CP × 100",
+        "vars":[
+          {"k":"Loss Leader","d":"Item sold at loss to attract customers"}
+        ],
+        "examples":[
+          {
+            "q":"Item A: CP = ?100, SP = ?90 (loss leader)\nItem B: CP = ?50, SP = ?80. Find overall.",
+            "steps":["Total CP = 150, Total SP = 170","Profit% = (20/150) × 100"],
+            "ans":"13.33% profit"}
+          ]
+        },
+      {
+        "name":"Seasonal Profit Calculation",
+        "tag":"Advanced",
+        "formula":"Annual Profit = Sum of seasonal profits\nAnnual Profit% = Annual Profit ÷ Annual CP × 100",
+        "vars":[
+          {"k":"Seasonal Profits","d":"Profits from different seasons"}
+        ],
+        "examples":[
+          {
+            "q":"Summer: profit ?5000, CP ?20000\nWinter: profit ?3000, CP ?15000. Find annual profit%.",
+            "steps":["Total profit = 8000, Total CP = 35000","Profit% = 8000/35000 × 100"],
+            "ans":"22.86% profit"}
+          ]
+        },
+      {
+        "name":"Common Values Memorization",
+        "tag":"Memory Trick",
+        "formula":"10% of 100 = 10 | 20% of 100 = 20 | 25% of 100 = 25\n33.33% of 100 = 33.33 | 50% of 100 = 50\nFor quick calculation: 1% = divide by 100, 5% = divide by 20, 10% = divide by 10",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Find 15% of 200 quickly.",
+            "steps":["10% of 200 = 20","5% of 200 = 10","Total = 20 + 10"],
+            "ans":"30"}
+          ]
+        },
+      {
+        "name":"Quick Profit Calculation",
+        "tag":"Time Saver",
+        "formula":"For CP = 100: SP = 100 + Profit% or 100 ? Loss%\nFor any CP: Multiply above result by (CP/100)",
+        "vars":[],
+        "examples":[
+          {
+            "q":"CP = ?250, profit = 20%. Find SP quickly.",
+            "steps":["For CP = 100: SP = 120","For CP = 250: SP = 120 × 2.5"],
+            "ans":"?300"}
+          ]
+        },
+      {
+        "name":"Reverse Calculation Trick",
+        "tag":"SSC Special",
+        "formula":"If profit = x%, then SP = CP × (100+x)/100\nIf loss = x%, then SP = CP × (100?x)/100\nTo find CP when SP and profit% given: CP = SP × 100/(100+x)",
+        "vars":[],
+        "examples":[
+          {
+            "q":"SP = ?480, profit = 20%. Find CP.",
+            "steps":["CP = 480 × 100/120","= 480 × 5/6"],
+            "ans":"?400"}
+          ]
+        },
+      {
+        "name":"Profit in Terms of SP",
+        "tag":"Alternative Formula",
+        "formula":"Profit% = [(SP ? CP) ÷ SP] × 100\nLoss% = [(CP ? SP) ÷ SP] × 100\n(When SP is taken as base)",
+        "vars":[],
+        "examples":[
+          {
+            "q":"CP = ?80, SP = ?100. Find profit% on SP.",
+            "steps":["Profit% = (100 ? 80)/100 × 100"],
+            "ans":"20% profit on SP"}
+          ]
+        },
+      {
+        "name":"Equivalent Single Discount",
+        "tag":"Advanced",
+        "formula":"Single Discount = 100 ? [(100?D1) × (100?D2) × ... ÷ 100^(n?1)]",
+        "vars":[
+          {"k":"D1, D2...","d":"Multiple discount percentages"}
+        ],
+        "examples":[
+          {
+            "q":"Find single discount equivalent to 20% and 10% successive discounts.",
+            "steps":["Single = 100 ? (80 × 90 ÷ 100)","= 100 ? 72"],
+            "ans":"28% single discount"}
+          ]
+        },
+      {
+        "name":"Profit with Different Currencies",
+        "tag":"International",
+        "formula":"Convert all amounts to same currency first\nThen apply standard profit/loss formulas",
+        "vars":[],
+        "examples":[
+          {
+            "q":"CP = $10, SP = ?750 (1$ = ?75). Find profit%.",
+            "steps":["CP in rupees = 10 × 75 = 750","Profit% = (750 ? 750)/750 × 100"],
+            "ans":"0% profit"}
+          ]
+        },
+      {
+        "name":"Break-Even Analysis",
+        "tag":"Business Planning",
+        "formula":"Break-Even Quantity = Fixed Costs ÷ (SP per unit ? Variable Cost per unit)",
+        "vars":[
+          {"k":"Fixed Costs","d":"Costs that don't change with quantity"},
+          {"k":"Variable Cost","d":"Cost per unit that varies with quantity"}
+        ],
+        "examples":[
+          {
+            "q":"Fixed cost = ?10000, SP/unit = ?50, Variable cost = ?30. Find break-even quantity.",
+            "steps":["Break-even = 10000 ÷ (50 ? 30)","= 10000 ÷ 20"],
+            "ans":"500 units"}
+          ]
+        },
+      {
+        "name":"Target Profit Calculation",
+        "tag":"Business Goal",
+        "formula":"Required Sales = (Fixed Costs + Target Profit) ÷ (SP per unit ? Variable Cost per unit)",
+        "vars":[
+          {"k":"Target Profit","d":"Desired profit amount"}
+        ],
+        "examples":[
+          {
+            "q":"Fixed cost = ?10000, Target profit = ?5000, SP/unit = ?50, Variable cost = ?30. Find required sales.",
+            "steps":["Required = (10000 + 5000) ÷ (50 ? 30)","= 15000 ÷ 20"],
+            "ans":"750 units"}
+          ]
+        },
+      {
+        "name":"Profit Efficiency Ratio",
+        "tag":"Performance Metric",
+        "formula":"Efficiency Ratio = Actual Profit ÷ Expected Profit × 100",
+        "vars":[
+          {"k":"Expected Profit","d":"Budgeted or planned profit"}
+        ],
+        "examples":[
+          {
+            "q":"Expected profit = ?50000, Actual profit = ?60000. Find efficiency ratio.",
+            "steps":["Ratio = 60000 ÷ 50000 × 100"],
+            "ans":"120% efficiency"}
+          ]
+        }
     ]
   },
   {
@@ -218,29 +1069,29 @@
   {
     "id":"ratio",
     "name":"Ratio & Proportion",
-    "icon":"⚖️",
+    "icon":"\u2696\ufe0f",
     "color":"#8b5cf6",
     "formulas":[
       {
         "name":"Ratio Basics",
         "tag":"Foundation",
-        "formula":"Ratio a:b = a÷b\nIf a:b = m:n  →  a = mk, b = nk",
+        "formula":"Ratio a:b = a÷b\nIf a:b = m:n  ?  a = mk, b = nk",
         "vars":[
           {"k":"a,b","d":"Two quantities being compared"},
           {"k":"k","d":"Common multiplier"}
         ],
         "examples":[
           {
-            "q":"Divide ₹1200 in ratio 3:5.",
+            "q":"Divide ?1200 in ratio 3:5.",
             "steps":["Total parts = 3+5 = 8","Share 1 = (3÷8)×1200 = 450","Share 2 = (5÷8)×1200 = 750"],
-            "ans":"₹450 and ₹750"
+            "ans":"?450 and ?750"
           }
         ]
       },
       {
         "name":"Proportion",
         "tag":"Important",
-        "formula":"a:b = c:d  →  a×d = b×c\n(Cross Multiply)\nFourth Proportional d = (b×c) ÷ a",
+        "formula":"a:b = c:d  ?  a×d = b×c\n(Cross Multiply)\nFourth Proportional d = (b×c) ÷ a",
         "vars":[
           {"k":"a,b,c,d","d":"Four proportional quantities"}
         ],
@@ -255,7 +1106,7 @@
       {
         "name":"Mixture & Alligation",
         "tag":"Trick",
-        "formula":"Cheaper Qty : Dearer Qty\n= (Dearer − Mean) : (Mean − Cheaper)",
+        "formula":"Cheaper Qty : Dearer Qty\n= (Dearer ? Mean) : (Mean ? Cheaper)",
         "vars":[
           {"k":"Mean","d":"Required/average price"},
           {"k":"Cheaper","d":"Price of cheaper item"},
@@ -263,18 +1114,324 @@
         ],
         "examples":[
           {
-            "q":"Mix milk at ₹10 & ₹15 to get ₹12/litre. Find ratio.",
-            "steps":["= (15−12) : (12−10)","= 3 : 2"],
+            "q":"Mix milk at ?10 & ?15 to get ?12/litre. Find ratio.",
+            "steps":["= (15?12) : (12?10)","= 3 : 2"],
             "ans":"3 : 2"
           }
         ]
-      }
+      },
+      {
+        "name":"Ratio Compounding",
+        "tag":"Most Asked",
+        "formula":"If a:b = m:n and b:c = p:q\nThen a:b:c = m×p : n×p : n×q",
+        "vars":[
+          {"k":"a:b:c","d":"Combined ratio of three quantities"}
+        ],
+        "examples":[
+          {
+            "q":"A:B = 2:3, B:C = 4:5. Find A:B:C.",
+            "steps":["Make B equal: A:B = 8:12, B:C = 12:15","A:B:C = 8:12:15"],
+            "ans":"8:12:15"}
+          ]
+        },
+      {
+        "name":"Division of Quantity in Ratios",
+        "tag":"Foundation",
+        "formula":"Share of A = Total × (A's ratio ÷ Sum of ratios)\nShare of B = Total × (B's ratio ÷ Sum of ratios)",
+        "vars":[
+          {"k":"Total","d":"Total quantity to be divided"},
+          {"k":"Sum of ratios","d":"a + b + c + ..."}
+        ],
+        "examples":[
+          {
+            "q":"Divide ?7200 in ratio 2:3:4.",
+            "steps":["Total parts = 2+3+4 = 9","A = 7200 × 2/9 = 1600","B = 7200 × 3/9 = 2400","C = 7200 × 4/9 = 3200"],
+            "ans":"?1600, ?2400, ?3200"}
+          ]
+        },
+      {
+        "name":"Partnership Formulas",
+        "tag":"Business Math",
+        "formula":"Profit Sharing Ratio = Investment × Time\nIf A invests P1 for T1, B invests P2 for T2:\nA's share : B's share = P1×T1 : P2×T2",
+        "vars":[
+          {"k":"P1, P2","d":"Investments of partners"},
+          {"k":"T1, T2","d":"Time periods of investment"}
+        ],
+        "examples":[
+          {
+            "q":"A invests ?5000 for 6 months, B invests ?8000 for 4 months. Find profit ratio.",
+            "steps":["A's share : B's share = 5000×6 : 8000×4","= 30000 : 32000"],
+            "ans":"15:16"}
+          ]
+        },
+      {
+        "name":"Age Ratio Problems",
+        "tag":"SSC Special",
+        "formula":"Current Age Ratio = Present ages\nPast Ratio = (Current ages ? Years ago)\nFuture Ratio = (Current ages + Years ahead)",
+        "vars":[
+          {"k":"Years ago/ahead","d":"Time difference from present"}
+        ],
+        "examples":[
+          {
+            "q":"A:B = 5:3 now. After 4 years, ratio = 3:2. Find present ages.",
+            "steps":["Let ages = 5x, 3x","After 4 years: (5x+4):(3x+4) = 3:2","2(5x+4) = 3(3x+4)","10x+8 = 9x+12","x = 4"],
+            "ans":"A = 20 years, B = 12 years"}
+          ]
+        },
+      {
+        "name":"Continued Proportion",
+        "tag":"Advanced",
+        "formula":"If a:b = b:c, then b² = ac\nMean proportional b = ?(a×c)",
+        "vars":[
+          {"k":"Mean proportional","d":"Middle term in continued proportion"}
+        ],
+        "examples":[
+          {
+            "q":"Find mean proportional between 9 and 16.",
+            "steps":["b = ?(9×16)"],
+            "ans":"12"}
+          ]
+        },
+      {
+        "name":"Third Proportional",
+        "tag":"Important",
+        "formula":"If a:b = b:c, then c is third proportional to a and b\nc = b² ÷ a",
+        "vars":[
+          {"k":"c","d":"Third proportional"}
+        ],
+        "examples":[
+          {
+            "q":"Find third proportional to 4 and 8.",
+            "steps":["c = 8² ÷ 4 = 64 ÷ 4"],
+            "ans":"16"}
+          ]
+        },
+      {
+        "name":"Fourth Proportional",
+        "tag":"Most Asked",
+        "formula":"If a:b = c:d, then d is fourth proportional\nd = (b×c) ÷ a",
+        "vars":[
+          {"k":"d","d":"Fourth proportional"}
+        ],
+        "examples":[
+          {
+            "q":"Find fourth proportional to 3, 7, 9.",
+            "steps":["d = (7×9) ÷ 3 = 63 ÷ 3"],
+            "ans":"21"}
+          ]
+        },
+      {
+        "name":"Inverse Proportion",
+        "tag":"Important",
+        "formula":"If y varies inversely as x: xy = constant\nIf x1:y1 = x2:y2 (inverse), then x1×y1 = x2×y2",
+        "vars":[
+          {"k":"Constant","d":"Product of inversely proportional quantities"}
+        ],
+        "examples":[
+          {
+            "q":"If 8 workers finish in 12 days, how many days for 6 workers?",
+            "steps":["8×12 = 6×d","96 = 6d"],
+            "ans":"16 days"}
+          ]
+        },
+      {
+        "name":"Direct Proportion",
+        "tag":"Foundation",
+        "formula":"If y varies directly as x: y/x = constant\nIf x1:y1 = x2:y2 (direct), then x1/y1 = x2/y2",
+        "vars":[
+          {"k":"Constant","d":"Ratio of directly proportional quantities"}
+        ],
+        "examples":[
+          {
+            "q":"If 5 books cost ?200, how much for 8 books?",
+            "steps":["5/200 = 8/c","5c = 1600"],
+            "ans":"?320"}
+          ]
+        },
+      {
+        "name":"Compound Proportion",
+        "tag":"Advanced",
+        "formula":"If x:y and y:z, then x:z = x×1/y×z\nChain rule: Product of extremes = Product of means",
+        "vars":[
+          {"k":"Extremes","d":"First and last terms"},
+          {"k":"Means","d":"Middle terms"}
+        ],
+        "examples":[
+          {
+            "q":"If 3:4 = 6:x and x:8 = y:12, find y.",
+            "steps":["From first: 3×x = 4×6, x = 8","From second: 8×12 = y×8, y = 12"],
+            "ans":"12"}
+          ]
+        },
+      {
+        "name":"Ratio of Areas and Volumes",
+        "tag":"Geometry",
+        "formula":"Area ratio = (Side ratio)²\nVolume ratio = (Side ratio)³\nIf sides a:b, then areas a²:b², volumes a³:b³",
+        "vars":[
+          {"k":"Side ratio","d":"Ratio of corresponding sides"}
+        ],
+        "examples":[
+          {
+            "q":"Sides of two squares = 2:3. Find ratio of areas.",
+            "steps":["Area ratio = (2:3)² = 4:9"],
+            "ans":"4:9"}
+          ]
+        },
+      {
+        "name":"Duplicate Ratio",
+        "tag":"Advanced",
+        "formula":"Duplicate ratio of a:b is a²:b²\nTriplicate ratio of a:b is a³:b³\nSub-duplicate ratio of a:b is ?a:?b",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Find duplicate ratio of 3:4.",
+            "steps":["Duplicate = 3²:4²"],
+            "ans":"9:16"}
+          ]
+        },
+      {
+        "name":"Ratio of Speed, Time, Distance",
+        "tag":"Important",
+        "formula":"Speed ratio = Inverse of time ratio (same distance)\nDistance ratio = Speed ratio (same time)\nTime ratio = Inverse of speed ratio (same distance)",
+        "vars":[],
+        "examples":[
+          {
+            "q":"A:B speed = 3:2. Find time ratio for same distance.",
+            "steps":["Time ratio = 2:3 (inverse of speed)"],
+            "ans":"2:3"}
+          ]
+        },
+      {
+        "name":"Proportional Distribution",
+        "tag":"Business Math",
+        "formula":"If total T distributed in ratio a:b:c\nThen each share = T × (individual ratio ÷ sum of ratios)",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Profit ?10000 distributed in 2:3:5. Find each share.",
+            "steps":["Total parts = 2+3+5 = 10","Shares = 10000×2/10, 10000×3/10, 10000×5/10"],
+            "ans":"?2000, ?3000, ?5000"}
+          ]
+        },
+      {
+        "name":"Ratio and Percentage",
+        "tag":"Data Analysis",
+        "formula":"Ratio a:b = a/(a+b) : b/(a+b) in percentage\nIf a:b = m:n, then a% = m/(m+n) × 100",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Ratio of boys to girls = 3:2. Find % of boys.",
+            "steps":["Boys% = 3/(3+2) × 100 = 3/5 × 100"],
+            "ans":"60%"}
+          ]
+        },
+      {
+        "name":"Working with Fractions in Ratios",
+        "tag":"Trick",
+        "formula":"To eliminate fractions in ratio, multiply by LCM of denominators\nIf ratio = a/b : c/d, multiply by bd to get ad:bc",
+        "vars":[
+          {"k":"LCM","d":"Least Common Multiple"}
+        ],
+        "examples":[
+          {
+            "q":"Simplify ratio 2/3 : 3/4.",
+            "steps":["Multiply by 12 (LCM of 3,4)","= 8:9"],
+            "ans":"8:9"}
+          ]
+        },
+      {
+        "name":"Ratio in Mixtures",
+        "tag":"Chemistry/Math",
+        "formula":"If item A has concentration C1, item B has C2\nFinal concentration = (C1×Q1 + C2×Q2) ÷ (Q1 + Q2)",
+        "vars":[
+          {"k":"C1, C2","d":"Concentrations"},
+          {"k":"Q1, Q2","d":"Quantities"}
+        ],
+        "examples":[
+          {
+            "q":"Mix 30% sugar solution (10L) with 50% solution (20L). Find final concentration.",
+            "steps":["Final = (30×10 + 50×20) ÷ (10 + 20)","= (300 + 1000) ÷ 30"],
+            "ans":"43.33%"}
+          ]
+        },
+      {
+        "name":"Ratio Comparison",
+        "tag":"Important",
+        "formula":"To compare a:b and c:d\nCross multiply: ad vs bc\nIf ad > bc, then a:b > c:d",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Compare 7:8 and 9:10.",
+            "steps":["7×10 = 70, 9×8 = 72","70 < 72, so 7:8 < 9:10"],
+            "ans":"7:8 is smaller"}
+          ]
+        },
+      {
+        "name":"Equivalent Ratios",
+        "tag":"Foundation",
+        "formula":"Two ratios are equivalent if their cross products are equal\na:b = c:d if ad = bc",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Check if 4:6 = 6:9.",
+            "steps":["4×9 = 36, 6×6 = 36","36 = 36"],
+            "ans":"Equivalent ratios"}
+          ]
+        },
+      {
+        "name":"Ratio in Word Problems",
+        "tag":"Application",
+        "formula":"Read problem carefully to identify quantities\nSet up ratio equation using given information\nSolve using cross multiplication",
+        "vars":[],
+        "examples":[
+          {
+            "q":"In a school, ratio of boys to girls = 3:2. Total students = 500. Find boys.",
+            "steps":["Boys = 500 × 3/(3+2) = 500 × 3/5"],
+            "ans":"300 boys"}
+          ]
+        },
+      {
+        "name":"Ratio and Simple Interest",
+        "tag":"Financial Math",
+        "formula":"If principals are in ratio a:b and rates same\nThen interests are also in ratio a:b\nInterest = Principal × Rate × Time ÷ 100",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Two loans in ratio 3:2 at 10% for same time. Total interest = ?5000. Find each interest.",
+            "steps":["Interests also in 3:2","Interest1 = 5000 × 3/5 = 3000","Interest2 = 5000 × 2/5 = 2000"],
+            "ans":"?3000 and ?2000"}
+          ]
+        },
+      {
+        "name":"Ratio in Geometry Problems",
+        "tag":"SSC Special",
+        "formula":"If sides of similar triangles are in ratio a:b\nThen corresponding areas are in ratio a²:b²\nCorresponding heights are in ratio a:b",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Two similar triangles have sides 3:4. If area of smaller = 18, find area of larger.",
+            "steps":["Area ratio = 3²:4² = 9:16","18/Larger = 9/16","Larger = 18 × 16/9"],
+            "ans":"32"}
+          ]
+        },
+      {
+        "name":"Complex Ratio Problems",
+        "tag":"Advanced",
+        "formula":"For multiple ratios, find common term\nConvert all ratios to have same common term\nCombine all ratios",
+        "vars":[],
+        "examples":[
+          {
+            "q":"A:B = 2:3, B:C = 4:5, C:D = 6:7. Find A:B:C:D.",
+            "steps":["Make B equal: A:B = 8:12, B:C = 12:15","Make C equal: B:C:D = 12:15:17.5","Multiply by 2: 24:30:35","Final: A:B:C:D = 8:12:15:17.5"],
+            "ans":"16:24:30:35"}
+          ]
+        }
     ]
   },
   {
     "id":"timework",
     "name":"Time & Work",
-    "icon":"⏱️",
+    "icon":"👷",
     "color":"#ec4899",
     "formulas":[
       {
@@ -288,12 +1445,42 @@
           {
             "q":"A takes 10 days, B takes 15 days. Together?",
             "steps":["Together/day = 1/10 + 1/15 = 3/30 + 2/30 = 5/30 = 1/6"],
-            "ans":"6 days"
-          }
-        ]
-      },
+            "ans":"6 days"}
+          ]
+        },
       {
-        "name":"Work & Wages",
+        "name":"Work Efficiency Formula",
+        "tag":"Most Asked",
+        "formula":"Work = Efficiency × Time\nEfficiency = Work ÷ Time\nTime = Work ÷ Efficiency",
+        "vars":[
+          {"k":"Efficiency","d":"Work done per unit time"}
+        ],
+        "examples":[
+          {
+            "q":"A's efficiency = 0.2 work/day. Time to complete 1 work?",
+            "steps":["Time = 1 ÷ 0.2"],
+            "ans":"5 days"}
+          ]
+        },
+      {
+        "name":"M1D1 = M2D2 Formula",
+        "tag":"SSC Special",
+        "formula":"M1 × D1 = M2 × D2\nM1 × D1 × W2 = M2 × D2 × W1\nM1 × D1 × W2 × H2 = M2 × D2 × W1 × H1",
+        "vars":[
+          {"k":"M","d":"Number of workers"},
+          {"k":"D","d":"Number of days"},
+          {"k":"W","d":"Work done"},
+          {"k":"H","d":"Working hours per day"}
+        ],
+        "examples":[
+          {
+            "q":"10 workers finish in 20 days. How many workers for 10 days?",
+            "steps":["10 × 20 = M2 × 10","M2 = 200 ÷ 10"],
+            "ans":"20 workers"}
+          ]
+        },
+      {
+        "name":"Work & Wages Distribution",
         "tag":"Important",
         "formula":"Wages ∝ Work done\nDistribute wages in ratio of work",
         "vars":[],
@@ -301,13 +1488,12 @@
           {
             "q":"A & B work in ratio 3:2. Total wage = ₹500. A's share?",
             "steps":["A's wage = (3÷5) × 500"],
-            "ans":"₹300"
-          }
-        ]
-      },
+            "ans":"₹300"}
+          ]
+        },
       {
-        "name":"Pipes & Cistern",
-        "tag":"Important",
+        "name":"Pipes & Cisterns - Basic",
+        "tag":"Foundation",
         "formula":"Inlet fills: +1/n per hour\nOutlet empties: −1/m per hour\nNet fill/hour = 1/n − 1/m",
         "vars":[
           {"k":"n","d":"Hours for inlet to fill"},
@@ -317,10 +1503,369 @@
           {
             "q":"Pipe A fills in 6 hrs, B empties in 12 hrs. Both open — time to fill?",
             "steps":["Net = 1/6 − 1/12 = 2/12 − 1/12 = 1/12"],
-            "ans":"12 hours"
-          }
-        ]
-      }
+            "ans":"12 hours"}
+          ]
+        },
+      {
+        "name":"Multiple Pipes Working Together",
+        "tag":"Most Asked",
+        "formula":"Time = 1 ÷ (1/n1 + 1/n2 + 1/n3 + ... − 1/m1 − 1/m2 − ...)\nWhere n = inlet pipes, m = outlet pipes",
+        "vars":[
+          {"k":"n1, n2, n3","d":"Fill times of inlet pipes"},
+          {"k":"m1, m2","d":"Empty times of outlet pipes"}
+        ],
+        "examples":[
+          {
+            "q":"A fills in 4h, B in 6h, C empties in 12h. All open? Fill time?",
+            "steps":["Rate = 1/4 + 1/6 − 1/12 = 3/12 + 2/12 − 1/12 = 4/12 = 1/3"],
+            "ans":"3 hours"}
+          ]
+        },
+      {
+        "name":"Alternate Day Work Pattern",
+        "tag":"SSC Favorite",
+        "formula":"Work in 2 days = 1/a + 1/b\nTotal time = 2 × (Total work ÷ Work in 2 days)",
+        "vars":[
+          {"k":"a, b","d":"Days taken by A and B individually"}
+        ],
+        "examples":[
+          {
+            "q":"A works day 1, B works day 2. A alone in 20 days, B in 30 days. Total time?",
+            "steps":["Work in 2 days = 1/20 + 1/30 = 3/60 + 2/60 = 5/60 = 1/12","Total time = 2 × 1 ÷ (1/12)"],
+            "ans":"24 days"}
+          ]
+        },
+      {
+        "name":"Fractional Work Completion",
+        "tag":"Important",
+        "formula":"If work done = a/b, then remaining work = 1 − a/b\nTime for remaining = (Remaining work) ÷ (Work rate)",
+        "vars":[
+          {"k":"a/b","d":"Fraction of work completed"}
+        ],
+        "examples":[
+          {
+            "q":"A completes 1/3 work in 5 days. Time for complete work?",
+            "steps":["Rate = (1/3) ÷ 5 = 1/15 per day","Total time = 1 ÷ (1/15)"],
+            "ans":"15 days"}
+          ]
+        },
+      {
+        "name":"Efficiency Ratio Problems",
+        "tag":"Advanced",
+        "formula":"If A:B efficiency = m:n\nThen time ratio = n:m\nWork ratio = m:n (same time)",
+        "vars":[
+          {"k":"m:n","d":"Efficiency ratio"}
+        ],
+        "examples":[
+          {
+            "q":"A:B efficiency = 3:2. If B takes 30 days, A takes?",
+            "steps":["Time ratio = 2:3","A's time = 30 × 2/3"],
+            "ans":"20 days"}
+          ]
+        },
+      {
+        "name":"Work Distribution in Ratios",
+        "tag":"Business Math",
+        "formula":"If workers work in ratio a:b\nThen work done ratio = a:b\nTime taken ratio = b:a (same work)",
+        "vars":[],
+        "examples":[
+          {
+            "q":"A:B work ratio = 3:2 for same work. If A takes 10 days, B takes?",
+            "steps":["Time ratio = 2:3","B's time = 10 × 3/2"],
+            "ans":"15 days"}
+          ]
+        },
+      {
+        "name":"Combined Work with Different Start Times",
+        "tag":"Advanced",
+        "formula":"Calculate work done separately, then combine\nWork by A = t1/a, Work by B = t2/b\nTotal work = Work by A + Work by B",
+        "vars":[
+          {"k":"t1, t2","d":"Time periods worked"}
+        ],
+        "examples":[
+          {
+            "q":"A works 2 days, B works 3 days. A alone in 10 days, B in 15 days. Work done?",
+            "steps":["A's work = 2/10 = 1/5","B's work = 3/15 = 1/5","Total = 1/5 + 1/5"],
+            "ans":"2/5 work"}
+          ]
+        },
+      {
+        "name":"Leaving and Joining Problems",
+        "tag":"SSC Special",
+        "formula":"Work done before leaving + Work done after = Total work\nUse unitary method for calculation",
+        "vars":[],
+        "examples":[
+          {
+            "q":"A & B work together. A leaves after 2 days. Total work = 1, A alone in 20 days, B in 30 days. Total time?",
+            "steps":["Work in 2 days = 2(1/20 + 1/30) = 2(5/60) = 1/6","Remaining = 5/6","B does 5/6 in (5/6) × 30 = 25 days","Total = 2 + 25"],
+            "ans":"27 days"}
+          ]
+        },
+      {
+        "name":"Work with Breaks/Rest",
+        "tag":"Practical",
+        "formula":"Effective work days = Total days − Rest days\nWork done = Effective work days × Daily work rate",
+        "vars":[
+          {"k":"Rest days","d":"Days not worked"}
+        ],
+        "examples":[
+          {
+            "q":"A works 6 days a week, rests Sunday. Work rate = 1/30 per day. Time for complete work?",
+            "steps":["Weekly work = 6 × 1/30 = 1/5","Weeks needed = 1 ÷ (1/5) = 5","Days = 5 × 7"],
+            "ans":"35 days"}
+          ]
+        },
+      {
+        "name":"Piece Work Problems",
+        "tag":"Real World",
+        "formula":"Total pieces = Rate per day × Working days\nEarnings = Pieces × Rate per piece",
+        "vars":[
+          {"k":"Rate per day","d":"Number of pieces made per day"}
+        ],
+        "examples":[
+          {
+            "q":"Worker makes 50 pieces/day, works 25 days. Total pieces?",
+            "steps":["Total = 50 × 25"],
+            "ans":"1250 pieces"}
+          ]
+        },
+      {
+        "name":"Work with Variable Efficiency",
+        "tag":"Advanced",
+        "formula":"Average efficiency = (E1 × t1 + E2 × t2) ÷ (t1 + t2)\nTotal work = Average efficiency × Total time",
+        "vars":[
+          {"k":"E1, E2","d":"Efficiencies in different periods"}
+        ],
+        "examples":[
+          {
+            "q":"Efficiency = 0.1 for 10 days, 0.2 for 10 days. Total work?",
+            "steps":["Avg efficiency = (0.1×10 + 0.2×10) ÷ 20 = 3 ÷ 20 = 0.15","Work = 0.15 × 20"],
+            "ans":"3 work units"}
+          ]
+        },
+      {
+        "name":"Group Work Problems",
+        "tag":"Important",
+        "formula": "Group efficiency = Sum of individual efficiencies\nTime = Total work ÷ Group efficiency",
+        "vars":[],
+        "examples":[
+          {
+            "q":"A: 0.1, B: 0.2, C: 0.3 work/day. Time for 1 work together?",
+            "steps":["Group efficiency = 0.1 + 0.2 + 0.3 = 0.6","Time = 1 ÷ 0.6"],
+            "ans":"1.67 days"}
+          ]
+        },
+      {
+        "name":"Work in Shifts",
+        "tag":"Practical",
+        "formula": "Work per shift = Efficiency × Shift hours\nTotal work = Work per shift × Number of shifts",
+        "vars":[
+          {"k":"Shift hours","d":"Hours per working shift"}
+        ],
+        "examples":[
+          {
+            "q":"Efficiency = 0.05 work/hour, 8-hour shifts. Work in 5 shifts?",
+            "steps":["Work per shift = 0.05 × 8 = 0.4","Total = 0.4 × 5"],
+            "ans":"2 work units"}
+          ]
+        },
+      {
+        "name":"Overtime Work Calculation",
+        "tag":"Business Math",
+        "formula": "Total work = Regular work + Overtime work\nOvertime rate = Regular rate × Overtime factor",
+        "vars":[
+          {"k":"Overtime factor","d":"Multiplier for overtime work rate"}
+        ],
+        "examples":[
+          {
+            "q":"Regular: 0.1 work/day, overtime: 1.5× rate. Work in 8 hours regular + 4 hours overtime?",
+            "steps":["Regular work = 0.1 × 1 = 0.1","Overtime work = 0.1 × 1.5 × 0.5 = 0.075","Total = 0.175"],
+            "ans":"0.175 work units"}
+          ]
+        },
+      {
+        "name":"Work Completion Prediction",
+        "tag":"Planning",
+        "formula": "Remaining time = Remaining work ÷ Current efficiency\nIf efficiency changes, recalculate",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Work done = 0.3, efficiency = 0.05/day. Time to complete?",
+            "steps":["Remaining = 0.7","Time = 0.7 ÷ 0.05"],
+            "ans":"14 days"}
+          ]
+        },
+      {
+        "name":"Comparative Work Analysis",
+        "tag":"Data Analysis",
+        "formula": "Work ratio = Efficiency ratio × Time ratio\nEfficiency ratio = Work ratio ÷ Time ratio",
+        "vars":[],
+        "examples":[
+          {
+            "q":"A does 0.4 work in 5 days, B does 0.3 work in 4 days. Efficiency ratio?",
+            "steps":["A's efficiency = 0.4 ÷ 5 = 0.08","B's efficiency = 0.3 ÷ 4 = 0.075","Ratio = 0.08:0.075 = 16:15"],
+            "ans":"16:15"}
+          ]
+        },
+      {
+        "name":"Work with Multiple Projects",
+        "tag":"Advanced",
+        "formula": "Total work = Sum of individual project works\nTime = Max(time for each project if parallel)",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Project 1: 0.5 work at 0.1/day, Project 2: 0.3 work at 0.15/day. Total time if parallel?",
+            "steps":["Time 1 = 0.5 ÷ 0.1 = 5 days","Time 2 = 0.3 ÷ 0.15 = 2 days","Total = Max(5, 2)"],
+            "ans":"5 days"}
+          ]
+        },
+      {
+        "name":"Work Quality Adjustment",
+        "tag":"Quality Control",
+        "formula": "Effective work = Actual work × Quality factor\nQuality factor = Acceptable units ÷ Total units",
+        "vars":[
+          {"k":"Quality factor","d":"Ratio of good work to total work"}
+        ],
+        "examples":[
+          {
+            "q":"Makes 100 units, 90 acceptable. Quality factor? Effective work if target = 1?",
+            "steps":["Quality factor = 90 ÷ 100 = 0.9","Effective work = 100 × 0.9 = 90"],
+            "ans":"90 units"}
+          ]
+        },
+      {
+        "name":"Work Learning Curve",
+        "tag":"Advanced",
+        "formula": "Efficiency increases with experience\nNew efficiency = Initial efficiency × (1 + Learning rate × Time)",
+        "vars":[
+          {"k":"Learning rate","d":"Rate of efficiency improvement"}
+        ],
+        "examples":[
+          {
+            "q":"Initial efficiency = 0.05, learning rate = 0.1 per day. Efficiency after 10 days?",
+            "steps":["New efficiency = 0.05 × (1 + 0.1 × 10) = 0.05 × 2"],
+            "ans":"0.1 work/day"}
+          ]
+        },
+      {
+        "name":"Work Cost Analysis",
+        "tag":"Financial Math",
+        "formula": "Total cost = Labor cost + Material cost + Overhead\nLabor cost = Time × Wage rate",
+        "vars":[
+          {"k":"Wage rate","d":"Cost per unit time"}
+        ],
+        "examples":[
+          {
+            "q":"Time = 20 days, wage = ?500/day, material = ?2000, overhead = ?1000. Total cost?",
+            "steps":["Labor cost = 20 × 500 = 10000","Total = 10000 + 2000 + 1000"],
+            "ans":"?13000"}
+          ]
+        },
+      {
+        "name":"Work Productivity Metrics",
+        "tag":"Performance",
+        "formula": "Productivity = Output ÷ Input\nProductivity index = Current productivity ÷ Standard productivity",
+        "vars":[
+          {"k":"Output","d":"Work completed"},
+          {"k":"Input","d":"Resources used"}
+        ],
+        "examples":[
+          {
+            "q":"Output = 100 units, Input = 200 hours. Productivity?",
+            "steps":["Productivity = 100 ÷ 200"],
+            "ans":"0.5 units/hour"}
+          ]
+        },
+      {
+        "name":"Work Breakdown Structure",
+        "tag":"Project Management",
+        "formula": "Total work = Sum of sub-works\nCritical path time = Longest sub-work time",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Sub-works: 0.3 (5 days), 0.4 (8 days), 0.3 (3 days). Total time?",
+            "steps":["Critical path = Max(5, 8, 3)"],
+            "ans":"8 days"}
+          ]
+        },
+      {
+        "name":"Work Resource Allocation",
+        "tag":"Optimization",
+        "formula": "Optimal allocation maximizes total work\nUse linear programming for complex cases",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Workers: A (0.1/day), B (0.15/day). Work: Task1 (0.2), Task2 (0.3). Optimal allocation?",
+            "steps":["Assign B to Task2 (more efficient), A to Task1"],
+            "ans":"A to Task1, B to Task2"}
+          ]
+        },
+      {
+        "name":"Work Risk Assessment",
+        "tag":"Risk Management",
+        "formula": "Expected work = Planned work × (1 − Risk factor)\nRisk factor = Probability of delay × Impact",
+        "vars":[
+          {"k":"Risk factor","d":"Expected reduction in work"}
+        ],
+        "examples":[
+          {
+            "q":"Planned work = 1, delay probability = 0.2, impact = 0.5. Expected work?",
+            "steps":["Risk factor = 0.2 × 0.5 = 0.1","Expected work = 1 × (1 − 0.1)"],
+            "ans":"0.9 work units"}
+          ]
+        },
+      {
+        "name":"Work Simulation Modeling",
+        "tag":"Advanced",
+        "formula": "Monte Carlo simulation for complex work\nUse probability distributions for uncertain factors",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Work time varies: 8-12 days uniformly. Expected time?",
+            "steps":["Expected = (8 + 12) ÷ 2"],
+            "ans":"10 days"}
+          ]
+        },
+      {
+        "name":"Work Benchmarking",
+        "tag":"Performance Analysis",
+        "formula": "Performance ratio = Actual work ÷ Standard work\nEfficiency gain = (Performance ratio − 1) × 100%",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Standard = 0.5 work/day, actual = 0.6. Efficiency gain?",
+            "steps":["Performance ratio = 0.6 ÷ 0.5 = 1.2","Gain = (1.2 − 1) × 100"],
+            "ans":"20% gain"}
+          ]
+        },
+      {
+        "name":"Work Forecasting",
+        "tag":"Planning",
+        "formula": "Future work = Historical work × Growth factor\nGrowth factor = 1 + Growth rate",
+        "vars":[
+          {"k":"Growth rate","d":"Expected increase in work"}
+        ],
+        "examples":[
+          {
+            "q":"Current work = 100 units, growth rate = 10%. Next year?",
+            "steps":["Growth factor = 1 + 0.1 = 1.1","Future work = 100 × 1.1"],
+            "ans":"110 units"}
+          ]
+        },
+      {
+        "name":"Work Optimization",
+        "tag":"Operations Research",
+        "formula": "Minimize cost or maximize work subject to constraints\nUse linear programming: Maximize Z = c1x1 + c2x2",
+        "vars":[
+          {"k":"c1, c2","d":"Coefficients (efficiencies)"}
+        ],
+        "examples":[
+          {
+            "q":"Maximize work: A (0.1/unit), B (0.15/unit), constraint: A + B = 10. Optimal?",
+            "steps":["All to B (higher efficiency)","Work = 10 × 0.15"],
+            "ans":"1.5 work units"}
+          ]
+        }
     ]
   },
   {
@@ -360,37 +1905,454 @@
         ]
       },
       {
-        "name":"Average Speed",
+        "name":"Average Speed - Equal Distances",
         "tag":"Most Asked",
-        "formula":"Same distance both ways:\nAvg Speed = 2×S1×S2 ÷ (S1+S2)",
+        "formula":"Avg Speed = 2×S1×S2 ÷ (S1+S2)\nWhen equal distances traveled at different speeds",
         "vars":[
-          {"k":"S1","d":"Speed going"},
-          {"k":"S2","d":"Speed returning"}
+          {"k":"S1","d":"Speed for first distance"},
+          {"k":"S2","d":"Speed for second distance"}
         ],
         "examples":[
           {
             "q":"Goes at 40 km/hr, returns at 60 km/hr. Avg speed?",
             "steps":["= 2×40×60 ÷ (40+60)","= 4800 ÷ 100"],
-            "ans":"48 km/hr"
-          }
-        ]
-      },
+            "ans":"48 km/hr"}
+          ]
+        },
       {
-        "name":"Train Crossing",
+        "name":"Average Speed - Equal Times",
         "tag":"Important",
-        "formula":"Opposite directions:\nTime = (L1+L2) ÷ (S1+S2)\nSame direction:\nTime = (L1+L2) ÷ (S1−S2)",
+        "formula":"Avg Speed = (S1 + S2) ÷ 2\nWhen equal time periods at different speeds",
         "vars":[
-          {"k":"L1,L2","d":"Lengths of the two trains"},
-          {"k":"S1,S2","d":"Speeds of the two trains (m/s)"}
+          {"k":"S1, S2","d":"Speeds for equal time periods"}
         ],
         "examples":[
           {
-            "q":"Trains 100m & 150m, speeds 60 & 40 km/hr, opposite dir. Time?",
-            "steps":["Rel. speed = 100 km/hr = 250/9 m/s","Time = (100+150) ÷ (250/9) = 250×9÷250"],
-            "ans":"9 seconds"
-          }
-        ]
-      }
+            "q":"Travel at 30 km/hr for 2 hrs, then 50 km/hr for 2 hrs. Avg speed?",
+            "steps":["Avg = (30 + 50) ÷ 2"],
+            "ans":"40 km/hr"}
+          ]
+        },
+      {
+        "name":"Relative Speed - Same Direction",
+        "tag":"Most Asked",
+        "formula":"Relative Speed = |S1 − S2|\nTime to catch/meet = Distance ÷ Relative Speed",
+        "vars":[
+          {"k":"S1, S2","d":"Speeds of two objects in same direction"}
+        ],
+        "examples":[
+          {
+            "q":"Faster car 80 km/hr, slower 60 km/hr, 50 km apart. Time to catch?",
+            "steps":["Rel. speed = 80 − 60 = 20 km/hr","Time = 50 ÷ 20"],
+            "ans":"2.5 hours"}
+          ]
+        },
+      {
+        "name":"Relative Speed - Opposite Direction",
+        "tag":"Most Asked",
+        "formula":"Relative Speed = S1 + S2\nTime to meet = Distance ÷ Relative Speed",
+        "vars":[
+          {"k":"S1, S2","d":"Speeds of two objects in opposite directions"}
+        ],
+        "examples":[
+          {
+            "q":"Two cars 100 km apart, speeds 40 and 60 km/hr towards each other. Meeting time?",
+            "steps":["Rel. speed = 40 + 60 = 100 km/hr","Time = 100 ÷ 100"],
+            "ans":"1 hour"}
+          ]
+        },
+      {
+        "name":"Train Crossing Platform",
+        "tag":"Important",
+        "formula":"Time = (Train Length + Platform Length) ÷ Train Speed\nWhen train crosses a platform",
+        "vars":[
+          {"k":"Train Length","d":"Length of the train"},
+          {"k":"Platform Length","d":"Length of the platform"}
+        ],
+        "examples":[
+          {
+            "q":"Train 300m long, speed 60 km/hr, platform 200m long. Crossing time?",
+            "steps":["Total distance = 300 + 200 = 500m","Speed = 60×5/18 = 50/3 m/s","Time = 500 ÷ (50/3) = 500×3/50"],
+            "ans":"30 seconds"}
+          ]
+        },
+      {
+        "name":"Train Crossing Pole/Man",
+        "tag":"Foundation",
+        "formula":"Time = Train Length ÷ Train Speed\nWhen train crosses a point object",
+        "vars":[
+          {"k":"Train Length","d":"Length of the train"}
+        ],
+        "examples":[
+          {
+            "q":"Train 250m long, speed 72 km/hr. Time to cross a pole?",
+            "steps":["Speed = 72×5/18 = 20 m/s","Time = 250 ÷ 20"],
+            "ans":"12.5 seconds"}
+          ]
+        },
+      {
+        "name":"Two Trains Crossing Each Other",
+        "tag":"Most Asked",
+        "formula":"Time = (L1 + L2) ÷ (S1 + S2) − Opposite direction\nTime = (L1 + L2) ÷ |S1 − S2| − Same direction",
+        "vars":[
+          {"k":"L1, L2","d":"Lengths of two trains"},
+          {"k":"S1, S2","d":"Speeds of two trains"}
+        ],
+        "examples":[
+          {
+            "q":"Trains 200m & 150m, speeds 50 & 40 km/hr opposite. Crossing time?",
+            "steps":["Rel. speed = 50 + 40 = 90 km/hr = 25 m/s","Total length = 350m","Time = 350 ÷ 25"],
+            "ans":"14 seconds"}
+          ]
+        },
+      {
+        "name":"Boat & Stream - Upstream",
+        "tag":"Important",
+        "formula":"Upstream Speed = Boat Speed − Stream Speed\nTime upstream = Distance ÷ Upstream Speed",
+        "vars":[
+          {"k":"Boat Speed","d":"Speed of boat in still water"},
+          {"k":"Stream Speed","d":"Speed of current"}
+        ],
+        "examples":[
+          {
+            "q":"Boat speed 20 km/hr, stream 5 km/hr. Upstream speed?",
+            "steps":["Upstream = 20 − 5"],
+            "ans":"15 km/hr"}
+          ]
+        },
+      {
+        "name":"Boat & Stream - Downstream",
+        "tag":"Important",
+        "formula":"Downstream Speed = Boat Speed + Stream Speed\nTime downstream = Distance ÷ Downstream Speed",
+        "vars":[
+          {"k":"Boat Speed","d":"Speed of boat in still water"},
+          {"k":"Stream Speed","d":"Speed of current"}
+        ],
+        "examples":[
+          {
+            "q":"Boat speed 20 km/hr, stream 5 km/hr. Downstream speed?",
+            "steps":["Downstream = 20 + 5"],
+            "ans":"25 km/hr"}
+          ]
+        },
+      {
+        "name":"Boat & Stream - Finding Speeds",
+        "tag":"SSC Special",
+        "formula":"Boat Speed = (Downstream + Upstream) ÷ 2\nStream Speed = (Downstream − Upstream) ÷ 2",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Downstream = 25 km/hr, Upstream = 15 km/hr. Find boat and stream speeds.",
+            "steps":["Boat = (25 + 15) ÷ 2 = 20","Stream = (25 − 15) ÷ 2 = 5"],
+            "ans":"Boat = 20 km/hr, Stream = 5 km/hr"}
+          ]
+        },
+      {
+        "name":"Circular Track - Same Direction",
+        "tag":"Advanced",
+        "formula":"Meeting Time = Track Length ÷ |S1 − S2|\nNumber of meetings = Relative Speed × Time ÷ Track Length",
+        "vars":[
+          {"k":"Track Length","d":"Circumference of circular track"}
+        ],
+        "examples":[
+          {
+            "q":"Track 500m, runners 8 m/s and 6 m/s same direction. First meeting time?",
+            "steps":["Rel. speed = 8 − 6 = 2 m/s","Time = 500 ÷ 2"],
+            "ans":"250 seconds"}
+          ]
+        },
+      {
+        "name":"Circular Track - Opposite Direction",
+        "tag":"Advanced",
+        "formula":"Meeting Time = Track Length ÷ (S1 + S2)\nNumber of meetings = (S1 + S2) × Time ÷ Track Length",
+        "vars":[
+          {"k":"Track Length","d":"Circumference of circular track"}
+        ],
+        "examples":[
+          {
+            "q":"Track 400m, runners 5 m/s and 3 m/s opposite. First meeting time?",
+            "steps":["Rel. speed = 5 + 3 = 8 m/s","Time = 400 ÷ 8"],
+            "ans":"50 seconds"}
+          ]
+        },
+      {
+        "name":"Race Problems - Head Start",
+        "tag":"SSC Favorite",
+        "formula":"If A gives B head start of d meters:\nA wins if: A's time < B's time\nDistance_A ÷ Speed_A < (Distance_B − d) ÷ Speed_B",
+        "vars":[
+          {"k":"d","d":"Head start distance"}
+        ],
+        "examples":[
+          {
+            "q":"Race 100m, A speed 10 m/s, B speed 8 m/s. Head start for B so race is tie?",
+            "steps":["Let head start = x","100/10 = (100−x)/8","10 = (100−x)/8","80 = 100−x"],
+            "ans":"20 meters head start"}
+          ]
+        },
+      {
+        "name":"Race Problems - Start Together",
+        "tag":"Important",
+        "formula":"Winner's time = Distance ÷ Winner's Speed\nLoser's distance = Loser's Speed × Winner's Time",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Race 200m, A wins in 20s, B speed 8 m/s. How far does B run?",
+            "steps":["B's distance = 8 × 20"],
+            "ans":"160 meters"}
+          ]
+        },
+      {
+        "name":"Pursuit Problems",
+        "tag":"Advanced",
+        "formula":"Time to catch = Initial Distance ÷ Relative Speed\nDistance covered by pursuer = Speed_pursuer × Time",
+        "vars":[
+          {"k":"Initial Distance","d":"Distance between pursuer and target"}
+        ],
+        "examples":[
+          {
+            "q":"Thief 100m ahead, runs at 5 m/s. Police 7 m/s. Catch time?",
+            "steps":["Rel. speed = 7 − 5 = 2 m/s","Time = 100 ÷ 2"],
+            "ans":"50 seconds"}
+          ]
+        },
+      {
+        "name":"Speed Ratio and Time Ratio",
+        "tag":"Important",
+        "formula":"Speed Ratio = Inverse of Time Ratio (same distance)\nTime Ratio = Inverse of Speed Ratio (same distance)",
+        "vars":[],
+        "examples":[
+          {
+            "q":"A:B speed = 3:2. Find time ratio for same distance.",
+            "steps":["Time ratio = 2:3 (inverse of speed)"],
+            "ans":"2:3"}
+          ]
+        },
+      {
+        "name":"Distance Proportionality",
+        "tag":"Foundation",
+        "formula":"Distance ∝ Speed × Time\nIf speed doubles, distance doubles (same time)\nIf time doubles, distance doubles (same speed)",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Car travels 120 km in 2 hours. Distance in 5 hours at same speed?",
+            "steps":["Speed = 120 ÷ 2 = 60 km/hr","Distance = 60 × 5"],
+            "ans":"300 km"}
+          ]
+        },
+      {
+        "name":"Mixed Unit Problems",
+        "tag":"Trick",
+        "formula":"Convert all to same unit before calculation\n1 km = 1000 m, 1 hour = 3600 seconds",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Speed = 18 km/hr, time = 20 seconds. Distance?",
+            "steps":["Convert speed: 18 × 5/18 = 5 m/s","Distance = 5 × 20"],
+            "ans":"100 meters"}
+          ]
+        },
+      {
+        "name":"Average Speed - Multiple Segments",
+        "tag":"Advanced",
+        "formula":"Avg Speed = Total Distance ÷ Total Time\nTotal Time = D1/S1 + D2/S2 + D3/S3 + ...",
+        "vars":[
+          {"k":"D1, D2, D3","d":"Distances of segments"},
+          {"k":"S1, S2, S3","d":"Speeds for segments"}
+        ],
+        "examples":[
+          {
+            "q":"Travel 120km at 60km/hr, then 80km at 40km/hr. Avg speed?",
+            "steps":["Total distance = 200km","Total time = 120/60 + 80/40 = 2 + 2 = 4hrs","Avg speed = 200 ÷ 4"],
+            "ans":"50 km/hr"}
+          ]
+        },
+      {
+        "name":"Harmonic Mean Speed",
+        "tag":"Advanced",
+        "formula":"For equal distances: Avg Speed = Harmonic Mean\nHM = n ÷ (1/S1 + 1/S2 + ... + 1/Sn)",
+        "vars":[
+          {"k":"n","d":"Number of segments"}
+        ],
+        "examples":[
+          {
+            "q":"Equal distances at 30, 60, 90 km/hr. Average speed?",
+            "steps":["HM = 3 ÷ (1/30 + 1/60 + 1/90)","= 3 ÷ (6/180 + 3/180 + 2/180) = 3 ÷ (11/180)"],
+            "ans":"49.09 km/hr"}
+          ]
+        },
+      {
+        "name":"Arithmetic Mean Speed",
+        "tag":"Important",
+        "formula":"For equal times: Avg Speed = Arithmetic Mean\nAM = (S1 + S2 + ... + Sn) ÷ n",
+        "vars":[
+          {"k":"n","d":"Number of time periods"}
+        ],
+        "examples":[
+          {
+            "q":"Speeds of 40, 50, 60 km/hr for equal times. Average speed?",
+            "steps":["AM = (40 + 50 + 60) ÷ 3"],
+            "ans":"50 km/hr"}
+          ]
+        },
+      {
+        "name":"Speed Change and Time Change",
+        "tag":"Important",
+        "formula":"If speed increases by x%, time decreases by x/(100+x) × 100%\nIf speed decreases by x%, time increases by x/(100−x) × 100%",
+        "vars":[
+          {"k":"x","d":"Percentage change in speed"}
+        ],
+        "examples":[
+          {
+            "q":"Speed increased by 25%. Find % decrease in time.",
+            "steps":["Time decrease = 25/(100+25) × 100","= 25/125 × 100"],
+            "ans":"20% decrease"}
+          ]
+        },
+      {
+        "name":"Two Object Meeting Point",
+        "tag":"Important",
+        "formula":"Meeting point from A = D × S1 ÷ (S1 + S2)\nMeeting point from B = D × S2 ÷ (S1 + S2)",
+        "vars":[
+          {"k":"D","d":"Total distance between A and B"},
+          {"k":"S1, S2","d":"Speeds from A and B"}
+        ],
+        "examples":[
+          {
+            "q":"A and B 100km apart, speeds 40 and 60 km/hr towards each other. Meeting point from A?",
+            "steps":["Distance from A = 100 × 40 ÷ (40 + 60)","= 4000 ÷ 100"],
+            "ans":"40 km from A"}
+          ]
+        },
+      {
+        "name":"Escalator Problems",
+        "tag":"SSC Special",
+        "formula":"Walking with escalator: Effective speed = Walk speed + Escalator speed\nWalking against escalator: Effective speed = Walk speed − Escalator speed",
+        "vars":[
+          {"k":"Walk speed","d":"Speed relative to escalator"},
+          {"k":"Escalator speed","d":"Speed of escalator itself"}
+        ],
+        "examples":[
+          {
+            "q":"Person walks 30 steps in 20s with escalator, 60 steps in 40s against. Find escalator speed.",
+            "steps":["Let escalator speed = e, walk speed = w","30 = (w+e)×20, 60 = (w−e)×40","w+e = 1.5, w−e = 1.5","Adding: 2w = 3, w = 1.5","e = 0"],
+            "ans":"Escalator is stationary"}
+          ]
+        },
+      {
+        "name":"Travel with Stops",
+        "tag":"Practical",
+        "formula":"Effective Speed = Total Distance ÷ (Travel Time + Stop Time)\nAverage Speed = Total Distance ÷ Total Time",
+        "vars":[
+          {"k":"Stop Time","d":"Total time spent stopped"}
+        ],
+        "examples":[
+          {
+            "q":"Travel 240km at 60km/hr, stop for 30 minutes. Average speed?",
+            "steps":["Travel time = 240 ÷ 60 = 4hrs","Total time = 4 + 0.5 = 4.5hrs","Avg speed = 240 ÷ 4.5"],
+            "ans":"53.33 km/hr"}
+          ]
+        },
+      {
+        "name":"Speed and Fuel Consumption",
+        "tag":"Real World",
+        "formula":"Fuel consumption ∝ 1/Speed (approximately)\nHigher speed = Lower fuel efficiency",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Car gives 15 km/l at 60 km/hr. At 90 km/hr, efficiency reduces by 20%. Find new consumption.",
+            "steps":["New efficiency = 15 × 0.8 = 12 km/l"],
+            "ans":"12 km/liter"}
+          ]
+        },
+      {
+        "name":"Wind Speed Problems",
+        "tag":"Advanced",
+        "formula":"Ground speed = Air speed ± Wind speed\nTailwind: Ground speed = Air speed + Wind speed\nHeadwind: Ground speed = Air speed − Wind speed",
+        "vars":[
+          {"k":"Air speed","d":"Speed relative to air"},
+          {"k":"Wind speed","d":"Speed of wind"}
+        ],
+        "examples":[
+          {
+            "q":"Plane air speed 500 km/hr, tailwind 100 km/hr. Ground speed?",
+            "steps":["Ground speed = 500 + 100"],
+            "ans":"600 km/hr"}
+          ]
+        },
+      {
+        "name":"Relative Motion in Three Dimensions",
+        "tag":"Advanced",
+        "formula":"3D Relative Speed = √((S1x−S2x)² + (S1y−S2y)² + (S1z−S2z)²)",
+        "vars":[
+          {"k":"S1x, S1y, S1z","d":"Components of first object's velocity"},
+          {"k":"S2x, S2y, S2z","d":"Components of second object's velocity"}
+        ],
+        "examples":[
+          {
+            "q":"Object A: (3,4,0) m/s, Object B: (1,2,0) m/s. Relative speed?",
+            "steps":["Rel. speed = √((3−1)² + (4−2)² + 0²)","= √(2² + 2²) = √8"],
+            "ans":"2.83 m/s"}
+          ]
+        },
+      {
+        "name":"Speed Limit Problems",
+        "tag":"Practical",
+        "formula":"Time saved = Distance × (1/Speed_limit − 1/Actual_speed)\nFine = (Actual_speed − Speed_limit) × Fine_rate",
+        "vars":[
+          {"k":"Speed_limit","d":"Maximum allowed speed"}
+        ],
+        "examples":[
+          {
+            "q":"Distance 100km, limit 60km/hr, actual 80km/hr. Time saved?",
+            "steps":["Time at limit = 100 ÷ 60 = 1.67hrs","Time actual = 100 ÷ 80 = 1.25hrs","Time saved = 1.67 − 1.25"],
+            "ans":"25 minutes"}
+          ]
+        },
+      {
+        "name":"Acceleration Problems",
+        "tag":"Physics",
+        "formula":"v = u + at\ns = ut + ½at²\nv² = u² + 2as",
+        "vars":[
+          {"k":"u","d":"Initial velocity"},
+          {"k":"v","d":"Final velocity"},
+          {"k":"a","d":"Acceleration"},
+          {"k":"t","d":"Time"},
+          {"k":"s","d":"Distance"}
+        ],
+        "examples":[
+          {
+            "q":"Car starts from rest, accelerates at 2 m/s² for 10s. Distance?",
+            "steps":["s = 0 + ½×2×10² = 100"],
+            "ans":"100 meters"}
+          ]
+        },
+      {
+        "name":"Speed Time Graph",
+        "tag":"Graphical",
+        "formula":"Area under speed-time graph = Distance\nSlope of speed-time graph = Acceleration",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Speed-time graph shows triangle with base 5s, height 10 m/s. Distance?",
+            "steps":["Area = ½ × base × height = ½ × 5 × 10"],
+            "ans":"25 meters"}
+          ]
+        },
+      {
+        "name":"Optimal Speed Problems",
+        "tag":"Optimization",
+        "formula":"Optimal speed minimizes: Time cost + Fuel cost\nTotal cost = Time × Value_rate + Distance × Fuel_rate/Speed",
+        "vars":[
+          {"k":"Value_rate","d":"Cost per unit time"},
+          {"k":"Fuel_rate","d":"Fuel consumption rate"}
+        ],
+        "examples":[
+          {
+            "q":"Distance 300km, time value ₹100/hr, fuel cost ₹50 at optimal speed. Find optimal speed.",
+            "steps":["This requires calculus - simplified: balance time and fuel costs"],
+            "ans":"Balance between speed and efficiency"}
+          ]
+        }
     ]
   },
   {
@@ -758,6 +2720,481 @@
             "ans":"24"
           }
         ]
+      },
+      {
+        "name":"Average Speed Special Cases",
+        "tag":"Most Asked",
+        "formula":"Equal distances: Avg Speed = 2×S1×S2 ÷ (S1+S2)\nEqual times: Avg Speed = (S1+S2) ÷ 2",
+        "vars":[
+          {"k":"S1, S2","d":"Speeds for different segments"}
+        ],
+        "examples":[
+          {
+            "q":"Travel 60km at 30km/hr, return at 60km/hr. Avg speed?",
+            "steps":["Avg = 2×30×60 ÷ (30+60) = 3600 ÷ 90"],
+            "ans":"40 km/hr"
+          }
+        ]
+      },
+      {
+        "name":"Age Average Progression",
+        "tag":"SSC Special",
+        "formula":"If average age increases by X years after Y years:\nX = (Number of new members × New avg age increase) ÷ Total members",
+        "vars":[
+          {"k":"X","d":"Increase in average age"},
+          {"k":"Y","d":"Years passed"}
+        ],
+        "examples":[
+          {
+            "q":"Family avg age = 25. After 5 years, avg = 30. 1 child born. Find child's age now.",
+            "steps":["Without child: avg would be 30","Increase due to child = 30−25 = 5","Child's contribution = 5×6 = 30","Child's age = 30−5"],
+            "ans":"25 years"
+          }
+        ]
+      },
+      {
+        "name":"Cricket Batting Average",
+        "tag":"Sports Math",
+        "formula":"Batting Avg = Total runs ÷ Number of innings\nAfter X runs: New Avg = (Total runs + X) ÷ (Innings + 1)",
+        "vars":[
+          {"k":"Total runs","d":"Cumulative runs scored"},
+          {"k":"Innings","d":"Number of innings played"}
+        ],
+        "examples":[
+          {
+            "q":"Batsman avg = 50 after 100 innings. Scores 100 runs in next innings. New avg?",
+            "steps":["Total runs = 50×100 = 5000","New total = 5000 + 100 = 5100","New innings = 101","New avg = 5100 ÷ 101"],
+            "ans":"50.5"
+          }
+        ]
+      },
+      {
+        "name":"Cricket Bowling Average",
+        "tag":"Sports Math",
+        "formula":"Bowling Avg = Runs conceded ÷ Wickets taken\nAfter giving X runs for Y wickets: New Avg = (Runs+X) ÷ (Wickets+Y)",
+        "vars":[
+          {"k":"Runs conceded","d":"Total runs given"},
+          {"k":"Wickets taken","d":"Total wickets taken"}
+        ],
+        "examples":[
+          {
+            "q":"Bowler avg = 25 (100 runs, 4 wickets). Gives 30 runs for 2 wickets. New avg?",
+            "steps":["New runs = 100 + 30 = 130","New wickets = 4 + 2 = 6","New avg = 130 ÷ 6"],
+            "ans":"21.67"
+          }
+        ]
+      },
+      {
+        "name":"Adding/Removing Values",
+        "tag":"Important",
+        "formula":"After adding value X: New Avg = (Sum + X) ÷ (n+1)\nAfter removing value X: New Avg = (Sum − X) ÷ (n−1)",
+        "vars":[
+          {"k":"X","d":"Value being added or removed"},
+          {"k":"n","d":"Original count"}
+        ],
+        "examples":[
+          {
+            "q":"Numbers: 10, 20, 30. Add 40. New avg?",
+            "steps":["Sum = 60, n = 3","New avg = (60+40) ÷ 4"],
+            "ans":"25"
+          }
+        ]
+      },
+      {
+        "name":"Average of Arithmetic Progression",
+        "tag":"Advanced",
+        "formula":"Average of AP = (First term + Last term) ÷ 2\nAverage = Middle term (if odd number of terms)",
+        "vars":[
+          {"k":"First term","d":"First term of AP"},
+          {"k":"Last term","d":"Last term of AP"}
+        ],
+        "examples":[
+          {
+            "q":"AP: 3, 6, 9, 12, 15. Find average.",
+            "steps":["Average = (3+15) ÷ 2 = 18 ÷ 2"],
+            "ans":"9"
+          }
+        ]
+      },
+      {
+        "name":"Average of Consecutive Numbers",
+        "tag":"Trick",
+        "formula":"Average of consecutive numbers = Middle number\nIf even count: Average = (Middle two numbers) ÷ 2",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Find average of 21, 22, 23, 24, 25.",
+            "steps":["Middle number = 23"],
+            "ans":"23"
+          }
+        ]
+      },
+      {
+        "name":"Average with Missing Values",
+        "tag":"Problem Solving",
+        "formula":"If one value missing: Missing = n×Avg − Sum of known values\nIf multiple missing: Use algebraic equations",
+        "vars":[
+          {"k":"n","d":"Total number of values including missing"}
+        ],
+        "examples":[
+          {
+            "q":"Avg of 4 numbers = 20. Three numbers: 15, 25, 30. Find fourth.",
+            "steps":["Total sum = 4×20 = 80","Fourth = 80 − (15+25+30) = 80 − 70"],
+            "ans":"10"
+          }
+        ]
+      },
+      {
+        "name":"Average Change Formula",
+        "tag":"Important",
+        "formula":"If average changes from A1 to A2 when n increases to m:\nTotal change = A2×m − A1×n",
+        "vars":[
+          {"k":"A1, A2","d":"Original and new averages"},
+          {"k":"n, m","d":"Original and new counts"}
+        ],
+        "examples":[
+          {
+            "q":"Avg of 5 students = 20. New student joins, avg becomes 19. Find new student's marks.",
+            "steps":["Total change = 19×6 − 20×5 = 114 − 100 = 14","New student = 14 + (increase in total)"],
+            "ans":"14 marks"
+          }
+        ]
+      },
+      {
+        "name":"Geometric vs Arithmetic Mean",
+        "tag":"Advanced",
+        "formula":"Arithmetic Mean = (a + b) ÷ 2\nGeometric Mean = √(a × b)\nGM ≤ AM (always)",
+        "vars":[
+          {"k":"a, b","d":"Two positive numbers"}
+        ],
+        "examples":[
+          {
+            "q":"Find AM and GM of 4 and 9.",
+            "steps":["AM = (4+9) ÷ 2 = 6.5","GM = √(4×9) = √36"],
+            "ans":"AM = 6.5, GM = 6"
+          }
+        ]
+      },
+      {
+        "name":"Average in Mixed Problems",
+        "tag":"Application",
+        "formula":"Combine average concepts with other topics\nUse step-by-step approach for complex problems",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Class avg = 40. 20% students score 60, rest score 30. Verify.",
+            "steps":["Let total students = 100","20 students score 60: total = 1200","80 students score 30: total = 2400","Combined avg = (1200+2400) ÷ 100"],
+            "ans":"36 (given 40 was incorrect)"
+          }
+        ]
+      },
+      {
+        "name":"Average Temperature",
+        "tag":"Real World",
+        "formula":"Daily avg = (Max + Min) ÷ 2\nMonthly avg = Sum of daily avgs ÷ Number of days",
+        "vars":[
+          {"k":"Max, Min","d":"Maximum and minimum temperatures"}
+        ],
+        "examples":[
+          {
+            "q":"Max temp = 30°C, Min = 20°C. Daily avg?",
+            "steps":["Avg = (30+20) ÷ 2"],
+            "ans":"25°C"
+          }
+        ]
+      },
+      {
+        "name":"Average Speed with Different Distances",
+        "tag":"Advanced",
+        "formula":"Avg Speed = Total Distance ÷ Total Time\nTotal Time = D1/S1 + D2/S2 + D3/S3 + ...",
+        "vars":[
+          {"k":"D1, D2, D3","d":"Distances for different segments"},
+          {"k":"S1, S2, S3","d":"Speeds for corresponding segments"}
+        ],
+        "examples":[
+          {
+            "q":"Travel 120km at 60km/hr, 80km at 40km/hr. Avg speed?",
+            "steps":["Total distance = 200km","Total time = 120/60 + 80/40 = 2 + 2 = 4hrs","Avg speed = 200 ÷ 4"],
+            "ans":"50 km/hr"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id":"numbersystem",
+    "name":"Number System",
+    "icon":"\ud83d\udd22",
+    "color":"#8b5cf6",
+    "formulas":[
+      {
+        "name":"Divisibility Rules - Basic",
+        "tag":"Foundation",
+        "formula":"2: Last digit even (0,2,4,6,8)\n3: Sum of digits divisible by 3\n4: Last two digits divisible by 4\n5: Last digit 0 or 5\n6: Divisible by both 2 and 3",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Check divisibility of 123456 by 3 and 4.",
+            "steps":["Sum of digits = 1+2+3+4+5+6 = 21 (divisible by 3)","Last two digits = 56 (divisible by 4)"],
+            "ans":"Divisible by both 3 and 4"}
+          ]
+        
+      },
+      {
+        "name":"Divisibility Rules - Advanced",
+        "tag":"Important",
+        "formula":"7: Double last digit, subtract from remaining\n8: Last three digits divisible by 8\n9: Sum of digits divisible by 9\n11: Alternating sum of digits divisible by 11",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Check 357 for divisibility by 7.",
+            "steps":["Double last digit: 7×2 = 14","Subtract from remaining: 35?14 = 21","21 is divisible by 7"],
+            "ans":"Divisible by 7"}
+          ]
+        
+      },
+      {
+        "name":"Divisibility Rules - Special Numbers",
+        "tag":"SSC Special",
+        "formula":"12: Divisible by both 3 and 4\n13: 4×last digit + remaining\n15: Divisible by both 3 and 5\n16: Last four digits divisible by 16\n18: Divisible by both 2 and 9\n25: Last two digits 00, 25, 50, 75",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Check 1825 for divisibility by 13.",
+            "steps":["4×last digit = 4×5 = 20","Add to remaining: 182 + 20 = 202","202 ÷ 13 = 15.54 (not divisible)"],
+            "ans":"Not divisible by 13"}
+          ]
+        
+      },
+      {
+        "name":"Sum of First n Natural Numbers",
+        "tag":"Most Asked",
+        "formula":"S = n(n+1) ÷ 2\nSum of first n natural numbers",
+        "vars":[
+          {"k":"n","d":"Number of terms"}
+        ],
+        "examples":[
+          {
+            "q":"Find sum of first 50 natural numbers.",
+            "steps":["S = 50×51 ÷ 2 = 2550 ÷ 2"],
+            "ans":"1275"}
+          ]
+        
+      },
+      {
+        "name":"Sum of First n Even Numbers",
+        "tag":"Important",
+        "formula":"S = n(n+1)\nSum of first n even numbers (2, 4, 6, ...)",
+        "vars":[
+          {"k":"n","d":"Number of even terms"}
+        ],
+        "examples":[
+          {
+            "q":"Find sum of first 20 even numbers.",
+            "steps":["S = 20×21"],
+            "ans":"420"}
+          ]
+        
+      },
+      {
+        "name":"Sum of First n Odd Numbers",
+        "tag":"Trick",
+        "formula":"S = n²\nSum of first n odd numbers (1, 3, 5, ...)",
+        "vars":[
+          {"k":"n","d":"Number of odd terms"}
+        ],
+        "examples":[
+          {
+            "q":"Find sum of first 15 odd numbers.",
+            "steps":["S = 15²"],
+            "ans":"225"}
+          ]
+        
+      },
+      {
+        "name":"Sum of Squares of First n Numbers",
+        "tag":"Important",
+        "formula":"S = n(n+1)(2n+1) ÷ 6\nSum of squares: 1² + 2² + 3² + ... + n²",
+        "vars":[
+          {"k":"n","d":"Number of terms"}
+        ],
+        "examples":[
+          {
+            "q":"Find sum of squares of first 10 numbers.",
+            "steps":["S = 10×11×21 ÷ 6 = 2310 ÷ 6"],
+            "ans":"385"}
+          ]
+        
+      },
+      {
+        "name":"Sum of Cubes of First n Numbers",
+        "tag":"Advanced",
+        "formula":"S = [n(n+1) ÷ 2]²\nSum of cubes: 1³ + 2³ + 3³ + ... + n³",
+        "vars":[
+          {"k":"n","d":"Number of terms"}
+        ],
+        "examples":[
+          {
+            "q":"Find sum of cubes of first 5 numbers.",
+            "steps":["S = [5×6 ÷ 2]² = 15²"],
+            "ans":"225"}
+          ]
+        
+      },
+      {
+        "name":"HCF (Highest Common Factor)",
+        "tag":"Foundation",
+        "formula":"HCF by Prime Factorization:\nTake common prime factors with lowest powers\nHCF by Division Method: Divide larger by smaller repeatedly",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Find HCF of 36 and 48.",
+            "steps":["36 = 2²×3², 48 = 2^4×3","Common: 2²×3 = 4×3"],
+            "ans":"12"}
+          ]
+        
+      },
+      {
+        "name":"LCM (Least Common Multiple)",
+        "tag":"Important",
+        "formula":"LCM by Prime Factorization:\nTake all prime factors with highest powers\nLCM × HCF = Product of numbers (for 2 numbers)",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Find LCM of 36 and 48.",
+            "steps":["36 = 2²×3², 48 = 2^4×3","LCM = 2^4×3² = 16×9"],
+            "ans":"144"}
+          ]
+        
+      },
+      {
+        "name":"HCF and LCM Relationship",
+        "tag":"SSC Special",
+        "formula":"For two numbers a and b:\nLCM × HCF = a × b\nFor three numbers: No direct formula",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Two numbers have HCF = 12, LCM = 72. Product = ?",
+            "steps":["Product = HCF × LCM = 12 × 72"],
+            "ans":"864"}
+          ]
+        
+      },
+      {
+        "name":"Remainder Theorem Basics",
+        "tag":"Important",
+        "formula":"When a is divided by b:\nDividend = Divisor × Quotient + Remainder\nRemainder < Divisor always",
+        "vars":[
+          {"k":"a","d":"Dividend"},
+          {"k":"b","d":"Divisor"}
+        ],
+        "examples":[
+          {
+            "q":"When 47 divided by 6, find remainder.",
+            "steps":["47 = 6×7 + 5"],
+            "ans":"Remainder = 5"}
+          ]
+        
+      },
+      {
+        "name":"Digital Root Concept",
+        "tag":"Trick",
+        "formula":"Digital Root = Sum of digits until single digit\nProperties: Digital root of product = Product of digital roots\nDigital root of sum = Sum of digital roots",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Find digital root of 789.",
+            "steps":["7+8+9 = 24, 2+4 = 6"],
+            "ans":"Digital root = 6"}
+          ]
+        
+      },
+      {
+        "name":"Factor Counting Formula",
+        "tag":"Advanced",
+        "formula":"If N = p^a × q^b × r^c...\nTotal factors = (a+1)(b+1)(c+1)...",
+        "vars":[
+          {"k":"p,q,r","d":"Prime factors"},
+          {"k":"a,b,c","d":"Exponents"}
+        ],
+        "examples":[
+          {
+            "q":"Find number of factors of 72.",
+            "steps":["72 = 2³×3²","Factors = (3+1)(2+1) = 4×3"],
+            "ans":"12 factors"}
+          ]
+        
+      },
+      {
+        "name":"Sum of Factors Formula",
+        "tag":"Advanced",
+        "formula":"If N = p^a × q^b × r^c...\nSum of factors = (p^(a+1)?1)/(p?1) × (q^(b+1)?1)/(q?1) × ...",
+        "vars":[
+          {"k":"p,q,r","d":"Prime factors"}
+        ],
+        "examples":[
+          {
+            "q":"Find sum of factors of 6.",
+            "steps":["6 = 2^1×3^1","Sum = (2²?1)/(2?1) × (3²?1)/(3?1) = 3/1 × 8/2 = 3×4"],
+            "ans":"12"}
+          ]
+        
+      },
+      {
+        "name":"Unit Digit Patterns",
+        "tag":"Important",
+        "formula":"2: 2,4,8,6 (cycle of 4)\n3: 3,9,7,1 (cycle of 4)\n4: 4,6 (cycle of 2)\n7: 7,9,3,1 (cycle of 4)\n8: 8,4,2,6 (cycle of 4)\n9: 9,1 (cycle of 2)",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Find unit digit of 2^25.",
+            "steps":["25 ÷ 4 = 6 remainder 1","First in cycle = 2"],
+            "ans":"Unit digit = 2"}
+          ]
+        
+      },
+      {
+        "name":"Number of Zeroes in Factorial",
+        "tag":"SSC Special",
+        "formula":"Zeros in n! = n ÷ 5 + n ÷ 25 + n ÷ 125 + ...\n(Only count 5s, as 2s are abundant)",
+        "vars":[
+          {"k":"n","d":"Factorial number"}
+        ],
+        "examples":[
+          {
+            "q":"Find zeroes in 100!",
+            "steps":["100 ÷ 5 = 20, 100 ÷ 25 = 4, 100 ÷ 125 = 0","Total = 20 + 4 + 0"],
+            "ans":"24 zeroes"}
+          ]
+        
+      },
+      {
+        "name":"Prime Number Tests",
+        "tag":"Important",
+        "formula":"Check divisibility up to ?n\nFor n, check primes up to ?n\nIf no divisors found, n is prime",
+        "vars":[
+          {"k":"n","d":"Number to test"}
+        ],
+        "examples":[
+          {
+            "q":"Is 97 prime?",
+            "steps":["?97 ? 10 (approx)","Check primes: 2,3,5,7","97 not divisible by any"],
+            "ans":"97 is prime"}
+          ]
+        
+      },
+      {
+        "name":"Base Conversion Basics",
+        "tag":"Advanced",
+        "formula":"Decimal to Binary: Divide by 2 repeatedly\nBinary to Decimal: Sum of (digit × 2^position)\nSimilarly for other bases",
+        "vars":[],
+        "examples":[
+          {
+            "q":"Convert 13 to binary.",
+            "steps":["13 ÷ 2 = 6 remainder 1","6 ÷ 2 = 3 remainder 0","3 ÷ 2 = 1 remainder 1","1 ÷ 2 = 0 remainder 1","Read remainders upward: 1101"],
+            "ans":"1101"}
+          ]
+        
       }
     ]
   },
@@ -793,6 +3230,154 @@
             "q":"Simplify: 2³ × 2⁴",
             "steps":["= 2^(3+4)","= 2⁷"],
             "ans":"128"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id":"progressions",
+    "name":"Progressions",
+    "icon":"📈",
+    "color":"#f59e0b",
+    "formulas":[
+      {
+        "name":"Arithmetic Progression",
+        "tag":"Foundation",
+        "formula":"aₙ = a + (n-1)d\nSₙ = n/2 × [2a + (n-1)d]\nSₙ = n/2 × [a + l]",
+        "vars":[
+          {"k":"a","d":"First term"},
+          {"k":"d","d":"Common difference"},
+          {"k":"n","d":"Number of terms"},
+          {"k":"l","d":"Last term"}
+        ],
+        "examples":[
+          {
+            "q":"Find 10th term: 2, 5, 8, 11, ...",
+            "steps":["a = 2, d = 3", "a₁₀ = 2 + (10-1)×3 = 2 + 27"],
+            "ans":"29"
+          },
+          {
+            "q":"Find sum of first 10 terms: 3, 7, 11, 15, ...",
+            "steps":["a = 3, d = 4, n = 10", "S₁₀ = 10/2 × [2×3 + (10-1)×4]"],
+            "ans":"210"
+          }
+        ]
+      },
+      {
+        "name":"Geometric Progression",
+        "tag":"Important",
+        "formula":"aₙ = ar^(n-1)\nSₙ = a(rⁿ-1)/(r-1)\nS∞ = a/(1-r) if |r|<1",
+        "vars":[
+          {"k":"a","d":"First term"},
+          {"k":"r","d":"Common ratio"},
+          {"k":"n","d":"Number of terms"}
+        ],
+        "examples":[
+          {
+            "q":"Find 5th term: 2, 6, 18, 54, ...",
+            "steps":["a = 2, r = 3", "a₅ = 2 × 3^(5-1) = 2 × 81"],
+            "ans":"162"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id":"permutation_combination",
+    "name":"Permutation & Combination",
+    "icon":"🔢",
+    "color":"#8b5cf6",
+    "formulas":[
+      {
+        "name":"Factorial",
+        "tag":"Foundation",
+        "formula":"n! = n × (n-1) × ... × 1\n0! = 1\nn! = n × (n-1)!",
+        "vars":[
+          {"k":"n!","d":"Factorial of n"}
+        ],
+        "examples":[
+          {
+            "q":"Find 5!",
+            "steps":["5! = 5 × 4 × 3 × 2 × 1"],
+            "ans":"120"
+          }
+        ]
+      },
+      {
+        "name":"Permutation",
+        "tag":"Most Asked",
+        "formula":"nPr = n! / (n-r)!\nCircular: (n-1)!\nWith repetition: nʳ",
+        "vars":[
+          {"k":"n","d":"Total items"},
+          {"k":"r","d":"Items to arrange"}
+        ],
+        "examples":[
+          {
+            "q":"Arrange 3 books from 5",
+            "steps":["5P3 = 5! / (5-3)! = 120 / 2! = 120 / 2"],
+            "ans":"60 ways"
+          }
+        ]
+      },
+      {
+        "name":"Combination",
+        "tag":"Most Asked",
+        "formula":"nCr = n! / (r! × (n-r)!)\nnCr = nC(n-r)",
+        "vars":[
+          {"k":"n","d":"Total items"},
+          {"k":"r","d":"Items to select"}
+        ],
+        "examples":[
+          {
+            "q":"Select 3 players from 5",
+            "steps":["5C3 = 5! / (3! × 2!) = 120 / (6 × 2) = 120 / 12"],
+            "ans":"10 ways"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id":"probability",
+    "name":"Probability",
+    "icon":"🎲",
+    "color":"#ef4444",
+    "formulas":[
+      {
+        "name":"Basic Probability",
+        "tag":"Foundation",
+        "formula":"P(E) = Favorable / Total\n0 ≤ P(E) ≤ 1\nP(E') = 1 - P(E)",
+        "vars":[
+          {"k":"P(E)","d":"Probability of event E"},
+          {"k":"P(E')","d":"Probability of not E"}
+        ],
+        "examples":[
+          {
+            "q":"Probability of head in coin toss",
+            "steps":["Favorable = 1, Total = 2", "P = 1/2"],
+            "ans":"1/2 or 0.5"
+          },
+          {
+            "q":"Probability of getting 3 in dice roll",
+            "steps":["Favorable = 1, Total = 6", "P = 1/6"],
+            "ans":"1/6"
+          }
+        ]
+      },
+      {
+        "name":"Addition Rule",
+        "tag":"Important",
+        "formula":"P(A or B) = P(A) + P(B) - P(A and B)\nIf mutually exclusive: P(A or B) = P(A) + P(B)",
+        "vars":[
+          {"k":"P(A or B)","d":"Probability of A or B"},
+          {"k":"P(A and B)","d":"Probability of both A and B"}
+        ],
+        "examples":[
+          {
+            "q":"P(A) = 0.3, P(B) = 0.4, P(A and B) = 0.1. Find P(A or B)",
+            "steps":["P(A or B) = 0.3 + 0.4 - 0.1"],
+            "ans":"0.6"
           }
         ]
       }

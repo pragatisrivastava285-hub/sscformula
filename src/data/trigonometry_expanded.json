@@ -1,0 +1,567 @@
+{
+  "id": "trigonometry",
+  "name": "Trigonometry",
+  "icon": "📏",
+  "color": "#f59e0b",
+  "formulas": [
+    {
+      "name": "Basic Trigonometric Ratios",
+      "tag": "Foundation",
+      "formula": "sin ? = Opposite/Hypotenuse\ncos ? = Adjacent/Hypotenuse\ntan ? = Opposite/Adjacent\ncot ? = Adjacent/Opponent\nsec ? = Hypotenuse/Adjacent\ncosec ? = Hypotenuse/Opposite",
+      "vars": [
+        {"k": "? (theta)", "d": "Angle in right triangle"},
+        {"k": "Opposite", "d": "Side opposite to angle ?"},
+        {"k": "Adjacent", "d": "Side adjacent to angle ?"},
+        {"k": "Hypotenuse", "d": "Longest side of right triangle"}
+      ],
+      "examples": [
+        {
+          "q": "In right triangle, opposite = 3, adjacent = 4, hypotenuse = 5. Find sin 30°.",
+          "steps": ["sin ? = 3/5"],
+          "ans": "3/5"
+        }
+      ]
+    },
+    {
+      "name": "Standard Angle Values",
+      "tag": "Most Asked",
+      "formula": "Angle: 0°, 30°, 45°, 60°, 90°\nsin: 0, 1/2, 1/??2, ??3/2, 1\ncos: 1, ??3/2, 1/??2, 1/2, 0\ntan: 0, 1/??3, 1, ??3, ?",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find sin 60° and cos 45°.",
+          "steps": ["sin 60° = ??3/2", "cos 45° = 1/??2"],
+          "ans": "sin 60° = ??3/2, cos 45° = 1/??2"
+        }
+      ]
+    },
+    {
+      "name": "Fundamental Identities",
+      "tag": "Important",
+      "formula": "sin²? + cos²? = 1\n1 + tan²? = sec²?\n1 + cot²? = cosec²?\ntan ? = sin ?/cos ?",
+      "vars": [
+        {"k": "? (theta)", "d": "Any angle"}
+      ],
+      "examples": [
+        {
+          "q": "If sin ? = 3/5, find cos ?.",
+          "steps": ["cos²? = 1 - sin²? = 1 - (3/5)² = 1 - 9/25 = 16/25", "cos ? = 4/5"],
+          "ans": "4/5"
+        }
+      ]
+    },
+    {
+      "name": "Complementary Angles",
+      "tag": "Important",
+      "formula": "sin(90° - ?) = cos ?\ncos(90° - ?) = sin ?\ntan(90° - ?) = cot ?\ncot(90° - ?) = tan ?",
+      "vars": [
+        {"k": "? (theta)", "d": "Angle in degrees"}
+      ],
+      "examples": [
+        {
+          "q": "Find sin 30° if cos 60° = 1/2.",
+          "steps": ["sin 30° = cos(90° - 30°) = cos 60°"],
+          "ans": "1/2"
+        }
+      ]
+    },
+    {
+      "name": "Supplementary Angles",
+      "tag": "Important",
+      "formula": "sin(180° - ?) = sin ?\ncos(180° - ?) = -cos ?\ntan(180° - ?) = -tan ?",
+      "vars": [
+        {"k": "? (theta)", "d": "Angle in degrees"}
+      ],
+      "examples": [
+        {
+          "q": "Find sin 150°.",
+          "steps": ["sin 150° = sin(180° - 30°) = sin 30° = 1/2"],
+          "ans": "1/2"
+        }
+      ]
+    },
+    {
+      "name": "Sum and Difference Formulas",
+      "tag": "Advanced",
+      "formula": "sin(A ± B) = sin A cos B ± cos A sin B\ncos(A ± B) = cos A cos B ? sin A sin B\ntan(A ± B) = (tan A ± tan B)/(1 ? tan A tan B)",
+      "vars": [
+        {"k": "A,B", "d": "Two angles"}
+      ],
+      "examples": [
+        {
+          "q": "Find sin(45° + 30°).",
+          "steps": ["sin(45° + 30°) = sin 45° cos 30° + cos 45° sin 30°", "= (1/??2)(??3/2) + (1/??2)(1/2)"],
+          "ans": "(??3 + 1)/2??2"
+        }
+      ]
+    },
+    {
+      "name": "Double Angle Formulas",
+      "tag": "Important",
+      "formula": "sin 2? = 2 sin ? cos ?\ncos 2? = cos²? - sin²? = 2cos²? - 1 = 1 - 2sin²?\ntan 2? = 2 tan ?/(1 - tan²?)",
+      "vars": [
+        {"k": "? (theta)", "d": "Angle"}
+      ],
+      "examples": [
+        {
+          "q": "If sin ? = 3/5, find sin 2?.",
+          "steps": ["cos ? = 4/5", "sin 2? = 2 × (3/5) × (4/5) = 24/25"],
+          "ans": "24/25"
+        }
+      ]
+    },
+    {
+      "name": "Triple Angle Formulas",
+      "tag": "Advanced",
+      "formula": "sin 3? = 3 sin ? - 4 sin³?\ncos 3? = 4 cos³? - 3 cos ?\ntan 3? = (3 tan ? - tan³?)/(1 - 3 tan²?)",
+      "vars": [
+        {"k": "? (theta)", "d": "Angle"}
+      ],
+      "examples": [
+        {
+          "q": "Find sin 60° using triple angle formula if sin 20° = 1/3.",
+          "steps": ["sin 60° = 3 sin 20° - 4 sin³20° = 3(1/3) - 4(1/27) = 1 - 4/27"],
+          "ans": "23/27"
+        }
+      ]
+    },
+    {
+      "name": "Half Angle Formulas",
+      "tag": "Advanced",
+      "formula": "sin(?/2) = ±?[(1 - cos ?)/2]\ncos(?/2) = ±?[(1 + cos ?)/2]\ntan(?/2) = ±?[(1 - cos ?)/(1 + cos ?)]",
+      "vars": [
+        {"k": "? (theta)", "d": "Angle"}
+      ],
+      "examples": [
+        {
+          "q": "Find sin 15° using half angle formula.",
+          "steps": ["sin 15° = sin(30°/2) = ?[(1 - cos 30°)/2] = ?[(1 - ??3/2)/2]"],
+          "ans": "(??6 - ??2)/4"
+        }
+      ]
+    },
+    {
+      "name": "Product to Sum Formulas",
+      "tag": "Advanced",
+      "formula": "sin A cos B = [sin(A+B) + sin(A-B)]/2\ncos A cos B = [cos(A+B) + cos(A-B)]/2\nsin A sin B = [cos(A-B) - cos(A+B)]/2",
+      "vars": [
+        {"k": "A,B", "d": "Two angles"}
+      ],
+      "examples": [
+        {
+          "q": "Convert sin 30° cos 45° to sum form.",
+          "steps": ["sin 30° cos 45° = [sin(75°) + sin(-15°)]/2"],
+          "ans": "[sin 75° - sin 15°]/2"
+        }
+      ]
+    },
+    {
+      "name": "Sum to Product Formulas",
+      "tag": "Advanced",
+      "formula": "sin A + sin B = 2 sin[(A+B)/2] cos[(A-B)/2]\nsin A - sin B = 2 cos[(A+B)/2] sin[(A-B)/2]\ncos A + cos B = 2 cos[(A+B)/2] cos[(A-B)/2]",
+      "vars": [
+        {"k": "A,B", "d": "Two angles"}
+      ],
+      "examples": [
+        {
+          "q": "Convert sin 60° + sin 30° to product form.",
+          "steps": ["sin 60° + sin 30° = 2 sin(45°) cos(15°)"],
+          "ans": "2 sin 45° cos 15°"
+        }
+      ]
+    },
+    {
+      "name": "Maximum and Minimum Values",
+      "tag": "SSC Special",
+      "formula": "sin ?, cos ?: Range [-1, 1]\ntan ?, cot ?: Range (-?, ?)\nsec ?, cosec ?: Range (-?, -1] U [1, ?)",
+      "vars": [
+        {"k": "? (theta)", "d": "Any angle"}
+      ],
+      "examples": [
+        {
+          "q": "Find maximum value of sin ? + cos ?.",
+          "steps": ["Maximum = ?(1² + 1²) = ?2"],
+          "ans": "?2"
+        }
+      ]
+    },
+    {
+      "name": "Height and Distance - Basic",
+      "tag": "Most Asked",
+      "formula": "Height = Distance × tan angle\nDistance = Height/tan angle\nAngle of elevation from ground to top",
+      "vars": [
+        {"k": "Height", "d": "Vertical height of object"},
+        {"k": "Distance", "d": "Horizontal distance from observer"}
+      ],
+      "examples": [
+        {
+          "q": "Building height 50m, observer distance 50?3 m. Find angle of elevation.",
+          "steps": ["tan ? = 50/(50?3) = 1/?3", "? = 30°"],
+          "ans": "30°"
+        }
+      ]
+    },
+    {
+      "name": "Height and Distance - Advanced",
+      "tag": "Important",
+      "formula": "Height of tower from two points:\nh = d × tan ?1 × tan ?2/(tan ?2 - tan ?1)\nWhere d is distance between observation points",
+      "vars": [
+        {"k": "?1, ?2", "d": "Angles of elevation from two points"},
+        {"k": "d", "d": "Distance between observation points"}
+      ],
+      "examples": [
+        {
+          "q": "From points 100m apart, angles of elevation are 30° and 45°. Find tower height.",
+          "steps": ["h = 100 × tan 30° × tan 45°/(tan 45° - tan 30°)", "= 100 × (1/?3) × 1/(1 - 1/?3)"],
+          "ans": "86.6 m"
+        }
+      ]
+    },
+    {
+      "name": "Special Angle Values - 15° and 75°",
+      "tag": "SSC Special",
+      "formula": "sin 15° = (?6 - ?2)/4\ncos 15° = (?6 + ?2)/4\ntan 15° = 2 - ?3\nsin 75° = (?6 + ?2)/4\ncos 75° = (?6 - ?2)/4\ntan 75° = 2 + ?3",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find tan 15°.",
+          "steps": ["tan 15° = 2 - ?3 ? 2 - 1.732"],
+          "ans": "0.268"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Equations - Basic",
+      "tag": "Important",
+      "formula": "sin ? = 0 ? ? = n×180°\ncos ? = 0 ? ? = 90° + n×180°\ntan ? = 0 ? ? = n×180°",
+      "vars": [
+        {"k": "n", "d": "Integer (0, ±1, ±2, ...)"}
+      ],
+      "examples": [
+        {
+          "q": "Solve sin ? = 0 for 0° ? ? < 360°.",
+          "steps": ["? = 0°, 180°"],
+          "ans": "0°, 180°"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Equations - General",
+      "tag": "Advanced",
+      "formula": "sin ? = k ? ? = sin?¹(k) + 360°n or ? = 180° - sin?¹(k) + 360°n\ncos ? = k ? ? = ±cos?¹(k) + 360°n\ntan ? = k ? ? = tan?¹(k) + 180°n",
+      "vars": [
+        {"k": "k", "d": "Constant value (-1 ? k ? 1 for sin and cos)"},
+        {"k": "n", "d": "Integer"}
+      ],
+      "examples": [
+        {
+          "q": "Solve cos ? = 1/2 for 0° ? ? < 360°.",
+          "steps": ["? = ±60° + 360°n", "For 0° ? ? < 360°: ? = 60°, 300°"],
+          "ans": "60°, 300°"
+        }
+      ]
+    },
+    {
+      "name": "Inverse Trigonometric Functions",
+      "tag": "Important",
+      "formula": "sin?¹(sin ?) = ?\ncos?¹(cos ?) = ?\ntan?¹(tan ?) = ?\nDomain restrictions apply",
+      "vars": [
+        {"k": "? (theta)", "d": "Angle in principal range"}
+      ],
+      "examples": [
+        {
+          "q": "Find sin?¹(1/2).",
+          "steps": ["sin 30° = 1/2, so sin?¹(1/2) = 30°"],
+          "ans": "30°"
+        }
+      ]
+    },
+    {
+      "name": "Law of Sines",
+      "tag": "Important",
+      "formula": "a/sin A = b/sin B = c/sin C = 2R\nWhere R is circumradius of triangle",
+      "vars": [
+        {"k": "a,b,c", "d": "Sides opposite angles A,B,C"},
+        {"k": "R", "d": "Circumradius"}
+      ],
+      "examples": [
+        {
+          "q": "Triangle with A=30°, B=60°, a=4. Find b.",
+          "steps": ["4/sin 30° = b/sin 60°", "4/(1/2) = b/(??3/2)", "8 = 2b/??3", "b = 4??3"],
+          "ans": "4??3"
+        }
+      ]
+    },
+    {
+      "name": "Law of Cosines",
+      "tag": "Important",
+      "formula": "a² = b² + c² - 2bc cos A\nb² = a² + c² - 2ac cos B\nc² = a² + b² - 2ab cos C",
+      "vars": [
+        {"k": "a,b,c", "d": "Sides opposite angles A,B,C"}
+      ],
+      "examples": [
+        {
+          "q": "Triangle with sides a=5, b=7, c=8. Find angle A.",
+          "steps": ["5² = 7² + 8² - 2×7×8×cos A", "25 = 49 + 64 - 112 cos A", "112 cos A = 88", "cos A = 88/112 = 11/14"],
+          "ans": "cos A = 11/14"
+        }
+      ]
+    },
+    {
+      "name": "Law of Tangents",
+      "tag": "Advanced",
+      "formula": "(a - b)/(a + b) = [tan(A/2) - tan(B/2)]/[tan(A/2) + tan(B/2)]",
+      "vars": [
+        {"k": "a,b", "d": "Two sides of triangle"},
+        {"k": "A,B", "d": "Angles opposite sides a,b"}
+      ],
+      "examples": [
+        {
+          "q": "In triangle, a=7, b=5, A=60°. Find B using law of tangents.",
+          "steps": ["(7-5)/(7+5) = [tan(30°) - tan(B/2)]/[tan(30°) + tan(B/2)]", "2/12 = [1/?3 - tan(B/2)]/[1/?3 + tan(B/2)]"],
+          "ans": "B ? 40.9°"
+        }
+      ]
+    },
+    {
+      "name": "Area of Triangle Using Trigonometry",
+      "tag": "Important",
+      "formula": "Area = (1/2)ab sin C = (1/2)bc sin A = (1/2)ca sin B\nArea = abc/(4R) where R is circumradius",
+      "vars": [
+        {"k": "a,b,c", "d": "Sides of triangle"},
+        {"k": "A,B,C", "d": "Angles opposite sides a,b,c"}
+      ],
+      "examples": [
+        {
+          "q": "Triangle with sides a=5, b=8, included angle C=30°. Find area.",
+          "steps": ["Area = (1/2) × 5 × 8 × sin 30° = 20 × 1/2"],
+          "ans": "10 square units"
+        }
+      ]
+    },
+    {
+      "name": "Radius of Circumcircle and Incircle",
+      "tag": "Advanced",
+      "formula": "Circumradius R = abc/(4 × Area)\nInradius r = Area/s where s = (a+b+c)/2",
+      "vars": [
+        {"k": "a,b,c", "d": "Sides of triangle"},
+        {"k": "s", "d": "Semi-perimeter"}
+      ],
+      "examples": [
+        {
+          "q": "Triangle sides 3,4,5. Find circumradius.",
+          "steps": ["Area = 6", "R = 3×4×5/(4×6) = 60/24"],
+          "ans": "2.5 units"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Substitution",
+      "tag": "Advanced",
+      "formula": "? = 2 sin(?/2) cos(?/2)\n1 - cos ? = 2 sin²(?/2)\n1 + cos ? = 2 cos²(?/2)",
+      "vars": [
+        {"k": "? (theta)", "d": "Angle"}
+      ],
+      "examples": [
+        {
+          "q": "Express sin 60° in terms of half angle.",
+          "steps": ["sin 60° = 2 sin 30° cos 30° = 2 × (1/2) × (??3/2)"],
+          "ans": "??3/2"
+        }
+      ]
+    },
+    {
+      "name": "Complex Number Form of Trigonometry",
+      "tag": "Advanced",
+      "formula": "e^(i?) = cos ? + i sin ?\ncos ? = (e^(i?) + e^(-i?))/2\nsin ? = (e^(i?) - e^(-i?))/(2i)",
+      "vars": [
+        {"k": "i", "d": "Imaginary unit, i² = -1"}
+      ],
+      "examples": [
+        {
+          "q": "Find cos 60° using Euler's formula.",
+          "steps": ["cos 60° = (e^(i?/3) + e^(-i?/3))/2"],
+          "ans": "1/2"
+        }
+      ]
+    },
+    {
+      "name": "De Moivre's Theorem",
+      "tag": "Advanced",
+      "formula": "(cos ? + i sin ?)^n = cos(n?) + i sin(n?)",
+      "vars": [
+        {"k": "n", "d": "Integer power"}
+      ],
+      "examples": [
+        {
+          "q": "Find (cos 30° + i sin 30°)³.",
+          "steps": ["= cos(90°) + i sin(90°) = 0 + i(1)"],
+          "ans": "i"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Series",
+      "tag": "Advanced",
+      "formula": "Sum of sin series: sin ? + sin 2? + ... + sin n?\nSum of cos series: cos ? + cos 2? + ... + cos n?",
+      "vars": [
+        {"k": "n", "d": "Number of terms"}
+      ],
+      "examples": [
+        {
+          "q": "Find sin 30° + sin 60° + sin 90°.",
+          "steps": ["= 1/2 + ??3/2 + 1 = (1 + ??3 + 2)/2"],
+          "ans": "(3 + ??3)/2"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Inequalities",
+      "tag": "Advanced",
+      "formula": "For 0° < ? < 90°:\nsin ? < ? < tan ?\ncos ? < 1 < sec ?",
+      "vars": [
+        {"k": "? (theta)", "d": "Angle in first quadrant"}
+      ],
+      "examples": [
+        {
+          "q": "Arrange sin 30°, 30°, tan 30° in increasing order.",
+          "steps": ["sin 30° = 1/2, tan 30° = 1/?3 ? 0.577", "1/2 < 0.577"],
+          "ans": "sin 30° < tan 30°"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Identities - Multiple Angles",
+      "tag": "Advanced",
+      "formula": "sin 3? = 4 sin ? cos²? - sin ?\ncos 3? = 4 cos³? - 3 cos ?\nsin 4? = 2 sin 2? cos 2?\ncos 4? = cos²2? - sin²2?",
+      "vars": [
+        {"k": "? (theta)", "d": "Angle"}
+      ],
+      "examples": [
+        {
+          "q": "Simplify sin 4? in terms of sin ? and cos ?.",
+          "steps": ["sin 4? = 2 sin 2? cos 2? = 2(2 sin ? cos ?)(cos²? - sin²?)"],
+          "ans": "4 sin ? cos ? (cos²? - sin²?)"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Functions of Compound Angles",
+      "tag": "Important",
+      "formula": "sin(180° + ?) = -sin ?\ncos(180° + ?) = -cos ?\ntan(180° + ?) = tan ?\nsin(360° - ?) = -sin ?\ncos(360° - ?) = cos ?",
+      "vars": [
+        {"k": "? (theta)", "d": "Angle"}
+      ],
+      "examples": [
+        {
+          "q": "Find cos 210°.",
+          "steps": ["cos 210° = cos(180° + 30°) = -cos 30° = -??3/2"],
+          "ans": "-??3/2"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Ratios in Different Quadrants",
+      "tag": "Foundation",
+      "formula": "Quadrant I: All positive\nQuadrant II: sin, cosec positive\nQuadrant III: tan, cot positive\nQuadrant IV: cos, sec positive",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find sign of cos 150°.",
+          "steps": ["150° is in Quadrant II where cos is negative"],
+          "ans": "Negative"
+        }
+      ]
+    },
+    {
+      "name": "Periodicity of Trigonometric Functions",
+      "tag": "Theory",
+      "formula": "sin ?, cos ?, sec ?, cosec ?: Period 360°\ntan ?, cot ?: Period 180°",
+      "vars": [
+        {"k": "? (theta)", "d": "Angle"}
+      ],
+      "examples": [
+        {
+          "q": "Find sin(390°).",
+          "steps": ["sin(390°) = sin(390° - 360°) = sin 30° = 1/2"],
+          "ans": "1/2"
+        }
+      ]
+    },
+    {
+      "name": "Graph of Trigonometric Functions",
+      "tag": "Theory",
+      "formula": "Amplitude = Maximum value - Minimum value)/2\nPeriod = Distance for one complete cycle\nPhase shift = Horizontal shift",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find amplitude of y = 2 sin ?.",
+          "steps": ["Maximum = 2, Minimum = -2", "Amplitude = (2 - (-2))/2 = 2"],
+          "ans": "2"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Transformations",
+      "tag": "Advanced",
+      "formula": "y = A sin(B? + C) + D\nAmplitude = |A|, Period = 360°/|B|\nPhase shift = -C/B, Vertical shift = D",
+      "vars": [
+        {"k": "A,B,C,D", "d": "Transformation parameters"}
+      ],
+      "examples": [
+        {
+          "q": "Find amplitude and period of y = 3 sin(2?).",
+          "steps": ["Amplitude = |3| = 3", "Period = 360°/|2| = 180°"],
+          "ans": "Amplitude = 3, Period = 180°"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Applications in Physics",
+      "tag": "Application",
+      "formula": "Projectile motion:\nHorizontal range = (v² sin 2?)/g\nMaximum height = (v² sin²?)/(2g)\nTime of flight = (2v sin ?)/g",
+      "vars": [
+        {"k": "v", "d": "Initial velocity"},
+        {"k": "? (theta)", "d": "Angle of projection"},
+        {"k": "g", "d": "Acceleration due to gravity"}
+      ],
+      "examples": [
+        {
+          "q": "Projectile at 30° with v=20m/s. Find range (g=10m/s²).",
+          "steps": ["Range = (20² × sin 60°)/10 = 400 × (??3/2)/10"],
+          "ans": "20??3 m"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Approximations",
+      "tag": "Advanced",
+      "formula": "For small angles (in radians):\nsin ? ? ?\ncos ? ? 1 - ?²/2\ntan ? ? ?",
+      "vars": [
+        {"k": "? (theta)", "d": "Small angle in radians"}
+      ],
+      "examples": [
+        {
+          "q": "Approximate sin 5° (convert to radians first).",
+          "steps": ["5° = 5 × ?/180 = ?/36 radians", "sin(?/36) ? ?/36"],
+          "ans": "?/36 radians"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Identities - Advanced",
+      "tag": "Advanced",
+      "formula": "sin A + sin B + sin C - sin(A+B+C) = 4 sin(A+B)/2 sin(B+C)/2 sin(C+A)/2\ncos A + cos B + cos C + cos(A+B+C) = 4 cos(A+B)/2 cos(B+C)/2 cos(C+A)/2",
+      "vars": [
+        {"k": "A,B,C", "d": "Three angles"}
+      ],
+      "examples": [
+        {
+          "q": "If A + B + C = 180°, find sin A + sin B + sin C.",
+          "steps": ["sin A + sin B + sin C - sin 180° = 4 sin(A+B)/2 sin(B+C)/2 sin(C+A)/2", "sin A + sin B + sin C = 4 sin(90°-C/2) sin(90°-A/2) sin(90°-B/2)"],
+          "ans": "4 cos(C/2) cos(A/2) cos(B/2)"
+        }
+      ]
+    }
+  ]
+}

@@ -98,30 +98,57 @@ const HomePage = () => {
             Your pocket mentor for formulas
           </motion.p>
           
-          {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn btn-primary"
-            style={{
-              fontSize: '1rem',
-              padding: 'var(--spacing-lg) var(--spacing-2xl)',
-              marginTop: 'var(--spacing-xl)',
-              background: 'var(--text-primary)',
-              color: 'var(--text-inverse)',
-              border: 'none',
-              cursor: 'pointer'
-            }}
-            onClick={() => {
-              const firstChapter = filteredChapters[0];
-              if (firstChapter) openChapter(firstChapter);
-            }}
-          >
-            Start Learning
-          </motion.button>
+          {/* CTA Buttons */}
+          <div style={{
+            display: 'flex',
+            gap: 'var(--spacing-lg)',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            marginTop: 'var(--spacing-xl)'
+          }}>
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn btn-primary"
+              style={{
+                fontSize: '1rem',
+                padding: 'var(--spacing-lg) var(--spacing-2xl)',
+                background: 'var(--text-primary)',
+                color: 'var(--text-inverse)',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                const firstChapter = filteredChapters[0];
+                if (firstChapter) openChapter(firstChapter);
+              }}
+            >
+              Start Learning
+            </motion.button>
+            
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn btn-secondary"
+              style={{
+                fontSize: '1rem',
+                padding: 'var(--spacing-lg) var(--spacing-2xl)',
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                color: 'white',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+              onClick={() => navigate('/quick-tricks')}
+            >
+              Quick Tricks
+            </motion.button>
+          </div>
           
           {/* Stats */}
           <motion.div
@@ -220,6 +247,57 @@ const HomePage = () => {
         margin: '0 auto'
       }}>
         <div className="grid grid-cols-2 grid-cols-md-3 grid-cols-lg-4" style={{ gap: 'var(--spacing-lg)' }}>
+          {/* Perfect Squares & Cubes Special Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0, duration: 0.6 }}
+            whileHover={{ y: -8, scale: 1.03 }}
+            className="product-card"
+            onClick={() => navigate('/squares-cubes')}
+            style={{
+              cursor: 'pointer',
+              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              border: '1px solid var(--border-primary)',
+              borderRadius: 'var(--radius-lg)',
+              padding: 'var(--spacing-2xl)',
+              textAlign: 'center',
+              position: 'relative',
+              overflow: 'hidden',
+              transition: 'all var(--transition-normal)'
+            }}
+          >
+            <div 
+              style={{
+                fontSize: '3rem',
+                marginBottom: 'var(--spacing-lg)',
+                transition: 'all var(--transition-normal)',
+              }}
+            >
+              🔢
+            </div>
+            <h3 
+              style={{
+                fontSize: '1rem',
+                fontWeight: 600,
+                color: 'white',
+                marginBottom: 'var(--spacing-sm)',
+                fontFamily: 'var(--font-heading)'
+              }}
+            >
+              Perfect Squares<br/>& Cubes
+            </h3>
+            <p 
+              style={{
+                fontSize: '0.75rem',
+                color: 'rgba(255,255,255,0.8)',
+                lineHeight: '1.4'
+              }}
+            >
+              Complete reference with<br/>practice questions
+            </p>
+          </motion.div>
+          
           {filteredChapters.map((chapter, index) => (
             <motion.div
               key={chapter.id}
