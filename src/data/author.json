@@ -1,0 +1,27 @@
+{
+  "name": "PragSSC Team",
+  "title": "SSC Exam Preparation Experts",
+  "description": "Dedicated to helping SSC aspirants excel in their exams with comprehensive formula collections and solved examples.",
+  "about": "PragSSC is a comprehensive platform designed specifically for SSC exam preparation. We understand the challenges students face when preparing for competitive exams like SSC CGL, CHSL, MTS, and CPO. Our mission is to provide easy access to all essential mathematical formulas with clear explanations and step-by-step solved examples.",
+  "expertise": [
+    "Mathematical Formulas & Shortcuts",
+    "SSC Exam Pattern Analysis", 
+    "Problem-Solving Techniques",
+    "Exam Strategy & Time Management"
+  ],
+  "contact": {
+    "email": "contact@pragssc.com",
+    "website": "https://pragssc.com",
+    "social": {
+      "youtube": "PragSSC",
+      "telegram": "PragSSC_Community"
+    }
+  },
+  "stats": {
+    "studentsHelped": "50,000+",
+    "formulasCovered": "100+",
+    "successRate": "95%"
+  },
+  "mission": "To make quality SSC exam preparation accessible to every student through comprehensive, easy-to-understand formula collections and practice materials.",
+  "vision": "To become the most trusted online resource for SSC exam preparation, helping thousands of students achieve their dream government jobs."
+}
