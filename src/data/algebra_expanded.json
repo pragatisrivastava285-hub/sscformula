@@ -1,0 +1,551 @@
+{
+  "id": "algebra",
+  "name": "Algebra",
+  "icon": "✨",
+  "color": "#14b8a6",
+  "formulas": [
+    {
+      "name": "Key Algebraic Identities",
+      "tag": "Foundation",
+      "formula": "(a+b)² = a²+2ab+b²\n(a-b)² = a²-2ab+b²\na²-b² = (a+b)(a-b)\n(a+b)³ = a³+3a²b+3ab²+b³\n(a-b)³ = a³-3a²b+3ab²-b³",
+      "vars": [
+        {"k": "a,b", "d": "Any two algebraic terms or numbers"}
+      ],
+      "examples": [
+        {
+          "q": "Find (103)² using identity.",
+          "steps": ["= (100+3)²", "= 100²+2×100×3+3²", "= 10000+600+9"],
+          "ans": "10609"
+        }
+      ]
+    },
+    {
+      "name": "a³+b³ / a³-b³",
+      "tag": "Important",
+      "formula": "a³+b³ = (a+b)(a²-ab+b²)\na³-b³ = (a-b)(a²+ab+b²)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "If a+b=5, ab=6. Find a³+b³.",
+          "steps": ["a²+b²=(a+b)²-2ab=25-12=13", "a³+b³=(a+b)[(a²+b²)-ab]=5×(13-6)"],
+          "ans": "35"
+        }
+      ]
+    },
+    {
+      "name": "x + 1/x Shortcut",
+      "tag": "SSC Favourite",
+      "formula": "x²+1/x² = (x+1/x)² - 2\nx³+1/x³ = (x+1/x)³ - 3(x+1/x)\nx?+1/x? = (x²+1/x²)² - 2",
+      "vars": [
+        {"k": "k", "d": "Given value of x+1/x"}
+      ],
+      "examples": [
+        {
+          "q": "x+1/x = 3. Find x²+1/x².",
+          "steps": ["= (x+1/x)² - 2", "= 3² - 2 = 9 - 2"],
+          "ans": "7"
+        }
+      ]
+    },
+    {
+      "name": "Three Variable Identities",
+      "tag": "Advanced",
+      "formula": "(a+b+c)² = a²+b²+c²+2(ab+bc+ca)\na³+b³+c³-3abc = (a+b+c)(a²+b²+c²-ab-bc-ca)\nIf a+b+c=0, then a³+b³+c³=3abc",
+      "vars": [
+        {"k": "a,b,c", "d": "Three variables"}
+      ],
+      "examples": [
+        {
+          "q": "If a+b+c=0 and a=1, b=2, find a³+b³+c³.",
+          "steps": ["c = -(a+b) = -3", "a³+b³+c³ = 3abc = 3×1×2×(-3)"],
+          "ans": "-18"
+        }
+      ]
+    },
+    {
+      "name": "Quadratic Formula",
+      "tag": "Most Asked",
+      "formula": "For ax²+bx+c=0:\nx = [-b ± sqrt(b²-4ac)] ÷ 2a\nDiscriminant D = b²-4ac",
+      "vars": [
+        {"k": "a,b,c", "d": "Coefficients of quadratic equation"}
+      ],
+      "examples": [
+        {
+          "q": "Solve: x²+5x+6=0",
+          "steps": ["a=1, b=5, c=6", "x = [-5 ± sqrt(25-24)] ÷ 2", "x = [-5 ± 1] ÷ 2"],
+          "ans": "x = -2, -3"
+        }
+      ]
+    },
+    {
+      "name": "Sum and Product of Roots",
+      "tag": "Important",
+      "formula": "For ax²+bx+c=0:\nSum of roots = -b/a\nProduct of roots = c/a",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find sum and product of roots of 2x²-8x+6=0",
+          "steps": ["Sum = -(-8)/2 = 4", "Product = 6/2 = 3"],
+          "ans": "Sum = 4, Product = 3"
+        }
+      ]
+    },
+    {
+      "name": "Linear Equations",
+      "tag": "Foundation",
+      "formula": "ax + b = 0 ? x = -b/a\nTwo equations: Solve by substitution or elimination",
+      "vars": [
+        {"k": "a,b", "d": "Coefficients"}
+      ],
+      "examples": [
+        {
+          "q": "Solve: 3x + 7 = 0",
+          "steps": ["3x = -7", "x = -7/3"],
+          "ans": "x = -7/3"
+        }
+      ]
+    },
+    {
+      "name": "Simultaneous Equations",
+      "tag": "Important",
+      "formula": "Method 1: Substitution\nMethod 2: Elimination\nMethod 3: Cross-multiplication",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Solve: x+y=5, x-y=1",
+          "steps": ["Add equations: 2x=6, x=3", "Substitute: 3+y=5, y=2"],
+          "ans": "x=3, y=2"
+        }
+      ]
+    },
+    {
+      "name": "Inequalities",
+      "tag": "Advanced",
+      "formula": "ax + b > 0 ? x > -b/a (if a>0)\nax + b > 0 ? x < -b/a (if a<0)\nQuadratic: Check sign of a and roots",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Solve: 2x - 4 > 0",
+          "steps": ["2x > 4", "x > 2"],
+          "ans": "x > 2"
+        }
+      ]
+    },
+    {
+      "name": "Maximum and Minimum Values",
+      "tag": "SSC Special",
+      "formula": "Quadratic ax²+bx+c:\nIf a>0: Minimum at x = -b/2a\nIf a<0: Maximum at x = -b/2a\nValue = -D/4a where D = b²-4ac",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find minimum value of x²+4x+5",
+          "steps": ["a=1>0, so minimum", "x = -4/2 = -2", "Value = (-2)²+4(-2)+5 = 4-8+5"],
+          "ans": "Minimum = 1 at x = -2"
+        }
+      ]
+    },
+    {
+      "name": "Factorization Techniques",
+      "tag": "Important",
+      "formula": "Common factor: a(b+c)\nDifference of squares: a²-b² = (a+b)(a-b)\nGrouping: ab+ac+bd+cd = a(b+c)+d(b+c)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Factorize: x²-9",
+          "steps": ["= (x+3)(x-3)"],
+          "ans": "(x+3)(x-3)"
+        }
+      ]
+    },
+    {
+      "name": "Perfect Square Trinomials",
+      "tag": "Trick",
+      "formula": "x² + 2ax + a² = (x+a)²\nx² - 2ax + a² = (x-a)²\nx² + (a+b)x + ab = (x+a)(x+b)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Complete square: x²+6x+9",
+          "steps": ["= (x+3)²"],
+          "ans": "(x+3)²"
+        }
+      ]
+    },
+    {
+      "name": "Rational Expressions",
+      "tag": "Advanced",
+      "formula": "Simplify: Factor and cancel\nAdd/Subtract: Find LCD\nMultiply/Divide: Factor first",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Simplify: (x²-4)/(x²-x-6)",
+          "steps": ["= (x+2)(x-2)/[(x-3)(x+2)]", "Cancel (x+2)"],
+          "ans": "(x-2)/(x-3)"
+        }
+      ]
+    },
+    {
+      "name": "Exponent Rules",
+      "tag": "Foundation",
+      "formula": "a^m × a^n = a^(m+n)\na^m ÷ a^n = a^(m-n)\n(a^m)^n = a^(mn)\na^-n = 1/a^n\na^0 = 1",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Simplify: 2³ × 2²",
+          "steps": ["= 2^(3+2) = 2^5"],
+          "ans": "32"
+        }
+      ]
+    },
+    {
+      "name": "Logarithm Basics",
+      "tag": "Important",
+      "formula": "log_a(b) = c ? a^c = b\nlog(ab) = log a + log b\nlog(a/b) = log a - log b\nlog(a^n) = n log a",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find log_2(8)",
+          "steps": ["2^x = 8", "2^x = 2³", "x = 3"],
+          "ans": "3"
+        }
+      ]
+    },
+    {
+      "name": "SSC Favorite Patterns",
+      "tag": "SSC Special",
+      "formula": "(x+1/x)² = x² + 2 + 1/x²\n(x+1/x)³ = x³ + 3x + 3/x + 1/x³\nIf x+1/x = k, then x²+1/x² = k²-2",
+      "vars": [],
+      "examples": [
+        {
+          "q": "If x+1/x = 4, find x³+1/x³",
+          "steps": ["x³+1/x³ = (x+1/x)³ - 3(x+1/x)", "= 4³ - 3×4 = 64 - 12"],
+          "ans": "52"
+        }
+      ]
+    },
+    {
+      "name": "Age Problems",
+      "tag": "Application",
+      "formula": "Current age = x\nAfter n years: x+n\nBefore n years: x-n\nSum of ages: Use variables",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Father is 3 times older than son. After 10 years, ratio is 2:1. Find current ages.",
+          "steps": ["Let son = x, father = 3x", "After 10 years: (x+10):(3x+10) = 1:2", "2(x+10) = 3x+10", "2x+20 = 3x+10", "x = 10"],
+          "ans": "Son = 10 years, Father = 30 years"
+        }
+      ]
+    },
+    {
+      "name": "Speed-Distance-Time Algebra",
+      "tag": "Application",
+      "formula": "Distance = Speed × Time\nRelative speed problems\nUse variables for unknown quantities",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Train covers 300km. If speed increased by 20km/hr, time reduces by 1 hour. Find original speed.",
+          "steps": ["Let speed = x, time = 300/x", "300/(x+20) = 300/x - 1", "300x = 300(x+20) - x(x+20)", "300x = 300x+6000 - x²-20x", "x²-20x-6000=0", "x=60 or -100"],
+          "ans": "60 km/hr"
+        }
+      ]
+    },
+    {
+      "name": "Mixture Problems",
+      "tag": "Application",
+      "formula": "Alligation method:\n(Cheaper rate) : (Dearer rate) = (Mean - Cheaper) : (Dearer - Mean)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Mix tea at ?60/kg with tea at ?80/kg to get ?70/kg. Find ratio.",
+          "steps": ["(80-70) : (70-60) = 10:10"],
+          "ans": "1:1"
+        }
+      ]
+    },
+    {
+      "name": "Work and Time Algebra",
+      "tag": "Application",
+      "formula": "Work = Rate × Time\nIf A alone: a days, B alone: b days\nTogether: 1/a + 1/b work per day",
+      "vars": [],
+      "examples": [
+        {
+          "q": "A can do work in 15 days, B in 20 days. Together?",
+          "steps": ["Work per day = 1/15 + 1/20 = 4/60 + 3/60 = 7/60", "Time = 60/7"],
+          "ans": "8 4/7 days"
+        }
+      ]
+    },
+    {
+      "name": "Partnership Problems",
+      "tag": "Business Math",
+      "formula": "Profit sharing ratio = Investment × Time\nIf investments different, calculate accordingly",
+      "vars": [],
+      "examples": [
+        {
+          "q": "A invests ?5000 for 6 months, B invests ?8000 for 4 months. Profit ratio?",
+          "steps": ["A's share : B's share = 5000×6 : 8000×4", "= 30000 : 32000"],
+          "ans": "15:16"
+        }
+      ]
+    },
+    {
+      "name": "Number Series Algebra",
+      "tag": "Important",
+      "formula": "Arithmetic: a, a+d, a+2d, ...\nGeometric: a, ar, ar², ...\nFind nth term using formulas",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find 10th term of AP: 3, 7, 11, ...",
+          "steps": ["a=3, d=4", "a_10 = 3 + 9×4 = 3 + 36"],
+          "ans": "39"
+        }
+      ]
+    },
+    {
+      "name": "Polynomial Division",
+      "tag": "Advanced",
+      "formula": "Long division method\nSynthetic division for linear factors\nRemainder theorem: f(a) = remainder when divided by (x-a)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Divide x²+5x+6 by (x+2)",
+          "steps": ["Using factorization: (x+2)(x+3)"],
+          "ans": "x+3"
+        }
+      ]
+    },
+    {
+      "name": "Coordinate Geometry Basics",
+      "tag": "Geometry",
+      "formula": "Distance = sqrt[(x2-x1)² + (y2-y1)²]\nSlope = (y2-y1)/(x2-x1)\nMidpoint = ((x1+x2)/2, (y1+y2)/2)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find distance between (1,2) and (4,6)",
+          "steps": ["= sqrt[(4-1)² + (6-2)²] = sqrt[9 + 16]"],
+          "ans": "5 units"
+        }
+      ]
+    },
+    {
+      "name": "Linear Programming Basics",
+      "tag": "Advanced",
+      "formula": "Maximize/Minimize objective function\nSubject to constraints\nFind feasible region",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Maximize Z = 2x + 3y, subject to x + y = 10, x,y = 0",
+          "steps": ["At (10,0): Z = 20", "At (0,10): Z = 30"],
+          "ans": "Maximum Z = 30 at (0,10)"
+        }
+      ]
+    },
+    {
+      "name": "Probability Basics",
+      "tag": "Important",
+      "formula": "P(A) = Favorable outcomes / Total outcomes\nP(A or B) = P(A) + P(B) - P(A and B)\nP(A and B) = P(A) × P(B) (independent)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Coin tossed twice. Probability of exactly one head?",
+          "steps": ["Total outcomes = 4 (HH, HT, TH, TT)", "Favorable = 2 (HT, TH)", "P = 2/4"],
+          "ans": "1/2"
+        }
+      ]
+    },
+    {
+      "name": "Set Theory Basics",
+      "tag": "Foundation",
+      "formula": "|A U B| = |A| + |B| - |A n B|\n|A n B| = |A| + |B| - |A U B|\nComplement: |A'| = Total - |A|",
+      "vars": [],
+      "examples": [
+        {
+          "q": "|A|=20, |B|=30, |A n B|=10. Find |A U B|",
+          "steps": ["|A U B| = 20 + 30 - 10"],
+          "ans": "40"
+        }
+      ]
+    },
+    {
+      "name": "Complex Numbers Basics",
+      "tag": "Advanced",
+      "formula": "i² = -1\na + bi: real part a, imaginary part b\nAdd: (a+bi) + (c+di) = (a+c) + (b+d)i",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Add: (3+2i) + (1-4i)",
+          "steps": ["= (3+1) + (2-4)i"],
+          "ans": "4 - 2i"
+        }
+      ]
+    },
+    {
+      "name": "Matrices Basics",
+      "tag": "Advanced",
+      "formula": "Addition: Element-wise\nMultiplication: Row × Column\n2×2 determinant: ad - bc",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find determinant of [[2,3],[1,4]]",
+          "steps": ["= 2×4 - 3×1 = 8 - 3"],
+          "ans": "5"
+        }
+      ]
+    },
+    {
+      "name": "Sequence and Series",
+      "tag": "Important",
+      "formula": "AP: a, a+d, a+2d, ...\nGP: a, ar, ar², ...\nSum AP: n/2[2a+(n-1)d]\nSum GP: a(r^n-1)/(r-1)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Sum of first 10 terms of AP: 2, 5, 8, ...",
+          "steps": ["a=2, d=3, n=10", "S = 10/2[2×2+9×3] = 5[4+27]"],
+          "ans": "155"
+        }
+      ]
+    },
+    {
+      "name": "Binomial Theorem",
+      "tag": "Advanced",
+      "formula": "(a+b)^n = C(n,0)a^n + C(n,1)a^(n-1)b + ... + C(n,n)b^n\nC(n,r) = n!/(r!(n-r)!)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Expand (x+2)³",
+          "steps": ["= C(3,0)x³ + C(3,1)x²(2) + C(3,2)x(2²) + C(3,3)2³", "= x³ + 6x² + 12x + 8"],
+          "ans": "x³ + 6x² + 12x + 8"
+        }
+      ]
+    },
+    {
+      "name": "Permutation and Combination",
+      "tag": "Important",
+      "formula": "nPr = n!/(n-r)!\nnCr = n!/(r!(n-r)!)\nnCr = nC(n-r)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Select 2 from 5",
+          "steps": ["5C2 = 5!/(2!×3!) = 120/(2×6)"],
+          "ans": "10"
+        }
+      ]
+    },
+    {
+      "name": "Mathematical Induction",
+      "tag": "Advanced",
+      "formula": "Prove for n=1\nAssume true for n=k\nProve for n=k+1",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Prove: 1+2+...+n = n(n+1)/2",
+          "steps": ["n=1: 1=1×2/2 = 1 (true)", "Assume: 1+...+k = k(k+1)/2", "For k+1: 1+...+k+(k+1) = k(k+1)/2 + (k+1)", "= (k+1)(k/2+1) = (k+1)(k+2)/2"],
+          "ans": "Proved"
+        }
+      ]
+    },
+    {
+      "name": "Functional Equations",
+      "tag": "Advanced",
+      "formula": "Find function satisfying given conditions\nUse substitution and elimination",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find f(x) if f(x+1) = f(x) + 2x + 1 and f(0) = 1",
+          "steps": ["Try f(x) = x² + 1", "f(x+1) = (x+1)² + 1 = x² + 2x + 2", "f(x) + 2x + 1 = x² + 1 + 2x + 1 = x² + 2x + 2"],
+          "ans": "f(x) = x² + 1"
+        }
+      ]
+    },
+    {
+      "name": "Recursive Relations",
+      "tag": "Advanced",
+      "formula": "a_(n+1) = f(a_n)\nFind general term using patterns",
+      "vars": [],
+      "examples": [
+        {
+          "q": "a_1 = 2, a_(n+1) = a_n + 3. Find a_10",
+          "steps": ["This is AP with a=2, d=3", "a_10 = 2 + 9×3"],
+          "ans": "29"
+        }
+      ]
+    },
+    {
+      "name": "Modular Arithmetic",
+      "tag": "Advanced",
+      "formula": "a = b (mod n) means n divides (a-b)\nProperties: (a+b) mod n = [(a mod n) + (b mod n)] mod n",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Find 17 mod 5",
+          "steps": ["17 = 3×5 + 2"],
+          "ans": "2"
+        }
+      ]
+    },
+    {
+      "name": "Graph Theory Basics",
+      "tag": "Advanced",
+      "formula": "Vertices, edges, degree\nHandshake lemma: Sum of degrees = 2 × edges",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Triangle has 3 vertices, each degree 2. Number of edges?",
+          "steps": ["Sum of degrees = 3×2 = 6", "Edges = 6/2"],
+          "ans": "3"
+        }
+      ]
+    },
+    {
+      "name": "Calculus Basics",
+      "tag": "Advanced",
+      "formula": "Derivative: dy/dx = limit of difference quotient\nIntegration: Area under curve\nPower rule: d/dx(x^n) = nx^(n-1)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Derivative of x³",
+          "steps": ["d/dx(x³) = 3x²"],
+          "ans": "3x²"
+        }
+      ]
+    },
+    {
+      "name": "Trigonometric Algebra",
+      "tag": "Important",
+      "formula": "sin²x + cos²x = 1\n1 + tan²x = sec²x\n1 + cot²x = cosec²x",
+      "vars": [],
+      "examples": [
+        {
+          "q": "If sin x = 3/5, find cos x",
+          "steps": ["cos²x = 1 - sin²x = 1 - 9/25 = 16/25", "cos x = 4/5"],
+          "ans": "4/5"
+        }
+      ]
+    },
+    {
+      "name": "Vector Algebra",
+      "tag": "Advanced",
+      "formula": "Dot product: a·b = |a||b|cos?\nCross product: a×b = |a||b|sin?\nMagnitude: |a| = sqrt(x²+y²+z²)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Magnitude of vector (3,4)",
+          "steps": ["|a| = sqrt(3²+4²) = sqrt25"],
+          "ans": "5"
+        }
+      ]
+    },
+    {
+      "name": "Differential Equations",
+      "tag": "Advanced",
+      "formula": "dy/dx = f(x,y)\nSeparable: dy/dx = g(x)h(y)\nLinear: dy/dx + P(x)y = Q(x)",
+      "vars": [],
+      "examples": [
+        {
+          "q": "Solve: dy/dx = 2x",
+          "steps": ["dy = 2x dx", "?dy = ?2x dx", "y = x² + C"],
+          "ans": "y = x² + C"
+        }
+      ]
+    }
+  ]
+}

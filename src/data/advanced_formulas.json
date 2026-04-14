@@ -1,0 +1,271 @@
+{
+  "title": "Advanced Competitive Exam Formulas",
+  "description": "Additional formulas for competitive exams covering topics beyond basic mathematics",
+  "topics": [
+    {
+      "id": "progressions",
+      "name": "Progressions",
+      "icon": "📈",
+      "color": "#f59e0b",
+      "formulas": [
+        {
+          "name": "Arithmetic Progression (AP)",
+          "tag": "Foundation",
+          "formula": "nth term: aₙ = a + (n-1)d\nSum: Sₙ = n/2 × [2a + (n-1)d]\nSum: Sₙ = n/2 × [a + l]",
+          "vars": [
+            {"k": "a", "d": "First term"},
+            {"k": "d", "d": "Common difference"},
+            {"k": "n", "d": "Number of terms"},
+            {"k": "l", "d": "Last term"}
+          ],
+          "examples": [
+            {
+              "q": "Find the 10th term of AP: 2, 5, 8, 11, ...",
+              "steps": ["a = 2, d = 3", "a₁₀ = 2 + (10-1)×3 = 2 + 27"],
+              "ans": "29"
+            }
+          ]
+        },
+        {
+          "name": "Geometric Progression (GP)",
+          "tag": "Important",
+          "formula": "nth term: aₙ = ar^(n-1)\nSum finite: Sₙ = a(rⁿ-1)/(r-1)\nSum infinite: S∞ = a/(1-r) if |r|<1",
+          "vars": [
+            {"k": "a", "d": "First term"},
+            {"k": "r", "d": "Common ratio"},
+            {"k": "n", "d": "Number of terms"}
+          ],
+          "examples": [
+            {
+              "q": "Find sum of GP: 2 + 6 + 18 + 54 (4 terms)",
+              "steps": ["a = 2, r = 3, n = 4", "S₄ = 2(3⁴-1)/(3-1) = 2(81-1)/2"],
+              "ans": "80"
+            }
+          ]
+        },
+        {
+          "name": "Harmonic Progression (HP)",
+          "tag": "Advanced",
+          "formula": "If a, b, c are in HP, then 1/a, 1/b, 1/c are in AP\nnth term: 1/aₙ = 1/a + (n-1)d",
+          "vars": [
+            {"k": "a", "d": "First term"},
+            {"k": "d", "d": "Common difference of reciprocals"}
+          ],
+          "examples": [
+            {
+              "q": "Find the 4th term of HP: 1, 2/3, 1/2, ...",
+              "steps": ["Reciprocals: 1, 3/2, 2 (AP with d=1/2)", "4th reciprocal = 1 + 3×1/2 = 5/2"],
+              "ans": "2/5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "logarithms",
+      "name": "Logarithms",
+      "icon": "📊",
+      "color": "#10b981",
+      "formulas": [
+        {
+          "name": "Basic Logarithm Rules",
+          "tag": "Foundation",
+          "formula": "logₐ(b) = c → aᶜ = b\nlogₐ(a) = 1\nlogₐ(1) = 0\nlog(ab) = log a + log b\nlog(a/b) = log a - log b\nlog(aⁿ) = n log a",
+          "vars": [
+            {"k": "a", "d": "Base of logarithm"},
+            {"k": "b", "d": "Number"}
+          ],
+          "examples": [
+            {
+              "q": "If log₂(8) = x, find x",
+              "steps": ["2ˣ = 8", "2ˣ = 2³"],
+              "ans": "x = 3"
+            }
+          ]
+        },
+        {
+          "name": "Change of Base Formula",
+          "tag": "Important",
+          "formula": "logₐ(b) = logₓ(b) / logₓ(a)\nCommonly: logₐ(b) = log₁₀(b) / log₁₀(a)",
+          "vars": [
+            {"k": "a", "d": "Original base"},
+            {"k": "b", "d": "Number"},
+            {"k": "x", "d": "New base"}
+          ],
+          "examples": [
+            {
+              "q": "Find log₃(5) using base 10",
+              "steps": ["log₃(5) = log₁₀(5) / log₁₀(3)", "= 0.6990 / 0.4771"],
+              "ans": "≈ 1.465"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "permutation_combination",
+      "name": "Permutation & Combination",
+      "icon": "🔢",
+      "color": "#8b5cf6",
+      "formulas": [
+        {
+          "name": "Factorial",
+          "tag": "Foundation",
+          "formula": "n! = n × (n-1) × (n-2) × ... × 1\n0! = 1\nn! = n × (n-1)!",
+          "vars": [
+            {"k": "n!", "d": "Factorial of n"}
+          ],
+          "examples": [
+            {
+              "q": "Find 5!",
+              "steps": ["5! = 5 × 4 × 3 × 2 × 1"],
+              "ans": "120"
+            }
+          ]
+        },
+        {
+          "name": "Permutation (Arrangement)",
+          "tag": "Most Asked",
+          "formula": "nPr = n! / (n-r)!\nCircular permutation: (n-1)!\nWith repetition: nʳ",
+          "vars": [
+            {"k": "n", "d": "Total items"},
+            {"k": "r", "d": "Items to arrange"}
+          ],
+          "examples": [
+            {
+              "q": "How many ways to arrange 3 books from 5?",
+              "steps": ["5P3 = 5! / (5-3)! = 120 / 2! = 120 / 2"],
+              "ans": "60 ways"
+            }
+          ]
+        },
+        {
+          "name": "Combination (Selection)",
+          "tag": "Most Asked",
+          "formula": "nCr = n! / (r! × (n-r)!)\nnCr = nC(n-r)",
+          "vars": [
+            {"k": "n", "d": "Total items"},
+            {"k": "r", "d": "Items to select"}
+          ],
+          "examples": [
+            {
+              "q": "How many ways to select 3 players from 5?",
+              "steps": ["5C3 = 5! / (3! × 2!) = 120 / (6 × 2) = 120 / 12"],
+              "ans": "10 ways"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "probability",
+      "name": "Probability",
+      "icon": "🎲",
+      "color": "#ef4444",
+      "formulas": [
+        {
+          "name": "Basic Probability",
+          "tag": "Foundation",
+          "formula": "P(E) = Number of favorable outcomes / Total outcomes\n0 ≤ P(E) ≤ 1\nP(E') = 1 - P(E)",
+          "vars": [
+            {"k": "P(E)", "d": "Probability of event E"},
+            {"k": "P(E')", "d": "Probability of event not E"}
+          ],
+          "examples": [
+            {
+              "q": "Find probability of getting a head in coin toss",
+              "steps": ["Favorable = 1 (Head), Total = 2 (H, T)", "P = 1/2"],
+              "ans": "1/2 or 0.5"
+            }
+          ]
+        },
+        {
+          "name": "Addition Rule",
+          "tag": "Important",
+          "formula": "P(A or B) = P(A) + P(B) - P(A and B)\nIf mutually exclusive: P(A or B) = P(A) + P(B)",
+          "vars": [
+            {"k": "P(A or B)", "d": "Probability of A or B occurring"},
+            {"k": "P(A and B)", "d": "Probability of both A and B"}
+          ],
+          "examples": [
+            {
+              "q": "P(A) = 0.3, P(B) = 0.4, P(A and B) = 0.1. Find P(A or B)",
+              "steps": ["P(A or B) = 0.3 + 0.4 - 0.1"],
+              "ans": "0.6"
+            }
+          ]
+        },
+        {
+          "name": "Multiplication Rule",
+          "tag": "Important",
+          "formula": "P(A and B) = P(A) × P(B|A)\nIf independent: P(A and B) = P(A) × P(B)",
+          "vars": [
+            {"k": "P(B|A)", "d": "Probability of B given A has occurred"}
+          ],
+          "examples": [
+            {
+              "q": "P(A) = 0.5, P(B|A) = 0.3. Find P(A and B)",
+              "steps": ["P(A and B) = 0.5 × 0.3"],
+              "ans": "0.15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coordinate_geometry",
+      "name": "Coordinate Geometry",
+      "icon": "📐",
+      "color": "#3b82f6",
+      "formulas": [
+        {
+          "name": "Distance Formula",
+          "tag": "Foundation",
+          "formula": "Distance between (x₁,y₁) and (x₂,y₂)\nd = √[(x₂-x₁)² + (y₂-y₁)²]",
+          "vars": [
+            {"k": "(x₁,y₁)", "d": "First point"},
+            {"k": "(x₂,y₂)", "d": "Second point"}
+          ],
+          "examples": [
+            {
+              "q": "Find distance between (2,3) and (5,7)",
+              "steps": ["d = √[(5-2)² + (7-3)²] = √[3² + 4²] = √[9 + 16]"],
+              "ans": "5 units"
+            }
+          ]
+        },
+        {
+          "name": "Section Formula",
+          "tag": "Important",
+          "formula": "Point dividing (x₁,y₁) and (x₂,y₂) in ratio m:n\nx = (mx₂ + nx₁)/(m+n)\ny = (my₂ + ny₁)/(m+n)",
+          "vars": [
+            {"k": "m:n", "d": "Ratio of division"}
+          ],
+          "examples": [
+            {
+              "q": "Find point dividing (1,2) and (7,8) in ratio 2:1",
+              "steps": ["x = (2×7 + 1×1)/(2+1) = (14+1)/3 = 5", "y = (2×8 + 1×2)/(2+1) = (16+2)/3 = 6"],
+              "ans": "(5, 6)"
+            }
+          ]
+        },
+        {
+          "name": "Line Equation",
+          "tag": "Most Asked",
+          "formula": "Slope form: y = mx + c\nPoint-slope: y-y₁ = m(x-x₁)\nTwo-point: (y-y₁)/(x-x₁) = (y₂-y₁)/(x₂-x₁)",
+          "vars": [
+            {"k": "m", "d": "Slope = (y₂-y₁)/(x₂-x₁)"},
+            {"k": "c", "d": "Y-intercept"}
+          ],
+          "examples": [
+            {
+              "q": "Find equation of line through (1,2) and (3,6)",
+              "steps": ["m = (6-2)/(3-1) = 4/2 = 2", "y-2 = 2(x-1)"],
+              "ans": "y = 2x"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
