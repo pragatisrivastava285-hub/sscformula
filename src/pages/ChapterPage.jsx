@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { theme } from '../styles/theme';
 import Layout from '../components/layout/Layout';
+import Header from '../components/layout/Header';
 import Card from '../components/common/Card';
 import Tag from '../components/common/Tag';
 import Button from '../components/common/Button';
@@ -122,6 +123,7 @@ const ChapterPage = () => {
 
   return (
     <Layout>
+      <Header />
       {/* Header */}
       <div style={headerStyles}>
         <Button 

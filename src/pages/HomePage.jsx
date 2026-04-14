@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { theme } from '../styles/theme';
 import Layout from '../components/layout/Layout';
+import Header from '../components/layout/Header';
 import Card from '../components/common/Card';
 import SearchInput from '../components/common/SearchInput';
 import Tag from '../components/common/Tag';
@@ -171,6 +172,7 @@ const HomePage = () => {
 
   return (
     <Layout>
+      <Header />
       {/* Hero Section */}
       <div style={heroStyles}>
         <div style={glowStyles(theme.colors.primary, 260, -60, -60)} />

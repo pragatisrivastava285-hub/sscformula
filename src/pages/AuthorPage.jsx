@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { theme } from '../styles/theme';
 import Layout from '../components/layout/Layout';
+import Header from '../components/layout/Header';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
 import { loadAuthor } from '../utils/dataLoader';
@@ -210,6 +211,7 @@ const AuthorPage = () => {
 
   return (
     <Layout>
+      <Header />
       {/* Header */}
       <div style={headerStyles}>
         <div style={glowStyles(theme.colors.primary, 400, -200)} />
