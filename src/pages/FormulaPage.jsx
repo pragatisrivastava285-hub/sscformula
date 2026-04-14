@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { theme } from '../styles/theme';
+import { motion } from 'framer-motion';
+import { useTheme } from '../contexts/ThemeContext';
 import Layout from '../components/layout/Layout';
 import Header from '../components/layout/Header';
-import Card from '../components/common/Card';
-import Tag from '../components/common/Tag';
-import Button from '../components/common/Button';
 import { getChapterById, getFormulaById } from '../utils/dataLoader';
 
 const FormulaPage = () => {
   const { chapterId, formulaIndex } = useParams();
   const navigate = useNavigate();
+  const { isDark } = useTheme();
   const chapter = getChapterById(chapterId);
   const [currentFormulaIndex, setCurrentFormulaIndex] = useState(parseInt(formulaIndex));
   
@@ -19,9 +18,14 @@ const FormulaPage = () => {
   if (!chapter || !formula) {
     return (
       <Layout>
-        <div style={{ padding: theme.spacing.xl, textAlign: 'center' }}>
-          <h1>Formula not found</h1>
-          <Button onClick={() => navigate('/')}>Go Home</Button>
+        <div style={{ padding: 'var(--spacing-2xl)', textAlign: 'center' }}>
+          <h1 style={{ fontSize: '2rem', marginBottom: 'var(--spacing-lg)' }}>Formula not found</h1>
+          <button 
+            onClick={() => navigate('/')}
+            className="btn btn-primary"
+          >
+            Go Home
+          </button>
         </div>
       </Layout>
     );
@@ -49,378 +53,444 @@ const FormulaPage = () => {
     }
   };
 
-  const headerStyles = {
-    background: theme.colors.surface,
-    borderBottom: `1px solid ${theme.colors.border}`,
-    padding: '13px 16px',
-    display: 'flex',
-    alignItems: 'center',
-    gap: theme.spacing.md,
-    position: 'sticky',
-    top: 0,
-    zIndex: 20,
+  const getChapterColor = (chapterColor) => {
+    const colorMap = {
+      '#f97316': 'var(--accent-orange)',
+      '#4ade80': 'var(--accent-green)',
+      '#3b82f6': 'var(--accent-blue)',
+      '#8b5cf6': 'var(--accent-purple)',
+      '#ef4444': 'var(--accent-red)',
+      '#f59e0b': 'var(--accent-yellow)'
+    };
+    return colorMap[chapterColor] || 'var(--accent-orange)';
   };
 
-  const headerTitleStyles = {
-    fontFamily: theme.typography.fontFamily.body,
-    fontWeight: theme.typography.fontWeight.semibold,
-    fontSize: theme.typography.fontSize.sm,
-    color: theme.colors.textSecondary,
-    lineHeight: theme.typography.lineHeight.tight,
-  };
-
-  const headerSubtitleStyles = {
-    fontSize: theme.typography.fontSize.xs,
-    color: theme.colors.textDim,
-  };
-
-  const dotsContainerStyles = {
-    display: 'flex',
-    gap: '4px',
-    flexWrap: 'wrap',
-    justifyContent: 'flex-end',
-    maxWidth: '100px',
-  };
-
-  const dotStyles = (isActive) => ({
-    width: '8px',
-    height: '8px',
-    borderRadius: '50%',
-    background: isActive ? chapter.color : theme.colors.border,
-    cursor: 'pointer',
-    transition: 'background 0.2s ease',
-  });
-
-  const contentStyles = {
-    padding: theme.spacing.lg,
-    maxWidth: '700px',
-    margin: '0 auto',
-    paddingBottom: '50px',
-  };
-
-  const formulaCardStyles = {
-    marginBottom: theme.spacing.md,
-    position: 'relative',
-    overflow: 'hidden',
-    border: `2px solid ${chapter.color}`,
-  };
-
-  const glowStyles = {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    width: '120px',
-    height: '120px',
-    borderRadius: '50%',
-    background: `radial-gradient(circle,${chapter.color}22,transparent 70%)`,
-    pointerEvents: 'none',
-  };
-
-  const formulaHeaderStyles = {
-    marginBottom: theme.spacing.md,
-  };
-
-  const formulaTitleStyles = {
-    fontFamily: theme.typography.fontFamily.display,
-    fontWeight: theme.typography.fontWeight.semibold,
-    fontSize: theme.typography.fontSize['2xl'],
-    color: chapter.color,
-    margin: 0,
-    lineHeight: theme.typography.lineHeight.tight,
-  };
-
-  const formulaDisplayStyles = {
-    background: '#020812',
-    borderRadius: theme.borderRadius.medium,
-    padding: '18px 16px',
-    margin: '14px 0',
-    fontFamily: theme.typography.fontFamily.mono,
-    fontSize: '0.97rem',
-    color: theme.colors.success,
-    lineHeight: theme.typography.lineHeight.loose,
-    border: `1px solid ${chapter.color}44`,
-    whiteSpace: 'pre-wrap',
-    wordBreak: 'break-word',
-    letterSpacing: '0.3px',
-  };
-
-  const variablesSectionStyles = {
-    marginTop: '4px',
-  };
-
-  const variablesTitleStyles = {
-    fontSize: theme.typography.fontSize.xs,
-    textTransform: 'uppercase',
-    letterSpacing: '1px',
-    color: theme.colors.info,
-    fontWeight: theme.typography.fontWeight.semibold,
-    marginBottom: theme.spacing.sm,
-  };
-
-  const variableItemStyles = {
-    display: 'flex',
-    gap: theme.spacing.sm,
-    marginBottom: theme.spacing.sm,
-    alignItems: 'flex-start',
-  };
-
-  const variableKeyStyles = {
-    background: theme.colors.border,
-    color: '#93c5fd',
-    fontFamily: theme.typography.fontFamily.mono,
-    fontSize: theme.typography.fontSize.sm,
-    padding: '3px 9px',
-    borderRadius: '6px',
-    flexShrink: 0,
-    marginTop: '1px',
-    fontWeight: theme.typography.fontWeight.semibold,
-  };
-
-  const variableDescStyles = {
-    fontSize: theme.typography.fontSize.sm,
-    color: theme.colors.textSecondary,
-    lineHeight: theme.typography.lineHeight.relaxed,
-    fontFamily: theme.typography.fontFamily.body,
-  };
-
-  const exampleCardStyles = {
-    background: theme.colors.surfaceDark,
-    border: `1.5px solid ${theme.colors.border}`,
-    borderRadius: theme.borderRadius.xl,
-    padding: '20px 18px',
-    marginBottom: theme.spacing.md,
-  };
-
-  const exampleBadgeStyles = {
-    display: 'inline-block',
-    background: `${theme.colors.primary}15`,
-    border: `1px solid ${theme.colors.primary}30`,
-    borderRadius: theme.borderRadius.small,
-    padding: '4px 10px',
-    fontSize: theme.typography.fontSize.xs,
-    color: theme.colors.primary,
-    fontWeight: theme.typography.fontWeight.semibold,
-    textTransform: 'uppercase',
-    letterSpacing: '0.5px',
-    marginBottom: theme.spacing.md,
-  };
-
-  const questionStyles = {
-    background: theme.colors.surface,
-    borderRadius: theme.borderRadius.small,
-    padding: '12px 14px',
-    marginBottom: theme.spacing.md,
-    fontSize: theme.typography.fontSize.sm,
-    lineHeight: theme.typography.lineHeight.relaxed,
-    fontFamily: theme.typography.fontFamily.body,
-    color: theme.colors.text,
-    borderLeft: `3px solid ${chapter.color}`,
-  };
-
-  const stepsTitleStyles = {
-    fontSize: theme.typography.fontSize.xs,
-    textTransform: 'uppercase',
-    letterSpacing: '1px',
-    color: theme.colors.textMuted,
-    marginBottom: theme.spacing.sm,
-  };
-
-  const stepItemStyles = {
-    display: 'flex',
-    gap: theme.spacing.sm,
-    marginBottom: '7px',
-    alignItems: 'flex-start',
-  };
-
-  const stepNumberStyles = {
-    background: theme.colors.border,
-    color: '#93c5fd',
-    fontSize: theme.typography.fontSize.xs,
-    fontWeight: theme.typography.fontWeight.semibold,
-    width: '20px',
-    height: '20px',
-    borderRadius: '5px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexShrink: 0,
-    marginTop: '1px',
-  };
-
-  const stepTextStyles = {
-    fontSize: theme.typography.fontSize.sm,
-    color: theme.colors.textSecondary,
-    lineHeight: theme.typography.lineHeight.relaxed,
-    fontFamily: theme.typography.fontFamily.body,
-  };
-
-  const answerStyles = {
-    background: '#020812',
-    borderRadius: theme.borderRadius.small,
-    padding: '12px 14px',
-    fontFamily: theme.typography.fontFamily.mono,
-    color: theme.colors.success,
-    fontSize: theme.typography.fontSize.sm,
-    marginTop: theme.spacing.sm,
-    border: '1px solid #14532d',
-    display: 'flex',
-    alignItems: 'center',
-    gap: theme.spacing.xs,
-  };
-
-  const navigationStyles = {
-    display: 'flex',
-    gap: theme.spacing.md,
-    marginTop: '6px',
-  };
-
-  const progressStyles = {
-    marginTop: theme.spacing.md,
-    background: theme.colors.surface,
-    borderRadius: theme.borderRadius.medium,
-    padding: '12px 14px',
-    border: `1px solid ${theme.colors.border}`,
-  };
-
-  const progressHeaderStyles = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginBottom: theme.spacing.sm,
-  };
-
-  const progressLabelStyles = {
-    fontSize: theme.typography.fontSize.xs,
-    color: theme.colors.textMuted,
-    textTransform: 'uppercase',
-    letterSpacing: '0.5px',
-  };
-
-  const progressValueStyles = {
-    fontSize: theme.typography.fontSize.xs,
-    color: chapter.color,
-    fontWeight: theme.typography.fontWeight.semibold,
-  };
-
-  const progressBarStyles = {
-    background: theme.colors.border,
-    borderRadius: theme.borderRadius.full,
-    height: '6px',
-  };
-
-  const progressFillStyles = {
-    background: chapter.color,
-    borderRadius: theme.borderRadius.full,
-    height: '6px',
-    width: `${((currentFormulaIndex + 1) / chapter.formulas.length) * 100}%`,
-    transition: 'width 0.3s ease',
+  const getTagColor = (tagName) => {
+    const tagMap = {
+      'Most Asked': 'tag-orange',
+      'Important': 'tag-blue',
+      'Foundation': 'tag-green',
+      'Trick': 'tag-purple',
+      'Shortcut': 'tag-yellow',
+      'Must Know': 'tag-red',
+      'Must Memorize': 'tag-purple',
+      'SSC Favourite': 'tag-orange'
+    };
+    return tagMap[tagName] || 'tag-blue';
   };
 
   return (
     <Layout>
       <Header />
+      
       {/* Header */}
-      <div style={headerStyles}>
-        <Button 
-          variant="secondary" 
-          onClick={goBack}
-          style={{ padding: '8px 14px' }}
-        >
-          ← Back
-        </Button>
-        <div style={{ flex: 1 }}>
-          <div style={headerTitleStyles}>{chapter.icon} {chapter.name}</div>
-          <div style={headerSubtitleStyles}>Formula {currentFormulaIndex + 1} of {chapter.formulas.length}</div>
-        </div>
-        <div style={dotsContainerStyles}>
-          {chapter.formulas.map((_, index) => (
-            <div
-              key={index}
-              onClick={() => openFormula(index)}
-              style={dotStyles(index === currentFormulaIndex)}
-            />
-          ))}
+      <div style={{
+        background: 'var(--bg-primary)',
+        borderBottom: '1px solid var(--border-primary)',
+        padding: 'var(--spacing-lg)',
+        position: 'sticky',
+        top: 0,
+        zIndex: 20,
+        backdropFilter: 'blur(10px)'
+      }}>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          maxWidth: '1200px',
+          margin: '0 auto'
+        }}>
+          <button
+            onClick={goBack}
+            className="btn btn-secondary"
+            style={{
+              background: 'transparent',
+              border: '2px solid var(--border-primary)',
+              color: 'var(--text-primary)'
+            }}
+          >
+            ← Back
+          </button>
+          
+          <div style={{ textAlign: 'center', flex: 1 }}>
+            <div style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: '1rem',
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              color: 'var(--text-primary)',
+              marginBottom: 'var(--spacing-xs)'
+            }}>
+              {chapter.icon} {chapter.name}
+            </div>
+            <div style={{
+              fontSize: '0.75rem',
+              color: 'var(--text-muted)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em'
+            }}>
+              Formula {currentFormulaIndex + 1} of {chapter.formulas.length}
+            </div>
+          </div>
+          
+          {/* Progress Dots */}
+          <div style={{
+            display: 'flex',
+            gap: '4px',
+            flexWrap: 'wrap',
+            justifyContent: 'flex-end',
+            maxWidth: '120px'
+          }}>
+            {chapter.formulas.map((_, index) => (
+              <div
+                key={index}
+                onClick={() => openFormula(index)}
+                style={{
+                  width: '8px',
+                  height: '8px',
+                  borderRadius: '50%',
+                  background: index === currentFormulaIndex ? getChapterColor(chapter.color) : 'var(--border-primary)',
+                  cursor: 'pointer',
+                  transition: 'all var(--transition-fast)'
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Content */}
-      <div style={contentStyles}>
-        {/* Formula Card */}
-        <Card background="formula" style={formulaCardStyles}>
-          <div style={glowStyles} />
-          <div style={formulaHeaderStyles}>
-            <Tag style={{ marginBottom: '10px', display: 'inline-block' }}>
-              {formula.tag}
-            </Tag>
-            <h2 style={formulaTitleStyles}>{formula.name}</h2>
+      {/* Two-Column Layout */}
+      <div className="formula-page-grid" style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: 'var(--spacing-2xl)',
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: 'var(--spacing-2xl)',
+        alignItems: 'start'
+      }}>
+        
+        {/* Left Column - Formula Display */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="formula-sticky"
+          style={{
+            position: 'sticky',
+            top: '120px',
+            height: 'fit-content'
+          }}
+        >
+          <div style={{
+            background: 'var(--bg-surface)',
+            border: '2px solid var(--border-primary)',
+            borderRadius: 'var(--radius-xl)',
+            padding: 'var(--spacing-2xl)',
+            textAlign: 'center',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            {/* Glow Effect */}
+            <div style={{
+              position: 'absolute',
+              top: '-50px',
+              right: '-50px',
+              width: '150px',
+              height: '150px',
+              borderRadius: '50%',
+              background: `radial-gradient(circle, ${getChapterColor(chapter.color)}22, transparent 70%)`,
+              pointerEvents: 'none'
+            }} />
+            
+            {/* Tag */}
+            <div style={{ marginBottom: 'var(--spacing-lg)' }}>
+              <span className={`tag ${getTagColor(formula.tag)}`}>
+                {formula.tag}
+              </span>
+            </div>
+            
+            {/* Formula Title */}
+            <h2 style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: '1.5rem',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              color: getChapterColor(chapter.color),
+              marginBottom: 'var(--spacing-xl)',
+              lineHeight: 1.2
+            }}>
+              {formula.name}
+            </h2>
+            
+            {/* Formula Display */}
+            <div className="formula-text" style={{
+              fontSize: '1.75rem',
+              lineHeight: 1.4,
+              padding: 'var(--spacing-xl)',
+              margin: 'var(--spacing-lg) 0',
+              background: isDark ? '#0A0A0A' : '#F8F8F8',
+              border: `2px solid ${getChapterColor(chapter.color)}`,
+              borderRadius: 'var(--radius-lg)',
+              color: getChapterColor(chapter.color),
+              fontWeight: 500,
+              letterSpacing: '0.05em',
+              boxShadow: `0 0 20px ${getChapterColor(chapter.color)}22`
+            }}>
+              {formula.formula}
+            </div>
           </div>
-          
-          <div style={formulaDisplayStyles}>
-            {formula.formula}
-          </div>
-          
+        </motion.div>
+
+        {/* Right Column - Details */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+        >
+          {/* Variables Explained */}
           {formula.vars.length > 0 && (
-            <div style={variablesSectionStyles}>
-              <div style={variablesTitleStyles}>📌 Variables Explained</div>
+            <div style={{
+              background: 'var(--bg-surface)',
+              border: '1px solid var(--border-primary)',
+              borderRadius: 'var(--radius-lg)',
+              padding: 'var(--spacing-xl)',
+              marginBottom: 'var(--spacing-xl)'
+            }}>
+              <h3 style={{
+                fontFamily: 'var(--font-heading)',
+                fontSize: '1rem',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                marginBottom: 'var(--spacing-lg)',
+                color: 'var(--text-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 'var(--spacing-sm)'
+              }}>
+                <span style={{ color: getChapterColor(chapter.color) }}>📌</span>
+                Variables Explained
+              </h3>
+              
               {formula.vars.map((variable, index) => (
-                <div key={index} style={variableItemStyles}>
-                  <span style={variableKeyStyles}>{variable.k}</span>
-                  <span style={variableDescStyles}>{variable.d}</span>
+                <div key={index} style={{
+                  display: 'flex',
+                  gap: 'var(--spacing-md)',
+                  marginBottom: 'var(--spacing-md)',
+                  alignItems: 'flex-start'
+                }}>
+                  <span style={{
+                    background: getChapterColor(chapter.color),
+                    color: 'white',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.875rem',
+                    fontWeight: 600,
+                    padding: 'var(--spacing-xs) var(--spacing-sm)',
+                    borderRadius: 'var(--radius-sm)',
+                    flexShrink: 0,
+                    minWidth: '60px',
+                    textAlign: 'center',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em'
+                  }}>
+                    {variable.k}
+                  </span>
+                  <span style={{
+                    fontSize: '0.875rem',
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.5,
+                    fontFamily: 'var(--font-body)'
+                  }}>
+                    {variable.d}
+                  </span>
                 </div>
               ))}
             </div>
           )}
-        </Card>
 
-        {/* Examples */}
-        {formula.examples.map((example, exampleIndex) => (
-          <Card key={exampleIndex} background="surfaceDark" style={exampleCardStyles}>
-            <div style={exampleBadgeStyles}>📝 Solved Example</div>
-            <div style={questionStyles}>❓ {example.q}</div>
-            <div style={stepsTitleStyles}>Step by Step</div>
-            {example.steps.map((step, stepIndex) => (
-              <div key={stepIndex} style={stepItemStyles}>
-                <div style={stepNumberStyles}>{stepIndex + 1}</div>
-                <div style={stepTextStyles}>{step}</div>
+          {/* Solved Examples */}
+          {formula.examples.map((example, exampleIndex) => (
+            <div key={exampleIndex} style={{
+              background: 'var(--bg-surface)',
+              border: '1px solid var(--border-primary)',
+              borderRadius: 'var(--radius-lg)',
+              padding: 'var(--spacing-xl)',
+              marginBottom: 'var(--spacing-xl)'
+            }}>
+              <div style={{
+                display: 'inline-block',
+                background: `${getChapterColor(chapter.color)}15`,
+                border: `1px solid ${getChapterColor(chapter.color)}30`,
+                borderRadius: 'var(--radius-full)',
+                padding: 'var(--spacing-xs) var(--spacing-md)',
+                fontSize: '0.75rem',
+                color: getChapterColor(chapter.color),
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                marginBottom: 'var(--spacing-lg)',
+                fontFamily: 'var(--font-heading)'
+              }}>
+                📝 Solved Example {exampleIndex + 1}
               </div>
-            ))}
-            <div style={answerStyles}>
-              <span>✅</span>
-              <strong>{example.ans}</strong>
+              
+              {/* Question */}
+              <div style={{
+                background: 'var(--bg-card)',
+                borderRadius: 'var(--radius-md)',
+                padding: 'var(--spacing-lg)',
+                marginBottom: 'var(--spacing-lg)',
+                fontSize: '0.875rem',
+                lineHeight: 1.6,
+                fontFamily: 'var(--font-body)',
+                color: 'var(--text-primary)',
+                borderLeft: `4px solid ${getChapterColor(chapter.color)}`
+              }}>
+                <strong>Q:</strong> {example.q}
+              </div>
+              
+              {/* Steps */}
+              <div style={{
+                fontSize: '0.75rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                color: 'var(--text-muted)',
+                marginBottom: 'var(--spacing-md)',
+                fontFamily: 'var(--font-heading)',
+                fontWeight: 600
+              }}>
+                Step by Step Solution
+              </div>
+              
+              {example.steps.map((step, stepIndex) => (
+                <div key={stepIndex} style={{
+                  display: 'flex',
+                  gap: 'var(--spacing-md)',
+                  marginBottom: 'var(--spacing-sm)',
+                  alignItems: 'flex-start'
+                }}>
+                  <div style={{
+                    background: 'var(--border-primary)',
+                    color: 'var(--text-primary)',
+                    fontSize: '0.75rem',
+                    fontWeight: 600,
+                    width: '24px',
+                    height: '24px',
+                    borderRadius: 'var(--radius-sm)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    fontFamily: 'var(--font-heading)'
+                  }}>
+                    {stepIndex + 1}
+                  </div>
+                  <div style={{
+                    fontSize: '0.875rem',
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.5,
+                    fontFamily: 'var(--font-body)',
+                    flex: 1
+                  }}>
+                    {step}
+                  </div>
+                </div>
+              ))}
+              
+              {/* Answer */}
+              <div style={{
+                background: isDark ? '#0A0A0A' : '#F8F8F8',
+                borderRadius: 'var(--radius-md)',
+                padding: 'var(--spacing-lg)',
+                marginTop: 'var(--spacing-lg)',
+                border: `2px solid ${getChapterColor(chapter.color)}`,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 'var(--spacing-sm)'
+              }}>
+                <span style={{ color: getChapterColor(chapter.color), fontSize: '1.2rem' }}>✅</span>
+                <span style={{
+                  fontFamily: 'var(--font-mono)',
+                  color: getChapterColor(chapter.color),
+                  fontSize: '1rem',
+                  fontWeight: 600
+                }}>
+                  {example.ans}
+                </span>
+              </div>
             </div>
-          </Card>
-        ))}
+          ))}
+        </motion.div>
+      </div>
 
-        {/* Navigation */}
-        <div style={navigationStyles}>
-          <Button
+      {/* Navigation - Fixed Bottom */}
+      <div style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        background: 'var(--bg-primary)',
+        borderTop: '1px solid var(--border-primary)',
+        padding: 'var(--spacing-lg)',
+        backdropFilter: 'blur(10px)',
+        zIndex: 30
+      }}>
+        <div style={{
+          display: 'flex',
+          gap: 'var(--spacing-lg)',
+          maxWidth: '400px',
+          margin: '0 auto'
+        }}>
+          <button
             onClick={goToPrevious}
             disabled={currentFormulaIndex === 0}
-            variant="secondary"
-            style={{ flex: 1 }}
+            className="btn btn-secondary"
+            style={{
+              flex: 1,
+              opacity: currentFormulaIndex === 0 ? 0.5 : 1,
+              cursor: currentFormulaIndex === 0 ? 'not-allowed' : 'pointer'
+            }}
           >
             ← Previous
-          </Button>
-          <Button
+          </button>
+          <button
             onClick={goToNext}
             disabled={currentFormulaIndex === chapter.formulas.length - 1}
-            variant="secondary"
-            style={{ flex: 1 }}
+            className="btn btn-primary"
+            style={{
+              flex: 1,
+              opacity: currentFormulaIndex === chapter.formulas.length - 1 ? 0.5 : 1,
+              cursor: currentFormulaIndex === chapter.formulas.length - 1 ? 'not-allowed' : 'pointer'
+            }}
           >
             Next →
-          </Button>
+          </button>
         </div>
-
-        {/* Progress */}
-        <div style={progressStyles}>
-          <div style={progressHeaderStyles}>
-            <span style={progressLabelStyles}>Chapter Progress</span>
-            <span style={progressValueStyles}>{currentFormulaIndex + 1}/{chapter.formulas.length}</span>
-          </div>
-          <div style={progressBarStyles}>
-            <div style={progressFillStyles} />
-          </div>
+        
+        {/* Progress Bar */}
+        <div style={{
+          marginTop: 'var(--spacing-md)',
+          background: 'var(--border-primary)',
+          borderRadius: 'var(--radius-full)',
+          height: '4px',
+          maxWidth: '400px',
+          margin: 'var(--spacing-md) auto 0'
+        }}>
+          <div style={{
+            background: getChapterColor(chapter.color),
+            borderRadius: 'var(--radius-full)',
+            height: '4px',
+            width: `${((currentFormulaIndex + 1) / chapter.formulas.length) * 100}%`,
+            transition: 'width var(--transition-normal)'
+          }} />
         </div>
       </div>
+
+      {/* Add padding to bottom to account for fixed navigation */}
+      <div style={{ height: '120px' }} />
     </Layout>
   );
 };

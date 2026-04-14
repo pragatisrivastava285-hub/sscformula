@@ -1,13 +1,13 @@
 import React from 'react';
-import { theme } from '../../styles/theme';
 
 const Layout = ({ children, style = {} }) => {
   const layoutStyles = {
     minHeight: '100vh',
-    background: theme.colors.background,
-    fontFamily: theme.typography.fontFamily.sans,
-    color: theme.colors.text,
+    background: 'var(--bg-primary)',
+    fontFamily: 'var(--font-body)',
+    color: 'var(--text-primary)',
     overflowX: 'hidden',
+    transition: 'background-color var(--transition-normal), color var(--transition-normal)',
     ...style,
   };
 
